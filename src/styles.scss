@@ -1,0 +1,195 @@
+@use "sass:color";
+
+// ─────────────────────────────────────────────────────────────────────────────
+// gov.gr — GOV.UK Frontend token overrides
+// Must come BEFORE the @import so the design system picks them up.
+// ─────────────────────────────────────────────────────────────────────────────
+
+// Brand colour (govuk-frontend v6 API)
+$govuk-functional-colours: (
+  "brand": #003476,
+);
+
+$govuk-link-colour:          #003476;
+$govuk-link-hover-colour:    #00205b;
+$govuk-link-visited-colour:  #4c2c92;
+$govuk-focus-colour:         #ffdd00;
+
+$govuk-font-family:          "Source Sans 3", "Noto Sans", system-ui, sans-serif;
+$govuk-assets-path:          "/node_modules/govuk-frontend/dist/govuk/assets/";
+
+@import "govuk-frontend/dist/govuk/index";
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Layout shell — stretch footer to bottom of viewport
+// ─────────────────────────────────────────────────────────────────────────────
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+#main-content,
+.govuk-main-wrapper {
+  flex: 1;
+}
+
+.govuk-header__logotype-image {
+  display: block;
+  height: 30px;
+  width: auto;
+  filter: brightness(0) invert(1);
+}
+
+.govuk-footer__logo-image {
+  display: block;
+  margin-bottom: govuk-spacing(3);
+  filter: brightness(0) invert(1);
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Phase banner — subtle blue tint to sit between header and content
+// ─────────────────────────────────────────────────────────────────────────────
+.govuk-phase-banner {
+  background-color: color.adjust(#003476, $lightness: 60%);
+  border-bottom: 1px solid color.adjust(#003476, $lightness: 50%);
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Hero banner
+// ─────────────────────────────────────────────────────────────────────────────
+.govgr-hero {
+  position: relative;
+  background-color: #003476;
+  // Diagonal light streak across the deep blue
+  background-image:
+    linear-gradient(
+      118deg,
+      color.adjust(#003476, $lightness: -4%) 0%,
+      #003476 45%,
+      color.adjust(#003476, $lightness: 6%) 100%
+    );
+  overflow: hidden;
+  padding: govuk-spacing(9) 0 govuk-spacing(9);
+
+  // Subtle geometric accent — large faint circle top-right
+  &::before {
+    content: '';
+    position: absolute;
+    top: -140px;
+    right: -100px;
+    width: 520px;
+    height: 520px;
+    border-radius: 50%;
+    border: 60px solid rgba(255, 255, 255, 0.04);
+    pointer-events: none;
+  }
+
+  // Second smaller circle bottom-left
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -80px;
+    left: -60px;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 40px solid rgba(255, 255, 255, 0.04);
+    pointer-events: none;
+  }
+
+  &__inner {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: govuk-spacing(6);
+  }
+
+  &__heading {
+    @include govuk-font($size: 48, $weight: bold);
+    color: #ffffff;
+    margin: 0;
+    max-width: 640px;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+
+    @include govuk-media-query($until: tablet) {
+      @include govuk-font($size: 36, $weight: bold);
+    }
+  }
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Hero search bar
+// ─────────────────────────────────────────────────────────────────────────────
+.govgr-search {
+  width: 100%;
+  max-width: 600px;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+
+  &__group {
+    display: flex;
+    height: 50px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  }
+
+  &__input {
+    @include govuk-font($size: 19);
+    flex: 1;
+    min-width: 0;
+    padding: 0 govuk-spacing(3);
+    border: 3px solid #ffffff;
+    border-right: none;
+    border-radius: 0;
+    background: #ffffff;
+    color: #0b0c0c;
+    outline: none;
+    appearance: none;
+
+    &::placeholder {
+      color: #6f777b;
+    }
+
+    // Remove browser search decorations
+    &::-webkit-search-decoration,
+    &::-webkit-search-cancel-button {
+      appearance: none;
+    }
+
+    &:focus {
+      outline: 3px solid #ffdd00;
+      outline-offset: 0;
+      border-color: #0b0c0c;
+      z-index: 1;
+    }
+  }
+
+  &__btn {
+    flex-shrink: 0;
+    width: 54px;
+    background-color: #ffdd00;
+    border: 3px solid #ffffff;
+    border-left: none;
+    border-radius: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #0b0c0c;
+    transition: background-color 0.1s ease;
+
+    &:hover {
+      background-color: color.adjust(#ffdd00, $lightness: -8%);
+    }
+
+    &:focus {
+      outline: 3px solid #ffdd00;
+      outline-offset: 0;
+      background-color: #ffdd00;
+    }
+  }
+}
