@@ -108,6 +108,86 @@ export function initHome() {
             </li>
           </ul>
         </section>
+
+        <section class="govgr-categories" aria-labelledby="categories-heading">
+          <h2 class="govgr-categories__heading" id="categories-heading">Κατηγορίες Υπηρεσιών</h2>
+          <p class="govuk-body govgr-categories__intro">
+            11 κατηγορίες με 2244 υπηρεσίες για να βρείτε ακριβώς αυτό που ψάχνετε.
+          </p>
+
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+              <ul class="govuk-list govuk-list--spaced govgr-categories__list">
+                <li class="govgr-categories__list-item">
+                  <a class="govuk-link govgr-categories__link" href="#">Γεωργία και κτηνοτροφία</a>
+                  <p class="govuk-body govgr-categories__description">
+                    Διαδικασίες, επιδοτήσεις και αποζημιώσεις για την γεωργική, κτηνοτροφική ή αλιευτική σας δραστηριότητα.
+                  </p>
+                </li>
+                <li class="govgr-categories__list-item">
+                  <a class="govuk-link govgr-categories__link" href="#">Δικαιοσύνη</a>
+                  <p class="govuk-body govgr-categories__description">
+                    Νομοθεσία, δικαστικό σύστημα, έκδοση εγγράφων κ.ά.
+                  </p>
+                </li>
+                <li class="govgr-categories__list-item">
+                  <a class="govuk-link govgr-categories__link" href="#">Εκπαίδευση</a>
+                  <p class="govuk-body govgr-categories__description">
+                    Διαδικασίες για την εγγραφή και φοίτηση σε όλες τις εκπαιδευτικές βαθμίδες.
+                  </p>
+                </li>
+                <li class="govgr-categories__list-item">
+                  <a class="govuk-link govgr-categories__link" href="#">Επιχειρηματική δραστηριότητα</a>
+                  <p class="govuk-body govgr-categories__description">
+                    Υπηρεσίες για να ξεκινήσετε και να μεγαλώσετε την επιχείρησή σας.
+                  </p>
+                </li>
+                <li class="govgr-categories__list-item">
+                  <a class="govuk-link govgr-categories__link" href="#">Εργασία και ασφάλιση</a>
+                  <p class="govuk-body govgr-categories__description">
+                    Εργαλεία και υπηρεσίες για την αναζήτηση εργασίας, την ασφάλιση και τη συνταξιοδότησή σας.
+                  </p>
+                </li>
+                <li class="govgr-categories__list-item">
+                  <a class="govuk-link govgr-categories__link" href="#">Οικογένεια</a>
+                  <p class="govuk-body govgr-categories__description">
+                    Διαδικασίες και έκδοση εγγράφων για όλα τα γεγονότα της ζωής σας.
+                  </p>
+                </li>
+                <li class="govgr-categories__list-item">
+                  <a class="govuk-link govgr-categories__link" href="#">Περιουσία και φορολογία</a>
+                  <p class="govuk-body govgr-categories__description">
+                    Οδηγίες και υπηρεσίες για τη διαχείριση της περιουσίας σας και τη φορολογία.
+                  </p>
+                </li>
+                <li class="govgr-categories__list-item">
+                  <a class="govuk-link govgr-categories__link" href="#">Πολίτης και καθημερινότητα</a>
+                  <p class="govuk-body govgr-categories__description">
+                    Υπηρεσίες για τις επαφές σας με το δημόσιο και την παραμονή των πολιτών τρίτων χωρών.
+                  </p>
+                </li>
+                <li class="govgr-categories__list-item">
+                  <a class="govuk-link govgr-categories__link" href="#">Πολιτισμός, αθλητισμός και τουρισμός</a>
+                  <p class="govuk-body govgr-categories__description">
+                    Υπηρεσίες πολιτιστικού περιεχομένου, διαδικασίες για εσωτερικό και εξωτερικό τουρισμό.
+                  </p>
+                </li>
+                <li class="govgr-categories__list-item">
+                  <a class="govuk-link govgr-categories__link" href="#">Στράτευση</a>
+                  <p class="govuk-body govgr-categories__description">
+                    Διαδικασίες για τη θητεία και τις στρατιωτικές σχολές, υπηρεσίες για ένστολους και απόστρατους.
+                  </p>
+                </li>
+                <li class="govgr-categories__list-item">
+                  <a class="govuk-link govgr-categories__link" href="#">Υγεία και πρόνοια</a>
+                  <p class="govuk-body govgr-categories__description">
+                    Διαδικασίες για την ατομική και δημόσια υγεία, υπηρεσίες για φάρμακα, νοσηλεία και επιδόματα.
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
       </div>
     </div>
   `;
