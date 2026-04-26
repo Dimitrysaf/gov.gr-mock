@@ -12,9 +12,6 @@ export function initHome() {
   const main = document.getElementById('main-content');
   if (!main) return;
 
-  // Remove default govuk-main-wrapper padding — banner handles its own spacing
-  main.classList.remove('govuk-main-wrapper');
-
   main.innerHTML = `
     <section class="govgr-hero" aria-labelledby="hero-heading">
       <div class="govgr-hero__inner govuk-width-container">
@@ -54,7 +51,63 @@ export function initHome() {
 
     <div class="govuk-width-container">
       <div class="govuk-main-wrapper" id="home-content">
-        <!-- Placeholder for future home page content sections -->
+        <section class="govgr-trending" aria-labelledby="trending-heading">
+          <h2 class="govgr-trending__heading" id="trending-heading">Επίκαιρες αναζητήσεις</h2>
+          <ul class="govuk-grid-row govuk-list govgr-trending__list">
+            <li class="govuk-grid-column-one-half-from-tablet govgr-trending__list-item">
+              <div class="govgr-trending__entry">
+                <span class="govgr-trending__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" class="govgr-trending__icon-svg" focusable="false">
+                    <path d="M5 12h12" />
+                    <path d="M13 6l6 6-6 6" />
+                  </svg>
+                </span>
+                <a class="govuk-link govgr-trending__link" href="#">
+                  Προσωπικός Αριθμός / Επιβεβαίωση και διόρθωση στοιχείων στα μητρώα δημοσίου (myinfo)
+                </a>
+              </div>
+            </li>
+            <li class="govuk-grid-column-one-half-from-tablet govgr-trending__list-item">
+              <div class="govgr-trending__entry">
+                <span class="govgr-trending__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" class="govgr-trending__icon-svg" focusable="false">
+                    <path d="M5 12h12" />
+                    <path d="M13 6l6 6-6 6" />
+                  </svg>
+                </span>
+                <a class="govuk-link govgr-trending__link" href="#">
+                  Βεβαίωση Επιλεξιμότητας στο πρόγραμμα «Σπίτι μου ΙΙ»
+                </a>
+              </div>
+            </li>
+            <li class="govuk-grid-column-one-half-from-tablet govgr-trending__list-item">
+              <div class="govgr-trending__entry">
+                <span class="govgr-trending__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" class="govgr-trending__icon-svg" focusable="false">
+                    <path d="M5 12h12" />
+                    <path d="M13 6l6 6-6 6" />
+                  </svg>
+                </span>
+                <a class="govuk-link govgr-trending__link" href="#">
+                  Υπεύθυνη Δήλωση / Εξουσιοδότηση / Γνήσιο Υπογραφής
+                </a>
+              </div>
+            </li>
+            <li class="govuk-grid-column-one-half-from-tablet govgr-trending__list-item">
+              <div class="govgr-trending__entry">
+                <span class="govgr-trending__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" class="govgr-trending__icon-svg" focusable="false">
+                    <path d="M5 12h12" />
+                    <path d="M13 6l6 6-6 6" />
+                  </svg>
+                </span>
+                <a class="govuk-link govgr-trending__link" href="#">
+                  Δημιουργία ηλεκτρονικής επισημείωσης της Χάγης (e-apostille)
+                </a>
+              </div>
+            </li>
+          </ul>
+        </section>
       </div>
     </div>
   `;
