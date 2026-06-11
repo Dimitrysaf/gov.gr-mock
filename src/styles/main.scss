@@ -1,0 +1,47 @@
+@use "sass:color";
+
+$govuk-functional-colours: (
+  "brand":        #003476,
+  "focus":        #ffdd00,
+  "link":         #003476,
+  "link-hover":   #00205b,
+  "link-visited": #4c2c92,
+);
+
+$govuk-font-family:  "Inter", system-ui, sans-serif;
+$govuk-assets-path:  "/node_modules/govuk-frontend/dist/govuk/assets/";
+
+@import "govuk-frontend/dist/govuk/index";
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#main-content,
+.govuk-main-wrapper { flex: 1; }
+
+.govuk-colour-secondary { color: #505a5f; }
+
+.govgr-domain-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: govuk-spacing(4);
+  margin-top: govuk-spacing(6);
+
+  @include govuk-media-query($from: tablet) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include govuk-media-query($from: desktop) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .govuk-summary-card {
+    height: 100%;
+    margin-bottom: 0;
+  }
+}
