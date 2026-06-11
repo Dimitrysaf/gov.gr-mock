@@ -1,0 +1,103 @@
+---
+import '../styles/main.scss';
+
+interface Props {
+  title?: string;
+}
+
+const { title = 'gov.gr' } = Astro.props;
+---
+
+<!doctype html>
+<html lang="el" class="govuk-template">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  </head>
+  <body class="govuk-template__body">
+    <header class="site-header">
+      <div class="govuk-width-container">
+        <a href="/" aria-label="gov.gr - Αρχική">
+          <img src="/gov_gr.svg" alt="gov.gr" height="40" />
+        </a>
+      </div>
+    </header>
+
+    <main class="govuk-main-wrapper" id="main-content" role="main" tabindex="-1">
+      <slot />
+    </main>
+
+    <footer class="govuk-footer">
+      <div class="govuk-width-container">
+        <div class="govuk-footer__meta">
+          <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+            <ul class="govuk-footer__inline-list">
+              <li class="govuk-footer__inline-list-item">
+                <a class="govuk-footer__link" href="/voitheia">Βοήθεια</a>
+              </li>
+              <li class="govuk-footer__inline-list-item">
+                <a class="govuk-footer__link" href="/aporrito">Απόρρητο</a>
+              </li>
+              <li class="govuk-footer__inline-list-item">
+                <a class="govuk-footer__link" href="/cookies">Cookies</a>
+              </li>
+              <li class="govuk-footer__inline-list-item">
+                <a class="govuk-footer__link" href="/prosvassimotita">Προσβασιμότητα</a>
+              </li>
+              <li class="govuk-footer__inline-list-item">
+                <a class="govuk-footer__link" href="/epikoinonia">Επικοινωνία</a>
+              </li>
+              <li class="govuk-footer__inline-list-item">
+                <a class="govuk-footer__link" href="/oroi-xrisis">Όροι χρήσης</a>
+              </li>
+              <li class="govuk-footer__inline-list-item">
+                <a class="govuk-footer__link" href="/ilektronikes-ypiresies">Ηλεκτρονικές Υπηρεσίες Διακυβέρνησης</a>
+              </li>
+            </ul>
+            <div class="footer-bottom">
+              <div class="footer-bottom__text">
+                <span class="govuk-footer__licence-description">
+                  © {new Date().getFullYear()} gov.gr &mdash;
+                  <a class="govuk-footer__link" href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence v3.0</a>
+                </span>
+              </div>
+              <div class="footer-bottom__logo">
+                <img src="/Coat_of_arms_of_Greece.svg" alt="" aria-hidden="true" height="60" />
+                <span>Ελληνική Δημοκρατία</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
+
+<style>
+  .site-header {
+    background-color: #003476;
+    padding: 12px 0;
+  }
+
+  .footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .footer-bottom__logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    font-size: 1rem;
+    color: #505a5f;
+  }
+</style>
