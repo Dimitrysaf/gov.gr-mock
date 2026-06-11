@@ -64,6 +64,7 @@ $super-nav-pipe-colour:   color.mix(#ffffff, #003476, 95%);
   flex-grow: 1;
   flex-shrink: 0;
   text-decoration: none;
+  pointer-events: none;
 }
 
 .gem-c-layout-super-navigation-header__header-logo-inner {
@@ -71,6 +72,8 @@ $super-nav-pipe-colour:   color.mix(#ffffff, #003476, 95%);
   align-items: center;
   height: $super-nav-navbar-height;
   position: relative;
+  pointer-events: auto;
+  cursor: pointer;
 }
 
 .gem-c-layout-super-navigation-header__header-logo:hover .gem-c-layout-super-navigation-header__header-logo-inner::after {
