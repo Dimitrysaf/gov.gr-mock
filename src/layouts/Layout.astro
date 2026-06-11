@@ -37,38 +37,31 @@ const { title = 'gov.gr' } = Astro.props;
           <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
             <ul class="govuk-footer__inline-list">
               <li class="govuk-footer__inline-list-item">
-                <a class="govuk-footer__link" href="/voitheia">Βοήθεια</a>
+                <a class="govuk-footer__link" href="/help">Βοήθεια</a>
               </li>
               <li class="govuk-footer__inline-list-item">
-                <a class="govuk-footer__link" href="/aporrito">Απόρρητο</a>
+                <a class="govuk-footer__link" href="/privacy">Απόρρητο</a>
               </li>
               <li class="govuk-footer__inline-list-item">
                 <a class="govuk-footer__link" href="/cookies">Cookies</a>
               </li>
               <li class="govuk-footer__inline-list-item">
-                <a class="govuk-footer__link" href="/prosvassimotita">Προσβασιμότητα</a>
+                <a class="govuk-footer__link" href="/accessibility">Προσβασιμότητα</a>
               </li>
               <li class="govuk-footer__inline-list-item">
-                <a class="govuk-footer__link" href="/epikoinonia">Επικοινωνία</a>
+                <a class="govuk-footer__link" href="/contact">Επικοινωνία</a>
               </li>
               <li class="govuk-footer__inline-list-item">
-                <a class="govuk-footer__link" href="/oroi-xrisis">Όροι χρήσης</a>
+                <a class="govuk-footer__link" href="/terms">Όροι χρήσης</a>
               </li>
               <li class="govuk-footer__inline-list-item">
-                <a class="govuk-footer__link" href="/ilektronikes-ypiresies">Ηλεκτρονικές Υπηρεσίες Διακυβέρνησης</a>
+                <a class="govuk-footer__link" href="/e-government-services">Ηλεκτρονικές Υπηρεσίες Διακυβέρνησης</a>
               </li>
             </ul>
             <div class="footer-bottom">
-              <div class="footer-bottom__text">
-                <span class="govuk-footer__licence-description">
-                  © {new Date().getFullYear()} gov.gr &mdash;
-                  <a class="govuk-footer__link" href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence v3.0</a>
-                </span>
-              </div>
-              <div class="footer-bottom__logo">
-                <img src="/Coat_of_arms_of_Greece.svg" alt="" aria-hidden="true" height="60" />
-                <span>Ελληνική Δημοκρατία</span>
-              </div>
+              <span class="footer-copyright">©</span>
+              <img src="/Κυβέρνηση_της_Ελλάδας.svg" alt="" aria-hidden="true" class="footer-bottom__logo-img" />
+              <span class="govuk-footer__licence-description">Όλο το περιεχόμενο διατίθεται υπό την <a class="govuk-footer__link" href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence v3.0</a>, εκτός αν αναφέρεται διαφορετικά.</span>
             </div>
           </div>
         </div>
@@ -86,18 +79,20 @@ const { title = 'gov.gr' } = Astro.props;
   .footer-bottom {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    gap: 0.75rem;
     margin-top: 1rem;
     flex-wrap: wrap;
-    gap: 1rem;
   }
 
-  .footer-bottom__logo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 4px;
-    font-size: 1rem;
+  .footer-copyright {
+    font-size: 3rem;
+    line-height: 1;
+    font-weight: 700;
     color: #505a5f;
+  }
+
+  .footer-bottom__logo-img {
+    height: 60px;
+    width: auto;
   }
 </style>
