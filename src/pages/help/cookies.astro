@@ -1,0 +1,333 @@
+---
+import Layout from '../../layouts/Layout.astro';
+const gaId = import.meta.env.PUBLIC_GA_ID ?? '';
+---
+
+<Layout
+  title="Cookies – gov.gr"
+  breadcrumbs={[
+    { text: 'Αρχική', href: '/' },
+    { text: 'Βοήθεια', href: '/help' },
+    { text: 'Cookies' },
+  ]}
+>
+  <div class="govuk-width-container">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <!-- Success notification banner -->
+        <div
+          class="govuk-notification-banner govuk-notification-banner--success"
+          role="alert"
+          aria-labelledby="govuk-notification-banner-title"
+          data-module="govuk-notification-banner"
+          id="cookie-success-banner"
+          hidden
+        >
+          <div class="govuk-notification-banner__header">
+            <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+              Επιτυχία
+            </h2>
+          </div>
+          <div class="govuk-notification-banner__content">
+            <p class="govuk-body">Οι ρυθμίσεις cookies αποθηκεύτηκαν.</p>
+          </div>
+        </div>
+
+        <h1 class="govuk-heading-xl">Cookies στο gov.gr</h1>
+
+        <p class="govuk-body">
+          Τα cookies είναι αρχεία που αποθηκεύονται στο τηλέφωνο, το tablet ή τον υπολογιστή σας όταν επισκέπτεστε έναν ιστότοπο.
+        </p>
+
+        <p class="govuk-body">
+          Χρησιμοποιούμε cookies για να συλλέγουμε και να αποθηκεύουμε πληροφορίες σχετικά με τον τρόπο που χρησιμοποιείτε τον ιστότοπο gov.gr και τις κυβερνητικές ψηφιακές υπηρεσίες, όπως οι σελίδες που επισκέπτεστε.
+        </p>
+
+        <p class="govuk-body">
+          Αυτή η σελίδα περιέχει μια σύντομη εξήγηση για κάθε τύπο cookie που χρησιμοποιούμε.
+        </p>
+
+        <h2 class="govuk-heading-l">Ρυθμίσεις cookies</h2>
+
+        <p class="govuk-body">Χρησιμοποιούμε 4 τύπους cookie. Μπορείτε να επιλέξετε ποια cookies αποδέχεστε.</p>
+
+        <form id="cookie-settings-form" novalidate>
+
+          <!-- ── 1. Measurement cookies ── -->
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                <h2 class="govuk-fieldset__heading">Cookies μέτρησης χρήσης ιστότοπου</h2>
+              </legend>
+
+              <p class="govuk-body">
+                Χρησιμοποιούμε cookies Google Analytics για να μετράμε πώς χρησιμοποιείτε το gov.gr και τις κυβερνητικές ψηφιακές υπηρεσίες.
+              </p>
+
+              <p class="govuk-body">Αυτά τα cookies συλλέγουν πληροφορίες σχετικά με:</p>
+              <ul class="govuk-list govuk-list--bullet">
+                <li>πώς φτάσατε σε αυτές τις ιστοσελίδες</li>
+                <li>τις σελίδες που επισκέπτεστε και πόσο χρόνο αφιερώνετε σε κάθε σελίδα</li>
+                <li>τι κάνετε κλικ ενώ επισκέπτεστε αυτές τις ιστοσελίδες</li>
+              </ul>
+
+              <p class="govuk-body">Δεν επιτρέπουμε στην Google να χρησιμοποιεί ή να μοιράζεται αυτά τα δεδομένα για δικούς της σκοπούς.</p>
+
+              <table class="govuk-table govuk-!-margin-bottom-4">
+                <caption class="govuk-table__caption govuk-visually-hidden">Cookies μέτρησης χρήσης</caption>
+                <thead class="govuk-table__head">
+                  <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header">Όνομα</th>
+                    <th scope="col" class="govuk-table__header">Σκοπός</th>
+                    <th scope="col" class="govuk-table__header">Λήξη</th>
+                  </tr>
+                </thead>
+                <tbody class="govuk-table__body">
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">_ga</td>
+                    <td class="govuk-table__cell">Μετρά πόσοι επισκέπτες έχουν χρησιμοποιήσει το gov.gr και πώς πλοηγήθηκαν.</td>
+                    <td class="govuk-table__cell">2 χρόνια</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">_ga_{gaId ? gaId.replace('G-', '') : 'XXXXXXXXXX'}</td>
+                    <td class="govuk-table__cell">Χρησιμοποιείται από το Google Analytics 4 για να διατηρεί την κατάσταση της συνεδρίας.</td>
+                    <td class="govuk-table__cell">2 χρόνια</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">_gid</td>
+                    <td class="govuk-table__cell">Μετρά πόσοι επισκέπτες έχουν χρησιμοποιήσει το gov.gr.</td>
+                    <td class="govuk-table__cell">24 ώρες</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">_gat</td>
+                    <td class="govuk-table__cell">Περιορίζει τον αριθμό αιτημάτων προς το Google Analytics.</td>
+                    <td class="govuk-table__cell">1 λεπτό</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="analytics-yes" name="analytics" type="radio" value="yes" />
+                  <label class="govuk-label govuk-radios__label" for="analytics-yes">
+                    Χρήση cookies μέτρησης χρήσης ιστότοπου
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="analytics-no" name="analytics" type="radio" value="no" />
+                  <label class="govuk-label govuk-radios__label" for="analytics-no">
+                    Να μη χρησιμοποιούνται cookies μέτρησης χρήσης ιστότοπου
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+
+          <!-- ── 2. Communications & marketing cookies ── -->
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                <h2 class="govuk-fieldset__heading">Cookies επικοινωνίας και προώθησης</h2>
+              </legend>
+
+              <p class="govuk-body">
+                Αυτά τα cookies ενδέχεται να ορίζονται από ιστότοπους τρίτων που εμφανίζουν περιεχόμενο ενσωματωμένο στο gov.gr, όπως βίντεο ή διαδραστικοί χάρτες.
+              </p>
+
+              <table class="govuk-table govuk-!-margin-bottom-4">
+                <caption class="govuk-table__caption govuk-visually-hidden">Cookies επικοινωνίας</caption>
+                <thead class="govuk-table__head">
+                  <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header">Όνομα</th>
+                    <th scope="col" class="govuk-table__header">Σκοπός</th>
+                    <th scope="col" class="govuk-table__header">Λήξη</th>
+                  </tr>
+                </thead>
+                <tbody class="govuk-table__body">
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">VISITOR_INFO1_LIVE</td>
+                    <td class="govuk-table__cell">Ορίζεται από το YouTube για τη μέτρηση του bandwidth του χρήστη.</td>
+                    <td class="govuk-table__cell">179 ημέρες</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">YSC</td>
+                    <td class="govuk-table__cell">Ορίζεται από το YouTube για την παρακολούθηση προβολών ενσωματωμένων βίντεο.</td>
+                    <td class="govuk-table__cell">Συνεδρία</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="comms-yes" name="comms" type="radio" value="yes" />
+                  <label class="govuk-label govuk-radios__label" for="comms-yes">
+                    Χρήση cookies επικοινωνίας και προώθησης
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="comms-no" name="comms" type="radio" value="no" />
+                  <label class="govuk-label govuk-radios__label" for="comms-no">
+                    Να μη χρησιμοποιούνται cookies επικοινωνίας και προώθησης
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+
+          <!-- ── 3. Settings cookies ── -->
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                <h2 class="govuk-fieldset__heading">Cookies που θυμούνται τις ρυθμίσεις σας</h2>
+              </legend>
+
+              <p class="govuk-body">
+                Αυτά τα cookies κάνουν πράγματα όπως να θυμούνται τις προτιμήσεις και τις επιλογές σας, για να εξατομικεύσουν την εμπειρία σας στον ιστότοπο.
+              </p>
+
+              <table class="govuk-table govuk-!-margin-bottom-4">
+                <caption class="govuk-table__caption govuk-visually-hidden">Cookies ρυθμίσεων</caption>
+                <thead class="govuk-table__head">
+                  <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header">Όνομα</th>
+                    <th scope="col" class="govuk-table__header">Σκοπός</th>
+                    <th scope="col" class="govuk-table__header">Λήξη</th>
+                  </tr>
+                </thead>
+                <tbody class="govuk-table__body">
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">govgr_lang</td>
+                    <td class="govuk-table__cell">Αποθηκεύει την προτίμηση γλώσσας διεπαφής.</td>
+                    <td class="govuk-table__cell">1 χρόνος</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">govgr_cookie_prefs</td>
+                    <td class="govuk-table__cell">Αποθηκεύει τις επιλογές σας για τα cookies από αυτή τη σελίδα.</td>
+                    <td class="govuk-table__cell">1 χρόνος</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="settings-yes" name="settings" type="radio" value="yes" />
+                  <label class="govuk-label govuk-radios__label" for="settings-yes">
+                    Χρήση cookies που θυμούνται τις ρυθμίσεις μου στον ιστότοπο
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="settings-no" name="settings" type="radio" value="no" />
+                  <label class="govuk-label govuk-radios__label" for="settings-no">
+                    Να μη χρησιμοποιούνται cookies που θυμούνται τις ρυθμίσεις μου
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+
+          <!-- ── 4. Strictly necessary (no choice) ── -->
+          <h2 class="govuk-heading-m">Απολύτως απαραίτητα cookies</h2>
+
+          <p class="govuk-body">
+            Αυτά τα βασικά cookies κάνουν πράγματα όπως να θυμούνται την πρόοδό σας σε μια φόρμα (για παράδειγμα μια αίτηση υπηρεσίας).
+          </p>
+
+          <p class="govuk-body">Πρέπει πάντα να είναι ενεργοποιημένα.</p>
+
+          <table class="govuk-table">
+            <caption class="govuk-table__caption govuk-visually-hidden">Απολύτως απαραίτητα cookies</caption>
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Όνομα</th>
+                <th scope="col" class="govuk-table__header">Σκοπός</th>
+                <th scope="col" class="govuk-table__header">Λήξη</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">govgr_session</td>
+                <td class="govuk-table__cell">Αποθηκεύει την τρέχουσα συνεδρία σας για να παραμένετε συνδεδεμένοι.</td>
+                <td class="govuk-table__cell">Συνεδρία</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">govgr_csrf</td>
+                <td class="govuk-table__cell">Προστατεύει από επιθέσεις πλαστογράφησης αιτημάτων (CSRF).</td>
+                <td class="govuk-table__cell">Συνεδρία</td>
+              </tr>
+            </tbody>
+          </table>
+
+
+          <!-- ── Government services ── -->
+          <h2 class="govuk-heading-m">Κυβερνητικές υπηρεσίες</h2>
+
+          <p class="govuk-body">
+            Οι κυβερνητικές ψηφιακές υπηρεσίες λειτουργούν από διαφορετικά υπουργεία και φορείς, όπως η ΑΑΔΕ, ο ΕΦΚΑ και το Υπουργείο Ψηφιακής Διακυβέρνησης.
+          </p>
+
+          <p class="govuk-body">
+            Αυτές οι υπηρεσίες ενδέχεται να ορίζουν πρόσθετα cookies και, εάν συμβαίνει αυτό, θα διαθέτουν τη δική τους πολιτική cookies.
+          </p>
+
+          <button type="submit" class="govuk-button" data-module="govuk-button">
+            Αποθήκευση ρυθμίσεων cookies
+          </button>
+
+        </form>
+
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<script>
+  const COOKIE_NAME = 'govgr_cookie_prefs';
+  const COOKIE_MAX_AGE = 60 * 60 * 24 * 365;
+
+  function getCookiePrefs(): Record<string, string> | null {
+    const raw = document.cookie.split('; ').find(r => r.startsWith(COOKIE_NAME + '='));
+    if (!raw) return null;
+    try { return JSON.parse(decodeURIComponent(raw.split('=')[1])); } catch { return null; }
+  }
+
+  function savePrefs(prefs: Record<string, string>): void {
+    document.cookie = `${COOKIE_NAME}=${encodeURIComponent(JSON.stringify(prefs))}; max-age=${COOKIE_MAX_AGE}; path=/; SameSite=Lax`;
+  }
+
+  function setRadio(name: string, value: string): void {
+    const el = document.querySelector<HTMLInputElement>(`input[name="${name}"][value="${value}"]`);
+    if (el) el.checked = true;
+  }
+
+  // Restore saved preferences
+  const saved = getCookiePrefs();
+  if (saved) {
+    if (saved.analytics) setRadio('analytics', saved.analytics);
+    if (saved.comms)     setRadio('comms',     saved.comms);
+    if (saved.settings)  setRadio('settings',  saved.settings);
+  }
+
+  document.getElementById('cookie-settings-form')?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const form = e.target as HTMLFormElement;
+
+    const get = (name: string) =>
+      (form.querySelector<HTMLInputElement>(`input[name="${name}"]:checked`)?.value ?? 'no');
+
+    savePrefs({
+      analytics: get('analytics'),
+      comms:     get('comms'),
+      settings:  get('settings'),
+    });
+
+    const banner = document.getElementById('cookie-success-banner')!;
+    banner.removeAttribute('hidden');
+    banner.setAttribute('tabindex', '-1');
+    banner.focus();
+    banner.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+</script>

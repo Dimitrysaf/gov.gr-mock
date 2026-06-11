@@ -2,4 +2,86 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="gov.gr" />
+<Layout title="gov.gr – Η πύλη της ελληνικής κυβέρνησης">
+  <div class="homepage-header">
+    <div class="govuk-width-container">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <div class="homepage-header__title-container">
+            <h1 class="homepage-header__title">
+              <span class="homepage-header__intro">Ο καλύτερος τρόπος για να βρείτε κυβερνητικές υπηρεσίες και πληροφορίες</span>
+            </h1>
+          </div>
+          <form action="/search" method="get" role="search">
+            <div class="gem-c-search gem-c-search--large gem-c-search--on-govuk-blue gem-c-search--separate-label">
+              <label for="search-main" class="govuk-label govuk-label--s gem-c-search__label gem-c-search__label--white govuk-!-margin-bottom-3">
+                Αναζήτηση
+              </label>
+              <div class="gem-c-search__item-wrapper">
+                <div class="gem-c-search__item gem-c-search__input-wrapper">
+                  <input
+                    class="gem-c-search__item gem-c-search__input"
+                    id="search-main"
+                    name="keywords"
+                    type="search"
+                    autocomplete="off"
+                    placeholder="Αναζητήστε υπηρεσίες, πληροφορίες..."
+                  />
+                </div>
+                <div class="gem-c-search__item gem-c-search__submit-wrapper">
+                  <button class="gem-c-search__submit" type="submit">
+                    Αναζήτηση στο gov.gr
+                    <svg class="gem-c-search__icon" width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                      <circle cx="12.0161" cy="11.0161" r="8.51613" stroke="currentColor" stroke-width="3"></circle>
+                      <line x1="17.8668" y1="17.3587" x2="26.4475" y2="25.9393" stroke="currentColor" stroke-width="3"></line>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .homepage-header {
+    background-color: var(--govgr-brand);
+    margin-top: -20px;
+    padding: 30px 0 40px;
+  }
+
+  @media (min-width: 40.0625em) {
+    .homepage-header {
+      margin-top: -40px;
+    }
+  }
+
+  .homepage-header__title-container {
+    margin-bottom: 20px;
+  }
+
+  .homepage-header__title {
+    margin: 0;
+  }
+
+  .homepage-header__intro {
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1.15;
+    color: #ffffff;
+    display: block;
+  }
+
+  @media (min-width: 48.0625em) {
+    .homepage-header__intro {
+      font-size: 3rem;
+    }
+  }
+
+  .gem-c-search__label--white {
+    color: #ffffff;
+  }
+</style>

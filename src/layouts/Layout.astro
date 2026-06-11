@@ -3,9 +3,10 @@ import '../styles/main.scss';
 
 interface Props {
   title?: string;
+  breadcrumbs?: Array<{ text: string; href?: string }>;
 }
 
-const { title = 'gov.gr' } = Astro.props;
+const { title = 'gov.gr', breadcrumbs } = Astro.props;
 ---
 
 <!doctype html>
@@ -19,17 +20,486 @@ const { title = 'gov.gr' } = Astro.props;
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   </head>
   <body class="govuk-template__body">
-    <header class="site-header">
-      <div class="govuk-width-container">
-        <a href="/" aria-label="gov.gr - Αρχική">
+
+    <!-- Cookie banner – shown only before a choice is made -->
+    <div class="govuk-cookie-banner" data-nosnippet role="region" aria-label="Cookies στο gov.gr" id="cookie-banner">
+
+      <!-- Initial ask -->
+      <div class="govuk-cookie-banner__message govuk-width-container" id="cookie-banner-ask">
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+            <h2 class="govuk-cookie-banner__heading govuk-heading-m">Cookies στο gov.gr</h2>
+            <div class="govuk-cookie-banner__content">
+              <p class="govuk-body">Χρησιμοποιούμε μερικά απαραίτητα cookies για να λειτουργεί αυτή η υπηρεσία.</p>
+              <p class="govuk-body">Θα θέλαμε επίσης να χρησιμοποιήσουμε cookies μέτρησης ώστε να κατανοούμε πώς χρησιμοποιείτε την υπηρεσία και να κάνουμε βελτιώσεις.</p>
+            </div>
+          </div>
+        </div>
+        <div class="govuk-button-group">
+          <button type="button" class="govuk-button" data-module="govuk-button" id="cookie-accept-btn">
+            Αποδοχή cookies μέτρησης
+          </button>
+          <button type="button" class="govuk-button" data-module="govuk-button" id="cookie-reject-btn">
+            Απόρριψη cookies μέτρησης
+          </button>
+          <a class="govuk-link" href="/help/cookies">Προβολή cookies</a>
+        </div>
+      </div>
+
+      <!-- Accept confirmation -->
+      <div class="govuk-cookie-banner__message govuk-width-container" id="cookie-banner-accepted" hidden>
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+            <div class="govuk-cookie-banner__content" role="alert">
+              <p class="govuk-body">Αποδεχτήκατε τα cookies μέτρησης. Μπορείτε να <a class="govuk-link" href="/help/cookies">αλλάξετε τις ρυθμίσεις cookies</a> ανά πάσα στιγμή.</p>
+            </div>
+          </div>
+        </div>
+        <div class="govuk-button-group">
+          <button type="button" class="govuk-button" data-module="govuk-button" id="cookie-hide-accepted-btn">
+            Απόκρυψη μηνύματος
+          </button>
+        </div>
+      </div>
+
+      <!-- Reject confirmation -->
+      <div class="govuk-cookie-banner__message govuk-width-container" id="cookie-banner-rejected" hidden>
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+            <div class="govuk-cookie-banner__content" role="alert">
+              <p class="govuk-body">Απορρίψατε τα cookies μέτρησης. Μπορείτε να <a class="govuk-link" href="/help/cookies">αλλάξετε τις ρυθμίσεις cookies</a> ανά πάσα στιγμή.</p>
+            </div>
+          </div>
+        </div>
+        <div class="govuk-button-group">
+          <button type="button" class="govuk-button" data-module="govuk-button" id="cookie-hide-rejected-btn">
+            Απόκρυψη μηνύματος
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    <script>
+      const COOKIE_NAME = 'govgr_cookie_prefs';
+      const COOKIE_MAX_AGE = 60 * 60 * 24 * 365;
+
+      function getPrefs(): { analytics: string } | null {
+        const raw = document.cookie.split('; ').find(r => r.startsWith(COOKIE_NAME + '='));
+        if (!raw) return null;
+        try { return JSON.parse(decodeURIComponent(raw.split('=')[1])); } catch { return null; }
+      }
+
+      function savePrefs(value: string) {
+        const prefs = JSON.stringify({ analytics: value, comms: value, settings: value });
+        document.cookie = `${COOKIE_NAME}=${encodeURIComponent(prefs)}; max-age=${COOKIE_MAX_AGE}; path=/; SameSite=Lax`;
+      }
+
+      const banner     = document.getElementById('cookie-banner')!;
+      const askPanel   = document.getElementById('cookie-banner-ask')!;
+      const accPanel   = document.getElementById('cookie-banner-accepted')!;
+      const rejPanel   = document.getElementById('cookie-banner-rejected')!;
+
+      // Hide entire banner if choice already made
+      if (getPrefs()) {
+        banner.setAttribute('hidden', '');
+      }
+
+      document.getElementById('cookie-accept-btn')?.addEventListener('click', () => {
+        savePrefs('yes');
+        askPanel.setAttribute('hidden', '');
+        accPanel.removeAttribute('hidden');
+        accPanel.querySelector<HTMLElement>('[role="alert"]')?.focus();
+      });
+
+      document.getElementById('cookie-reject-btn')?.addEventListener('click', () => {
+        savePrefs('no');
+        askPanel.setAttribute('hidden', '');
+        rejPanel.removeAttribute('hidden');
+        rejPanel.querySelector<HTMLElement>('[role="alert"]')?.focus();
+      });
+
+
+      document.getElementById('cookie-hide-accepted-btn')?.addEventListener('click', () => {
+        banner.setAttribute('hidden', '');
+      });
+
+      document.getElementById('cookie-hide-rejected-btn')?.addEventListener('click', () => {
+        banner.setAttribute('hidden', '');
+      });
+    </script>
+
+    <header class="gem-c-layout-super-navigation-header">
+      <div class="govuk-width-container gem-c-layout-super-navigation-header__container">
+        <a href="/" class="gem-c-layout-super-navigation-header__header-logo" aria-label="gov.gr - Αρχική">
           <img src="/gov_gr.svg" alt="gov.gr" height="40" />
         </a>
+        <nav aria-label="Μενού πλοήγησης" class="gem-c-layout-super-navigation-header__content">
+          <button
+            type="button"
+            id="super-nav-toggle"
+            aria-expanded="false"
+            aria-controls="super-nav-panel"
+            aria-label="Εμφάνιση μενού πλοήγησης"
+            class="gem-c-layout-super-navigation-header__navigation-top-toggle-button"
+          >
+            <span class="gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner">Μενού</span>
+          </button>
+          <button
+            type="button"
+            id="super-search-toggle"
+            aria-expanded="false"
+            aria-controls="super-search-panel"
+            aria-label="Εμφάνιση αναζήτησης"
+            class="gem-c-layout-super-navigation-header__search-toggle-button"
+          >
+            <span class="govuk-visually-hidden">Αναζήτηση στο gov.gr</span>
+            <svg class="gem-c-layout-super-navigation-header__search-toggle-button-link-icon" width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+              <circle cx="12.0161" cy="11.0161" r="8.51613" stroke="currentColor" stroke-width="3"></circle>
+              <line x1="17.8668" y1="17.3587" x2="26.4475" y2="25.9393" stroke="currentColor" stroke-width="3"></line>
+            </svg>
+            <span aria-hidden="true" class="gem-c-layout-super-navigation-header__navigation-top-toggle-close-icon">×</span>
+          </button>
+          <a class="gem-c-layout-super-navigation-header__search-item-link" href="/search" hidden>
+            <span class="govuk-visually-hidden">Αναζήτηση στο gov.gr</span>
+            <svg class="gem-c-layout-super-navigation-header__search-item-link-icon" width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+              <circle cx="12.0161" cy="11.0161" r="8.51613" stroke="currentColor" stroke-width="3"></circle>
+              <line x1="17.8668" y1="17.3587" x2="26.4475" y2="25.9393" stroke="currentColor" stroke-width="3"></line>
+            </svg>
+          </a>
+        </nav>
       </div>
+
+      <div id="super-nav-panel" class="gem-c-layout-super-navigation-header__navigation-dropdown-menu" hidden>
+        <div class="govuk-width-container">
+          <div class="govuk-grid-row">
+
+            <div class="govuk-grid-column-two-thirds-from-desktop gem-c-layout-super-navigation-header__column--services-and-information">
+              <h3 class="govuk-heading-m gem-c-layout-super-navigation-header__column-header">
+                Υπηρεσίες και πληροφορίες
+              </h3>
+              <ul class="gem-c-layout-super-navigation-header__navigation-second-items gem-c-layout-super-navigation-header__navigation-second-items--services-and-information">
+                <li class="gem-c-layout-super-navigation-header__dropdown-list-item">
+                  <a class="govuk-link gem-c-layout-super-navigation-header__navigation-second-item-link" href="/browse/benefits">Παροχές και επιδόματα</a>
+                </li>
+                <li class="gem-c-layout-super-navigation-header__dropdown-list-item">
+                  <a class="govuk-link gem-c-layout-super-navigation-header__navigation-second-item-link" href="/browse/births-deaths-marriages">Γεννήσεις, θάνατοι και γάμοι</a>
+                </li>
+                <li class="gem-c-layout-super-navigation-header__dropdown-list-item">
+                  <a class="govuk-link gem-c-layout-super-navigation-header__navigation-second-item-link" href="/browse/business">Επιχειρήσεις και αυτοαπασχόληση</a>
+                </li>
+                <li class="gem-c-layout-super-navigation-header__dropdown-list-item">
+                  <a class="govuk-link gem-c-layout-super-navigation-header__navigation-second-item-link" href="/browse/childcare-parenting">Παιδική μέριμνα και γονεϊκότητα</a>
+                </li>
+                <li class="gem-c-layout-super-navigation-header__dropdown-list-item">
+                  <a class="govuk-link gem-c-layout-super-navigation-header__navigation-second-item-link" href="/browse/citizenship">Ιθαγένεια και κατοικία</a>
+                </li>
+                <li class="gem-c-layout-super-navigation-header__dropdown-list-item">
+                  <a class="govuk-link gem-c-layout-super-navigation-header__navigation-second-item-link" href="/browse/justice">Έγκλημα, δικαιοσύνη και νόμος</a>
+                </li>
+                <li class="gem-c-layout-super-navigation-header__dropdown-list-item">
+                  <a class="govuk-link gem-c-layout-super-navigation-header__navigation-second-item-link" href="/browse/disabilities">Άτομα με αναπηρία</a>
+                </li>
+                <li class="gem-c-layout-super-navigation-header__dropdown-list-item">
+                  <a class="govuk-link gem-c-layout-super-navigation-header__navigation-second-item-link" href="/browse/driving">Οδήγηση και μεταφορές</a>
+                </li>
+                <li class="gem-c-layout-super-navigation-header__dropdown-list-item">
+                  <a class="govuk-link gem-c-layout-super-navigation-header__navigation-second-item-link" href="/browse/education">Εκπαίδευση και μάθηση</a>
+                </li>
+                <li class="gem-c-layout-super-navigation-header__dropdown-list-item">
+                  <a class="govuk-link gem-c-layout-super-navigation-header__navigation-second-item-link" href="/browse/employing-people">Απασχόληση προσωπικού</a>
+                </li>
+                <li class="gem-c-layout-super-navigation-header__dropdown-list-item">
+                  <a class="govuk-link gem-c-layout-super-navigation-header__navigation-second-item-link" href="/browse/environment">Περιβάλλον και αγροτικές περιοχές</a>
+                </li>
+                <li class="gem-c-layout-super-navigation-header__dropdown-list-item">
+                  <a class="govuk-link gem-c-layout-super-navigation-header__navigation-second-item-link" href="/browse/housing">Στέγαση και τοπικές υπηρεσίες</a>
+                </li>
+                <li class="gem-c-layout-super-navigation-header__dropdown-list-item">
+                  <a class="govuk-link gem-c-layout-super-navigation-header__navigation-second-item-link" href="/browse/tax">Χρήμα και φορολογία</a>
+                </li>
+                <li class="gem-c-layout-super-navigation-header__dropdown-list-item">
+                  <a class="govuk-link gem-c-layout-super-navigation-header__navigation-second-item-link" href="/browse/abroad">Διαβατήρια, ταξίδια και διαμονή εξωτερικού</a>
+                </li>
+                <li class="gem-c-layout-super-navigation-header__dropdown-list-item">
+                  <a class="govuk-link gem-c-layout-super-navigation-header__navigation-second-item-link" href="/browse/visas">Βίζες και μετανάστευση</a>
+                </li>
+                <li class="gem-c-layout-super-navigation-header__dropdown-list-item">
+                  <a class="govuk-link gem-c-layout-super-navigation-header__navigation-second-item-link" href="/browse/working">Εργασία, θέσεις εργασίας και συντάξεις</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="govuk-grid-column-one-third-from-desktop gem-c-layout-super-navigation-header__column--government-activity">
+              <h3 class="govuk-heading-m gem-c-layout-super-navigation-header__column-header">
+                Κυβερνητική δραστηριότητα
+              </h3>
+              <ul class="gem-c-layout-super-navigation-header__navigation-second-items">
+                <li class="gem-c-layout-super-navigation-header__dropdown-list-item">
+                  <a class="govuk-link gem-c-layout-super-navigation-header__navigation-second-item-link gem-c-layout-super-navigation-header__navigation-second-item-link--with-description" href="/government/organisations">Υπουργεία</a>
+                  <p class="gem-c-layout-super-navigation-header__navigation-second-item-description">Υπουργεία, φορείς και δημόσιοι οργανισμοί</p>
+                </li>
+                <li class="gem-c-layout-super-navigation-header__dropdown-list-item">
+                  <a class="govuk-link gem-c-layout-super-navigation-header__navigation-second-item-link gem-c-layout-super-navigation-header__navigation-second-item-link--with-description" href="/news">Νέα</a>
+                  <p class="gem-c-layout-super-navigation-header__navigation-second-item-description">Ανακοινώσεις, ομιλίες, επιστολές και γνωστοποιήσεις</p>
+                </li>
+                <li class="gem-c-layout-super-navigation-header__dropdown-list-item">
+                  <a class="govuk-link gem-c-layout-super-navigation-header__navigation-second-item-link gem-c-layout-super-navigation-header__navigation-second-item-link--with-description" href="/guidance">Οδηγίες και κανονισμοί</a>
+                  <p class="gem-c-layout-super-navigation-header__navigation-second-item-description">Αναλυτικές οδηγίες, κανονισμοί και κανόνες</p>
+                </li>
+                <li class="gem-c-layout-super-navigation-header__dropdown-list-item">
+                  <a class="govuk-link gem-c-layout-super-navigation-header__navigation-second-item-link gem-c-layout-super-navigation-header__navigation-second-item-link--with-description" href="/research">Έρευνα και στατιστικά</a>
+                  <p class="gem-c-layout-super-navigation-header__navigation-second-item-description">Εκθέσεις, αναλύσεις και επίσημα στατιστικά</p>
+                </li>
+                <li class="gem-c-layout-super-navigation-header__dropdown-list-item">
+                  <a class="govuk-link gem-c-layout-super-navigation-header__navigation-second-item-link gem-c-layout-super-navigation-header__navigation-second-item-link--with-description" href="/consultations">Πολιτικά κείμενα και διαβουλεύσεις</a>
+                  <p class="gem-c-layout-super-navigation-header__navigation-second-item-description">Διαβουλεύσεις και στρατηγική</p>
+                </li>
+                <li class="gem-c-layout-super-navigation-header__dropdown-list-item">
+                  <a class="govuk-link gem-c-layout-super-navigation-header__navigation-second-item-link gem-c-layout-super-navigation-header__navigation-second-item-link--with-description" href="/transparency">Διαφάνεια</a>
+                  <p class="gem-c-layout-super-navigation-header__navigation-second-item-description">Δεδομένα και εκθέσεις εταιρικής διακυβέρνησης</p>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div id="super-search-panel" class="gem-c-layout-super-navigation-header__navigation-dropdown-menu" hidden>
+        <div class="govuk-width-container gem-c-layout-super-navigation-header__search-container gem-c-layout-super-navigation-header__search-items">
+          <h3 class="govuk-visually-hidden">Αναζήτηση</h3>
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full">
+              <form class="gem-c-layout-super-navigation-header__search-form" action="/search" method="get" role="search" aria-label="Αναζήτηση στο gov.gr">
+                <div class="gem-c-search gem-c-search--large gem-c-search--on-white gem-c-search--separate-label govuk-!-margin-bottom-0">
+                  <label for="header-search-input" class="govuk-label govuk-label--m gem-c-layout-super-navigation-header__search-label--large-navbar">
+                    Αναζήτηση στο gov.gr
+                  </label>
+                  <div class="gem-c-search__item-wrapper">
+                    <div class="gem-c-search__item gem-c-search__input-wrapper">
+                      <input
+                        class="gem-c-search__item gem-c-search__input gem-c-search__input--on-white"
+                        id="header-search-input"
+                        name="keywords"
+                        type="search"
+                        autocomplete="off"
+                        placeholder=""
+                      />
+                    </div>
+                    <div class="gem-c-search__item gem-c-search__submit-wrapper">
+                      <button class="gem-c-search__submit" type="submit" enterkeyhint="search">
+                        Αναζήτηση
+                        <svg class="gem-c-search__icon" width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                          <circle cx="12.0161" cy="11.0161" r="8.51613" stroke="currentColor" stroke-width="3"></circle>
+                          <line x1="17.8668" y1="17.3587" x2="26.4475" y2="25.9393" stroke="currentColor" stroke-width="3"></line>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        const superNavToggle    = document.getElementById('super-nav-toggle')!;
+        const superNavPanel     = document.getElementById('super-nav-panel')!;
+        const superSearchToggle = document.getElementById('super-search-toggle')!;
+        const superSearchPanel  = document.getElementById('super-search-panel')!;
+
+        function closeNav() {
+          superNavPanel.setAttribute('hidden', '');
+          superNavToggle.setAttribute('aria-expanded', 'false');
+          superNavToggle.setAttribute('aria-label', 'Εμφάνιση μενού πλοήγησης');
+          superNavToggle.classList.remove('gem-c-layout-super-navigation-header__open-button');
+        }
+
+        function closeSearch() {
+          superSearchPanel.setAttribute('hidden', '');
+          superSearchToggle.setAttribute('aria-expanded', 'false');
+          superSearchToggle.setAttribute('aria-label', 'Εμφάνιση αναζήτησης');
+          superSearchToggle.classList.remove('gem-c-layout-super-navigation-header__open-button');
+        }
+
+        superNavToggle.addEventListener('click', () => {
+          const open = superNavToggle.getAttribute('aria-expanded') === 'true';
+          closeSearch();
+          if (open) {
+            closeNav();
+          } else {
+            superNavPanel.removeAttribute('hidden');
+            superNavToggle.setAttribute('aria-expanded', 'true');
+            superNavToggle.setAttribute('aria-label', 'Απόκρυψη μενού πλοήγησης');
+            superNavToggle.classList.add('gem-c-layout-super-navigation-header__open-button');
+          }
+        });
+
+        superSearchToggle.addEventListener('click', () => {
+          const open = superSearchToggle.getAttribute('aria-expanded') === 'true';
+          closeNav();
+          if (open) {
+            closeSearch();
+          } else {
+            superSearchPanel.removeAttribute('hidden');
+            superSearchToggle.setAttribute('aria-expanded', 'true');
+            superSearchToggle.setAttribute('aria-label', 'Απόκρυψη αναζήτησης');
+            superSearchToggle.classList.add('gem-c-layout-super-navigation-header__open-button');
+            document.getElementById('header-search-input')?.focus();
+          }
+        });
+
+        document.addEventListener('click', (e) => {
+          const header = document.querySelector('.gem-c-layout-super-navigation-header');
+          if (!header?.contains(e.target as Node)) {
+            closeNav();
+            closeSearch();
+          }
+        });
+      </script>
     </header>
 
     <main class="govuk-main-wrapper" id="main-content" role="main" tabindex="-1">
+      {breadcrumbs && breadcrumbs.length > 0 && (
+        <div class="govuk-width-container">
+          <nav class="govuk-breadcrumbs" aria-label="Breadcrumb">
+            <ol class="govuk-breadcrumbs__list">
+              {breadcrumbs.map((crumb) => (
+                <li class="govuk-breadcrumbs__list-item">
+                  {crumb.href
+                    ? <a class="govuk-breadcrumbs__link" href={crumb.href}>{crumb.text}</a>
+                    : <span aria-current="page">{crumb.text}</span>
+                  }
+                </li>
+              ))}
+            </ol>
+          </nav>
+        </div>
+      )}
       <slot />
     </main>
+
+    <!-- Feedback bar -->
+    <div class="gem-c-feedback">
+      <div class="govuk-width-container">
+
+        <div class="gem-c-feedback__prompt" id="feedback-prompt" tabindex="-1">
+          <div class="gem-c-feedback__prompt-content">
+
+            <div class="gem-c-feedback__prompt-questions" id="feedback-prompt-questions">
+              <div class="gem-c-feedback__prompt-question-answer">
+                <h2 class="gem-c-feedback__prompt-question">Ήταν χρήσιμη αυτή η σελίδα;</h2>
+                <ul class="gem-c-feedback__option-list">
+                  <li class="gem-c-feedback__option-list-item">
+                    <button class="govuk-button gem-c-feedback__prompt-link" id="feedback-yes-btn">
+                      Ναι <span class="govuk-visually-hidden">αυτή η σελίδα ήταν χρήσιμη</span>
+                    </button>
+                  </li>
+                  <li class="gem-c-feedback__option-list-item">
+                    <button class="govuk-button gem-c-feedback__prompt-link" id="feedback-no-btn" aria-controls="feedback-no-form" aria-expanded="false">
+                      Όχι <span class="govuk-visually-hidden">αυτή η σελίδα δεν ήταν χρήσιμη</span>
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="gem-c-feedback__prompt-questions gem-c-feedback__prompt-questions--something-is-wrong">
+              <button class="govuk-button gem-c-feedback__prompt-link" id="feedback-report-btn" aria-controls="feedback-report-form" aria-expanded="false">
+                Αναφορά προβλήματος σε αυτή τη σελίδα
+              </button>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Success message -->
+        <div class="gem-c-feedback__prompt-questions gem-c-feedback__prompt-success" role="alert" id="feedback-success" tabindex="-1" hidden>
+          Σας ευχαριστούμε για τα σχόλιά σας
+        </div>
+
+        <!-- "No" expanded form -->
+        <div id="feedback-no-form" class="gem-c-feedback__form-wrapper" hidden>
+          <form class="gem-c-feedback__form" id="feedback-no-form-el" novalidate>
+            <h2 class="gem-c-feedback__form-heading">Βοηθήστε μας να βελτιώσουμε το gov.gr</h2>
+            <p class="gem-c-feedback__form-paragraph">Μην συμπεριλαμβάνετε προσωπικές ή οικονομικές πληροφορίες, όπως αριθμό ταυτότητας ή στοιχεία κάρτας.</p>
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="no-what-doing">Τι κάνατε;</label>
+              <textarea class="govuk-textarea" id="no-what-doing" name="what_doing" rows="3"></textarea>
+            </div>
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="no-what-wrong">Τι δεν ήταν χρήσιμο;</label>
+              <textarea class="govuk-textarea" id="no-what-wrong" name="what_wrong" rows="3"></textarea>
+            </div>
+            <div class="gem-c-feedback__button-wrapper">
+              <button type="submit" class="govuk-button">Αποστολή</button>
+              <button type="button" class="govuk-button govuk-button--secondary gem-c-feedback__close" id="feedback-no-close">Ακύρωση</button>
+            </div>
+          </form>
+        </div>
+
+        <!-- "Report a problem" expanded form -->
+        <div id="feedback-report-form" class="gem-c-feedback__form-wrapper" hidden>
+          <form class="gem-c-feedback__form" id="feedback-report-form-el" novalidate>
+            <h2 class="gem-c-feedback__form-heading">Βοηθήστε μας να βελτιώσουμε το gov.gr</h2>
+            <p class="gem-c-feedback__form-paragraph">Μην συμπεριλαμβάνετε προσωπικές ή οικονομικές πληροφορίες, όπως αριθμό ταυτότητας ή στοιχεία κάρτας.</p>
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="report-what-doing">Τι κάνατε;</label>
+              <textarea class="govuk-textarea" id="report-what-doing" name="what_doing" rows="3"></textarea>
+            </div>
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="report-what-wrong">Τι πήγε στραβά;</label>
+              <textarea class="govuk-textarea" id="report-what-wrong" name="what_wrong" rows="3"></textarea>
+            </div>
+            <div class="gem-c-feedback__button-wrapper">
+              <button type="submit" class="govuk-button">Αποστολή</button>
+              <button type="button" class="govuk-button govuk-button--secondary gem-c-feedback__close" id="feedback-report-close">Ακύρωση</button>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+
+    <script>
+      const prompt = document.getElementById('feedback-prompt')!;
+
+      function openForm(formId: string) {
+        ['feedback-no-form', 'feedback-report-form'].forEach(id =>
+          document.getElementById(id)?.setAttribute('hidden', '')
+        );
+        prompt.setAttribute('hidden', '');
+        const form = document.getElementById(formId)!;
+        form.removeAttribute('hidden');
+        form.querySelector<HTMLElement>('h2')?.focus();
+      }
+
+      function closeForm(formId: string) {
+        document.getElementById(formId)?.setAttribute('hidden', '');
+        prompt.removeAttribute('hidden');
+        prompt.focus();
+      }
+
+      function showSuccess() {
+        ['feedback-no-form', 'feedback-report-form'].forEach(id =>
+          document.getElementById(id)?.setAttribute('hidden', '')
+        );
+        prompt.setAttribute('hidden', '');
+        const success = document.getElementById('feedback-success')!;
+        success.removeAttribute('hidden');
+        success.focus();
+      }
+
+      document.getElementById('feedback-yes-btn')?.addEventListener('click', showSuccess);
+      document.getElementById('feedback-no-btn')?.addEventListener('click', () => openForm('feedback-no-form'));
+      document.getElementById('feedback-report-btn')?.addEventListener('click', () => openForm('feedback-report-form'));
+      document.getElementById('feedback-no-close')?.addEventListener('click', () => closeForm('feedback-no-form'));
+      document.getElementById('feedback-report-close')?.addEventListener('click', () => closeForm('feedback-report-form'));
+      document.getElementById('feedback-no-form-el')?.addEventListener('submit', (e) => { e.preventDefault(); showSuccess(); });
+      document.getElementById('feedback-report-form-el')?.addEventListener('submit', (e) => { e.preventDefault(); showSuccess(); });
+    </script>
 
     <footer class="govuk-footer">
       <div class="govuk-width-container">
@@ -37,22 +507,22 @@ const { title = 'gov.gr' } = Astro.props;
           <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
             <ul class="govuk-footer__inline-list">
               <li class="govuk-footer__inline-list-item">
-                <a class="govuk-footer__link" href="/help">Βοήθεια</a>
+                <a class="govuk-footer__link" href="/help/">Βοήθεια</a>
               </li>
               <li class="govuk-footer__inline-list-item">
-                <a class="govuk-footer__link" href="/privacy">Απόρρητο</a>
+                <a class="govuk-footer__link" href="/help/privacy-notice">Ειδοποίηση απορρήτου</a>
               </li>
               <li class="govuk-footer__inline-list-item">
-                <a class="govuk-footer__link" href="/cookies">Cookies</a>
+                <a class="govuk-footer__link" href="/help/cookies">Cookies</a>
               </li>
               <li class="govuk-footer__inline-list-item">
-                <a class="govuk-footer__link" href="/accessibility">Προσβασιμότητα</a>
+                <a class="govuk-footer__link" href="/help/accessibility-statement">Δήλωση προσβασιμότητας</a>
               </li>
               <li class="govuk-footer__inline-list-item">
                 <a class="govuk-footer__link" href="/contact">Επικοινωνία</a>
               </li>
               <li class="govuk-footer__inline-list-item">
-                <a class="govuk-footer__link" href="/terms">Όροι χρήσης</a>
+                <a class="govuk-footer__link" href="/help/terms">Όροι χρήσης</a>
               </li>
               <li class="govuk-footer__inline-list-item">
                 <a class="govuk-footer__link" href="/e-government-services">Ηλεκτρονικές Υπηρεσίες Διακυβέρνησης</a>
@@ -61,7 +531,7 @@ const { title = 'gov.gr' } = Astro.props;
             <div class="footer-bottom">
               <span class="footer-copyright">©</span>
               <img src="/Κυβέρνηση_της_Ελλάδας.svg" alt="" aria-hidden="true" class="footer-bottom__logo-img" />
-              <span class="govuk-footer__licence-description">Όλο το περιεχόμενο διατίθεται υπό την <a class="govuk-footer__link" href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence v3.0</a>, εκτός αν αναφέρεται διαφορετικά.</span>
+              <span class="govuk-footer__licence-description">Όλο το περιεχόμενο διατίθεται υπό την <a class="govuk-footer__link" href="https://creativecommons.org/licenses/by/4.0/" rel="license">Creative Commons Attribution 4.0 (CC BY 4.0)</a>, εκτός αν αναφέρεται διαφορετικά.</span>
             </div>
           </div>
         </div>
@@ -71,11 +541,6 @@ const { title = 'gov.gr' } = Astro.props;
 </html>
 
 <style>
-  .site-header {
-    background-color: #003476;
-    padding: 12px 0;
-  }
-
   .footer-bottom {
     display: flex;
     align-items: center;
