@@ -1,0 +1,95 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout
+  title="Επαναχρησιμοποίηση περιεχομένου gov.gr – gov.gr"
+  breadcrumbs={[
+    { text: 'Αρχική', href: '/' },
+    { text: 'Βοήθεια', href: '/help' },
+    { text: 'Επαναχρησιμοποίηση περιεχομένου gov.gr' },
+  ]}
+>
+  <div class="govuk-width-container">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-xl">Επαναχρησιμοποίηση περιεχομένου gov.gr</h1>
+
+        <p class="govuk-body">
+          Για να επαναχρησιμοποιήσετε περιεχόμενο που δημοσιεύεται στο gov.gr πρέπει να πληροίτε τους όρους της άδειας
+          <a class="govuk-link" rel="external" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 (CC BY 4.0)</a>.
+        </p>
+
+        <h2 class="govuk-heading-l" id="apis-govgr">APIs gov.gr</h2>
+
+        <p class="govuk-body">
+          Εκτός από την παροχή περιεχομένου σε χρήστες, το gov.gr παρέχει επίσης περιεχόμενο για μηχανές. Αυτά ονομάζονται <abbr title="Application Programming Interface">API</abbr>.
+        </p>
+
+        <p class="govuk-body">Υπάρχουν 3 <abbr title="Application Programming Interface">API</abbr> που σας επιτρέπουν να επαναχρησιμοποιείτε περιεχόμενο του gov.gr.</p>
+
+        <h3 class="govuk-heading-m" id="content-api">Content <abbr title="Application Programming Interface">API</abbr></h3>
+
+        <p class="govuk-body">
+          Το Content <abbr title="Application Programming Interface">API</abbr> παρέχει πρόσβαση στα δεδομένα που αποδίδουν το περιεχόμενο στο gov.gr. Μπορείτε να χρησιμοποιήσετε το URL της σελίδας gov.gr για πρόσβαση στο περιεχόμενο και τα μεταδεδομένα που φιλοξενούνται στο gov.gr.
+        </p>
+
+        <p class="govuk-body">
+          Διαβάστε την <a class="govuk-link" rel="external" href="https://content-api.gov.gr">τεκμηρίωση του Content <abbr title="Application Programming Interface">API</abbr></a> για οδηγίες πρόσβασης και χρήσης αυτού του <abbr title="Application Programming Interface">API</abbr>.
+        </p>
+
+        <h3 class="govuk-heading-m" id="argies-api">Αργίες <abbr title="Application Programming Interface">API</abbr></h3>
+
+        <p class="govuk-body">
+          Το <a class="govuk-link" href="https://www.gov.gr/argies.json">Αργίες <abbr title="Application Programming Interface">API</abbr> (σε μορφή JSON)</a> παρέχει πρόσβαση σε δεδομένα για τις επόμενες επίσημες αργίες στην Ελλάδα.
+        </p>
+
+        <h3 class="govuk-heading-m" id="search-api">Search <abbr title="Application Programming Interface">API</abbr> (μη υποστηριζόμενο)</h3>
+
+        <p class="govuk-body">
+          Μπορείτε να αποκτήσετε πρόσβαση σε επιπλέον μεταδεδομένα που βρίσκονται πίσω από τα αποτελέσματα αναζήτησης του gov.gr χρησιμοποιώντας το Search <abbr title="Application Programming Interface">API</abbr> του gov.gr. Μπορείτε να φιλτράρετε αυτά τα δεδομένα με διάφορους τρόπους.
+        </p>
+
+        <p class="govuk-body">
+          Για οδηγίες χρήσης αυτού του <abbr title="Application Programming Interface">API</abbr>, διαβάστε την <a class="govuk-link" rel="external" href="https://docs.gov.gr/apis/search">τεκμηρίωση του Search <abbr title="Application Programming Interface">API</abbr></a>.
+        </p>
+
+        <p class="govuk-body">
+          Πρόκειται για μη υποστηριζόμενο <abbr title="Application Programming Interface">API</abbr>, που σημαίνει ότι το <abbr title="Application Programming Interface">API</abbr> ενδέχεται να αλλάξει χωρίς προειδοποίηση.
+        </p>
+
+        <h2 class="govuk-heading-l" id="scraping">Scraping του ιστότοπου</h2>
+
+        <p class="govuk-body">
+          Μπορείτε να κάνετε scraping στο gov.gr εφόσον τηρείτε την πολιτική <a class="govuk-link" href="https://www.gov.gr/robots.txt">robots.txt</a> μας. Εάν υποβάλλετε υπερβολικά πολλά αιτήματα, η πρόσβασή σας θα περιοριστεί έως ότου ο ρυθμός αιτημάτων σας μειωθεί. Αυτό είναι γνωστό ως περιορισμός ρυθμού (rate limiting).
+        </p>
+
+        <h2 class="govuk-heading-l" id="schemas">Schemas</h2>
+
+        <p class="govuk-body">
+          Το gov.gr χρησιμοποιεί <a class="govuk-link" rel="external" href="https://schema.org/">σήμανση schema.org</a> για να διευκολύνει την ευρετηρίαση του ιστότοπου από web crawlers. Αυτά περιλαμβάνουν:
+        </p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li><a class="govuk-link" rel="external" href="https://schema.org/Article">Article schema</a> για τις περισσότερες σελίδες του gov.gr</li>
+          <li><a class="govuk-link" rel="external" href="https://schema.org/NewsArticle">NewsArticle schema</a> για όλες τις ειδήσεις στο gov.gr</li>
+          <li><a class="govuk-link" rel="external" href="https://schema.org/HowTo">HowTo schema</a> για οδηγούς βήμα-βήμα, όπως <a class="govuk-link" href="/odos-pros-odigisi">«Βγάλτε δίπλωμα οδήγησης»</a></li>
+        </ul>
+
+        <h2 class="govuk-heading-l" id="sitemap">Sitemap</h2>
+
+        <p class="govuk-body">
+          Το gov.gr παρέχει ένα <a class="govuk-link" href="https://www.gov.gr/sitemap.xml">sitemap σε μορφή XML</a>. Αυτό το sitemap καταγράφει την πλειονότητα των σελίδων του gov.gr.
+        </p>
+
+        <div class="govuk-!-margin-top-6">
+          <p class="govuk-body govuk-!-font-size-16 govuk-!-colour-secondary">
+            Τελευταία ενημέρωση: 12 Ιουνίου 2026
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</Layout>
