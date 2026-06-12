@@ -1,0 +1,52 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import CardList from '../../components/CardList.astro';
+import nav from '../../data/navigation.json';
+---
+
+<Layout title="Υπηρεσίες και πληροφορίες – gov.gr">
+  <div class="browse-header govuk-!-padding-bottom-8 govuk-!-margin-bottom-9">
+    <div class="govuk-width-container">
+      <nav class="govuk-breadcrumbs govuk-breadcrumbs--inverse govuk-!-margin-bottom-4" aria-label="Breadcrumb">
+        <ol class="govuk-breadcrumbs__list">
+          <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="/">Αρχική</a>
+          </li>
+          <li class="govuk-breadcrumbs__list-item">
+            <span aria-current="page">Υπηρεσίες και πληροφορίες</span>
+          </li>
+        </ol>
+      </nav>
+      <h1 class="govuk-heading-xl browse-header__title govuk-!-margin-bottom-3">
+        Υπηρεσίες και πληροφορίες
+      </h1>
+      <p class="govuk-body-l browse-header__lead govuk-!-margin-bottom-0">
+        Βρείτε τις κυβερνητικές υπηρεσίες, φόρμες και λογαριασμούς που χρειάζεστε
+      </p>
+    </div>
+  </div>
+
+  <div class="govuk-width-container govuk-!-margin-bottom-9">
+    <CardList items={nav.services} />
+  </div>
+</Layout>
+
+<style>
+  .browse-header {
+    background-color: var(--govgr-brand);
+    margin-top: -20px;
+    padding-top: 20px;
+  }
+
+  @media (min-width: 40.0625em) {
+    .browse-header {
+      margin-top: -40px;
+      padding-top: 30px;
+    }
+  }
+
+  .browse-header__title,
+  .browse-header__lead {
+    color: #ffffff;
+  }
+</style>

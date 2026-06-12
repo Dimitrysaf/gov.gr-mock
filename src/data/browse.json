@@ -1,0 +1,709 @@
+{
+  "benefits": {
+    "title": "Παροχές και επιδόματα",
+    "description": "Περιλαμβάνει επιλεξιμότητα, ενστάσεις και φορολογικές ελαφρύνσεις",
+    "mostViewed": [
+      { "text": "Σύνδεση στον λογαριασμό ΔΥΠΑ", "href": "/dypa" },
+      { "text": "Επίδομα ανεργίας", "href": "/browse/benefits/looking-for-work" },
+      { "text": "ΟΠΕΚΑ – Επίδομα παιδιού", "href": "/browse/benefits/families" }
+    ],
+    "topics": [
+      {
+        "text": "Διαχείριση υπάρχουσας παροχής, πληρωμής ή αίτησης",
+        "href": "/browse/benefits/manage",
+        "description": "Σύνδεση στον λογαριασμό σας, αναφορά αλλαγών, ενημέρωση για αχρεωστήτως καταβληθέντα ή προσφυγή κατά απόφασης. Περιλαμβάνει υπάρχουσες αιτήσεις ΔΥΠΑ και e-ΕΦΚΑ."
+      },
+      {
+        "text": "Παροχές και οικονομική στήριξη αν ψάχνετε εργασία",
+        "href": "/browse/benefits/looking-for-work",
+        "description": "Βοήθεια αν ψάχνετε νέα δουλειά, είστε άνεργοι ή επηρεάστηκε η εργασία σας. Περιλαμβάνει επίδομα ανεργίας ΔΥΠΑ."
+      },
+      {
+        "text": "Παροχές αν είστε προσωρινά ανίκανοι για εργασία",
+        "href": "/browse/benefits/unable-to-work",
+        "description": "Βοήθεια αν δεν μπορείτε να εργαστείτε λόγω ασθένειας ή ατυχήματος. Περιλαμβάνει επίδομα ασθένειας e-ΕΦΚΑ."
+      },
+      {
+        "text": "Παροχές και οικονομική στήριξη για οικογένειες",
+        "href": "/browse/benefits/families",
+        "description": "Βοήθεια αν φροντίζετε παιδιά ή σκοπεύετε να αποκτήσετε ή να υιοθετήσετε παιδί. Περιλαμβάνει επίδομα παιδιού ΟΠΕΚΑ."
+      },
+      {
+        "text": "Παροχές για ΑμεΑ ή άτομα με χρόνια πάθηση",
+        "href": "/browse/benefits/disability",
+        "description": "Βοήθεια αν ζείτε με αναπηρία ή χρόνια πάθηση. Περιλαμβάνει επίδομα αναπηρίας e-ΕΦΚΑ και κάρτα αναπηρίας ΚΕΠΑ."
+      },
+      {
+        "text": "Παροχές για φροντιστές",
+        "href": "/browse/benefits/carers",
+        "description": "Βοήθεια αν φροντίζετε τακτικά κάποιον που χρειάζεται υποστήριξη λόγω ηλικίας, ασθένειας ή αναπηρίας."
+      },
+      {
+        "text": "Παροχές για χαμηλά εισοδήματα",
+        "href": "/browse/benefits/low-income",
+        "description": "Βοήθεια με στέγαση, θέρμανση και άλλα έξοδα διαβίωσης. Περιλαμβάνει Ελάχιστο Εγγυημένο Εισόδημα (ΕΕΕ)."
+      },
+      {
+        "text": "Παροχές μετά από θάνατο",
+        "href": "/browse/benefits/bereavement",
+        "description": "Βοήθεια με έξοδα κηδείας και άλλα κόστη μετά από θάνατο. Περιλαμβάνει εφάπαξ βοήθημα e-ΕΦΚΑ."
+      }
+    ]
+  },
+  "births-deaths-marriages": {
+    "title": "Γεννήσεις, θάνατοι και γάμοι",
+    "description": "Γονεϊκότητα, συμφώνα συμβίωσης, διαζύγια και πληρεξούσια",
+    "mostViewed": [
+      { "text": "Ληξιαρχική πράξη γέννησης", "href": "/browse/births-deaths-marriages/births" },
+      { "text": "Γάμος – σύσταση και έγγραφα", "href": "/browse/births-deaths-marriages/marriage" },
+      { "text": "Ληξιαρχική πράξη θανάτου", "href": "/browse/births-deaths-marriages/death" }
+    ],
+    "topics": [
+      { "text": "Γεννήσεις και βαπτίσεις", "href": "/browse/births-deaths-marriages/births", "description": "Δήλωση γέννησης, ληξιαρχική πράξη, αναγνώριση τέκνου." },
+      { "text": "Θάνατοι", "href": "/browse/births-deaths-marriages/death", "description": "Δήλωση θανάτου, ληξιαρχική πράξη, κηδεία." },
+      { "text": "Γάμος και σύμφωνο συμβίωσης", "href": "/browse/births-deaths-marriages/marriage", "description": "Σύσταση γάμου ή συμφώνου συμβίωσης, έγγραφα και απαιτήσεις." },
+      { "text": "Διαζύγιο και χωρισμός", "href": "/browse/births-deaths-marriages/divorce", "description": "Διαδικασία διαζυγίου, επιμέλεια παιδιών και διατροφή." },
+      { "text": "Υιοθεσία και αναδοχή", "href": "/browse/births-deaths-marriages/adoption", "description": "Διαδικασία υιοθεσίας και ανάδοχης οικογένειας." },
+      { "text": "Πληρεξούσιο και νομική εκπροσώπηση", "href": "/browse/births-deaths-marriages/lasting-power-of-attorney", "description": "Εξουσιοδότηση, πληρεξούσιο και νομική εκπροσώπηση ανίκανων προσώπων." }
+    ]
+  },
+  "business": {
+    "title": "Επιχειρήσεις και αυτοαπασχόληση",
+    "description": "Εργαλεία και οδηγίες για επιχειρήσεις",
+    "mostViewed": [
+      { "text": "myAADE – σύνδεση στο TAXISnet", "href": "/taxisnet" },
+      { "text": "Πληροφορίες για εταιρεία από το ΓΕΜΗ", "href": "/browse/business/setting-up" },
+      { "text": "Υποβολή δήλωσης ΦΠΑ online", "href": "/browse/business/vat" }
+    ],
+    "topics": [
+      { "text": "Σύσταση επιχείρησης", "href": "/browse/business/setting-up", "description": "Σχεδιασμός, σύσταση και εγγραφή επιχείρησης στο ΓΕΜΗ" },
+      { "text": "Φορολογία και δηλώσεις επιχειρήσεων", "href": "/browse/business/tax", "description": "Κατανόηση, υποβολή και πληρωμή φόρων επιχείρησης" },
+      { "text": "Πρόσληψη προσωπικού", "href": "/browse/business/employing-people", "description": "Πρόσληψη εργαζομένων, μισθοδοσία και εργοδοτικές υποχρεώσεις" },
+      { "text": "Λειτουργία επιχείρησης", "href": "/browse/business/running", "description": "Νομικές υποχρεώσεις, υποβολή αναφορών και διαχείριση κινδύνου" },
+      { "text": "Ανάπτυξη επιχείρησης", "href": "/browse/business/grow", "description": "Χρηματοδότηση ανάπτυξης, καινοτομία και εύρεση εργολαβιών" },
+      { "text": "Αγορά και πώληση εκτός Ελλάδας", "href": "/browse/business/imports-exports", "description": "Εισαγωγή και εξαγωγή αγαθών, τελωνεία και εμπορικές συμφωνίες" },
+      { "text": "Καινοτομία, προστασία και κυβερνοασφάλεια", "href": "/browse/business/innovation", "description": "Χρηματοδότηση Ε&Α, προστασία πνευματικής ιδιοκτησίας και κανονισμοί προσωπικών δεδομένων" },
+      { "text": "Χρέη επιχείρησης και επιλογές συνέχισης", "href": "/browse/business/debt", "description": "Βοήθεια με οικονομικά προβλήματα και επιλογές αναδιάρθρωσης ή διακοπής" },
+      { "text": "Απόβλητα επιχειρήσεων", "href": "/browse/business/waste", "description": "Διαχείριση αποβλήτων, ανακύκλωση και υποχρεώσεις παραγωγών" },
+      { "text": "Πώληση ή μεταβίβαση επιχείρησης", "href": "/browse/business/sell-transfer", "description": "Περιλαμβάνει διαχείριση πωλήσεων και συγχωνεύσεων, ενημέρωση φορολογικών και ΓΕΜΗ" },
+      { "text": "Κατασκευές και διαχείριση ακινήτων", "href": "/browse/business/construction", "description": "Ανέγερση, ανάπτυξη, εκμίσθωση ακινήτων ή παροχή κατασκευαστικών υπηρεσιών" },
+      { "text": "Τρόφιμα, φιλοξενία και λιανεμπόριο", "href": "/browse/business/food-hospitality", "description": "Έναρξη και λειτουργία εστιατορίου, καφέ, ξενοδοχείου ή καταστήματος τροφίμων" },
+      { "text": "Εμπορικές μεταφορές και logistics", "href": "/browse/business/transport", "description": "Άδειες μεταφορέα, ασφάλεια και εκπαίδευση" },
+      { "text": "Μεταποίηση και βιομηχανία", "href": "/browse/business/manufacturing", "description": "Λειτουργία εργοστασίου, παραγωγικής εγκατάστασης ή βιομηχανικής μονάδας" },
+      { "text": "Ενέργεια και πάροχοι κοινής ωφέλειας", "href": "/browse/business/energy", "description": "Άδειες ενέργειας και τήρηση περιβαλλοντικών κανονισμών" },
+      { "text": "Επαγγελματικές και χρηματοοικονομικές υπηρεσίες", "href": "/browse/business/professional-services", "description": "Έναρξη και λειτουργία λογιστικού, νομικού, χρηματοοικονομικού ή άλλου επαγγελματικού γραφείου" },
+      { "text": "Υγεία, επιστήμες ζωής και κοινωνική φροντίδα", "href": "/browse/business/healthcare", "description": "Λειτουργία γηροκομείου, ιατρείου, φαρμακείου ή επιχείρησης υγείας" },
+      { "text": "Γεωργία, δασοκομία και αλιεία", "href": "/browse/business/farming", "description": "Λειτουργία αγροκτήματος, διαχείριση δάσους ή εμπορικής αλιείας" },
+      { "text": "Μέσα ενημέρωσης, δημιουργικός τομέας και ψυχαγωγία", "href": "/browse/business/media", "description": "Κανονισμοί και φορολογικές ελαφρύνσεις για δημιουργικές, μεταδοτικές και τυχερά παιχνίδια επιχειρήσεις" },
+      { "text": "Παιδική μέριμνα και εκπαιδευτικοί πάροχοι", "href": "/browse/business/childcare-education", "description": "Εγγραφή υπηρεσιών και τήρηση προτύπων εκπαίδευσης και παιδικής μέριμνας" },
+      { "text": "Αεροναυτική και αεροδιαστημική", "href": "/browse/business/aerospace", "description": "Κατασκευή αεροσκαφών, αεροδιαστημικές αποστολές ή παροχή αεροπορικών υπηρεσιών" },
+      { "text": "Ορυχεία, λατομεία και εξόρυξη", "href": "/browse/business/mining", "description": "Ασφάλεια, άδειες, περιβαλλοντικές επιπτώσεις και κληροδοτημένα ζητήματα" },
+      { "text": "Λειτουργία μη κερδοσκοπικού οργανισμού ή ΜΚΟ", "href": "/browse/business/charities", "description": "Σύσταση οργανισμού, υποχρεώσεις διοικητικού συμβουλίου και διαχείριση οικονομικών" }
+    ]
+  },
+  "childcare-parenting": {
+    "title": "Παιδική μέριμνα και γονεϊκότητα",
+    "description": "Περιλαμβάνει τοκετό, αναδοχή, υιοθεσία, επιδόματα για παιδιά, παιδική μέριμνα και σχολεία",
+    "mostViewed": [
+      { "text": "Σύνδεση στον λογαριασμό voucher παιδικής μέριμνας", "href": "/voucher-paidikis-merimnas" },
+      { "text": "Voucher βρεφονηπιακού σταθμού ΕΣΠΑ", "href": "/browse/childcare-parenting/childcare" },
+      { "text": "Επίδομα παιδιού ΟΠΕΚΑ", "href": "/browse/childcare-parenting/financial-help" }
+    ],
+    "topics": [
+      {
+        "text": "Εγκυμοσύνη και τοκετός",
+        "href": "/browse/childcare-parenting/pregnancy-birth",
+        "description": "Εργασία, άδειες και οικονομική υποστήριξη κατά τη γέννηση παιδιού, δήλωση γέννησης"
+      },
+      {
+        "text": "Αναδοχή, υιοθεσία και παρένθετη μητρότητα",
+        "href": "/browse/childcare-parenting/fostering-adoption",
+        "description": "Αναδοχή ή υιοθεσία παιδιού, συμπεριλαμβανομένης της από εξωτερικό, και παρένθετη μητρότητα"
+      },
+      {
+        "text": "Οικονομική βοήθεια αν έχετε παιδιά",
+        "href": "/browse/childcare-parenting/financial-help",
+        "description": "Περιλαμβάνει βοήθεια κατά τη γέννηση ή υιοθεσία, επίδομα παιδιού ΟΠΕΚΑ και ενίσχυση για παιδική μέριμνα"
+      },
+      {
+        "text": "Παιδική μέριμνα",
+        "href": "/browse/childcare-parenting/childcare",
+        "description": "Εύρεση παιδικής μέριμνας, οικονομική υποστήριξη και voucher ΕΣΠΑ για βρεφονηπιακούς σταθμούς"
+      },
+      {
+        "text": "Σχολεία και εκπαίδευση",
+        "href": "/browse/childcare-parenting/schools-education",
+        "description": "Εγγραφή παιδιού σε σχολείο, οικονομική υποστήριξη, επικοινωνία με τη σχολική μονάδα"
+      },
+      {
+        "text": "Διαζύγιο, χωρισμός και νομικά θέματα",
+        "href": "/browse/childcare-parenting/divorce-separation",
+        "description": "Διατροφή τέκνου και διαφορές γονεϊκής επιμέλειας"
+      }
+    ]
+  },
+  "citizenship": {
+    "title": "Ιθαγένεια και ζωή στην Ελλάδα",
+    "description": "Ψηφοφορία, συμμετοχή στην κοινότητα, ζωή στην Ελλάδα, διεθνή προγράμματα",
+    "mostViewed": [
+      { "text": "Απόδειξη δικαιώματος εργασίας σε εργοδότη", "href": "/browse/citizenship/government" },
+      { "text": "Εγγραφή στους εκλογικούς καταλόγους", "href": "/browse/citizenship/voting" },
+      { "text": "Εξέταση γνώσεων για πολιτογράφηση", "href": "/browse/citizenship/citizenship" }
+    ],
+    "topics": [
+      {
+        "text": "Ελληνική ιθαγένεια",
+        "href": "/browse/citizenship/citizenship",
+        "description": "Πολιτογράφηση, εξέταση γνώσεων για ιθαγένεια και απόκτηση διαβατηρίου"
+      },
+      {
+        "text": "ΜΚΟ, εθελοντισμός και τιμητικές διακρίσεις",
+        "href": "/browse/citizenship/charities-honours",
+        "description": "Υποβολή υποψηφιότητας για παράσημο, σύσταση ΜΚΟ, συμμετοχή στην κοινότητα"
+      },
+      {
+        "text": "Ζωή στην Ελλάδα, κυβέρνηση και δημοκρατία",
+        "href": "/browse/citizenship/government",
+        "description": "Αναφορά στη Βουλή, κυβερνητικά στατιστικά, έλεγχος καθεστώτος διαμονής, εθνικές έκτακτες ανάγκες"
+      },
+      {
+        "text": "Ψηφοφορία",
+        "href": "/browse/citizenship/voting",
+        "description": "Εγγραφή στους εκλογικούς καταλόγους, εκλογικό τμήμα και ψήφος μέσω αντιπροσώπου"
+      }
+    ]
+  },
+  "justice": {
+    "title": "Έγκλημα, δικαιοσύνη και νόμος",
+    "description": "Νομικές διαδικασίες, δικαστήρια και αστυνομία",
+    "mostViewed": [
+      { "text": "Αποστολή χρημάτων σε κρατούμενο", "href": "/browse/justice/prisons-probation" },
+      { "text": "Επίσκεψη σε κρατούμενο", "href": "/browse/justice/prisons-probation" },
+      { "text": "Καταγγελία οχήματος χωρίς τέλη κυκλοφορίας", "href": "/browse/justice/reporting-crimes" }
+    ],
+    "topics": [
+      {
+        "text": "Τα δικαιώματά σας και νομική υποστήριξη",
+        "href": "/browse/justice/your-rights-legal-support",
+        "description": "Περιλαμβάνει νομική βοήθεια, συμβουλές καταναλωτή, διακρίσεις, εργατικές και ενοικιαστικές διαφορές"
+      },
+      {
+        "text": "Δικαστήρια, διοικητικές επιτροπές και προσφυγές",
+        "href": "/browse/justice/courts-sentencing-tribunals",
+        "description": "Περιλαμβάνει εμφάνιση σε δικαστήριο, πληρωμή προστίμων, άσκηση έφεσης και ένορκοι"
+      },
+      {
+        "text": "Καταγγελία εγκλημάτων",
+        "href": "/browse/justice/reporting-crimes",
+        "description": "Περιλαμβάνει αντικοινωνική συμπεριφορά, κακοποίηση, απάτη και τρομοκρατία"
+      },
+      {
+        "text": "Αποζημίωση και υποστήριξη θυμάτων",
+        "href": "/browse/justice/compensation-victim-support",
+        "description": "Περιλαμβάνει αποζημίωση από εγκληματικές πράξεις και άλλη υποστήριξη θυμάτων"
+      },
+      {
+        "text": "Ποινές, καταδίκες και αστυνομία",
+        "href": "/browse/justice/penalties-sentences-police",
+        "description": "Περιλαμβάνει απαγγελία κατηγοριών, κοινωνική εργασία, εναλλακτικές ποινές και αστυνομικές εξουσίες"
+      },
+      {
+        "text": "Φυλακές και αποφυλάκιση",
+        "href": "/browse/justice/prisons-probation",
+        "description": "Έκτιση ποινής, αποφυλάκιση υπό όρους και υποστήριξη οικογενειών κρατουμένων"
+      },
+      {
+        "text": "Νέοι και νόμος",
+        "href": "/browse/justice/young-people",
+        "description": "Περιλαμβάνει νομικά δικαιώματα ανηλίκων, δικαστήρια ανηλίκων και πρόληψη εγκληματικότητας"
+      }
+    ]
+  },
+  "disabilities": {
+    "title": "Άτομα με αναπηρία",
+    "description": "Περιλαμβάνει φροντιστές, δικαιώματα, παροχές και τον Νόμο περί Ισότητας",
+    "mostViewed": [
+      { "text": "Επίδομα αναπηρίας e-ΕΦΚΑ", "href": "/browse/disabilities/benefits" },
+      { "text": "Αίτηση ή ανανέωση κάρτας αναπηρίας ΚΕΠΑ", "href": "/browse/disabilities/equipment" },
+      { "text": "Υπολογιστές παροχών αναπηρίας", "href": "/browse/disabilities/benefits" }
+    ],
+    "topics": [
+      {
+        "text": "Παροχές και οικονομική βοήθεια",
+        "href": "/browse/disabilities/benefits",
+        "description": "Περιλαμβάνει επίδομα αναπηρίας e-ΕΦΚΑ, επίδομα παρακολούθησης και άλλες παροχές ΑμεΑ"
+      },
+      {
+        "text": "Φροντίδα κάποιου",
+        "href": "/browse/disabilities/carers",
+        "description": "Περιλαμβάνει παροχές και οικονομική υποστήριξη για φροντιστές, ευέλικτη εργασία και βοήθεια με αίτηση παροχών"
+      },
+      {
+        "text": "Εξοπλισμός αναπηρίας και μεταφορά",
+        "href": "/browse/disabilities/equipment",
+        "description": "Περιλαμβάνει κάρτα αναπηρίας ΚΕΠΑ, επίδομα σπουδών ΑμεΑ και υποστήριξη στο σπίτι"
+      },
+      {
+        "text": "Δικαιώματα αναπηρίας και Νόμος 4443/2016",
+        "href": "/browse/disabilities/rights",
+        "description": "Διακρίσεις και δικαιώματα αναπηρίας βάσει του Νόμου 4443/2016 για την ισότητα"
+      },
+      {
+        "text": "Εργασία και ΑμεΑ",
+        "href": "/browse/disabilities/work",
+        "description": "Περιλαμβάνει πρόσληψη ΑμεΑ, εύλογες προσαρμογές στην εργασία και πρόγραμμα επαγγελματικής ένταξης ΔΥΠΑ"
+      }
+    ]
+  },
+  "driving": {
+    "title": "Οδήγηση και μεταφορές",
+    "description": "Περιλαμβάνει τέλη κυκλοφορίας, ΚΤΕΟ και άδειες οδήγησης",
+    "mostViewed": [
+      { "text": "Έλεγχος ιστορικού ΚΤΕΟ οχήματος", "href": "/browse/driving/vehicle-and-driver-information" },
+      { "text": "Πληρωμή τελών κυκλοφορίας", "href": "/browse/driving/vehicle-tax-mot-insurance" },
+      { "text": "Έλεγχος αν όχημα έχει τέλη κυκλοφορίας", "href": "/browse/driving/vehicle-and-driver-information" }
+    ],
+    "topics": [
+      { "text": "Καθαρές ζώνες, εκπομπές και ηλεκτρικά οχήματα", "href": "/browse/driving/clean-air-zones-emissions-electric-vehicles", "description": "Κόστος κυκλοφορίας σε ζώνες χαμηλών εκπομπών, εκπομπές οχημάτων, e-bikes και ηλεκτρικά αυτοκίνητα" },
+      { "text": "Άδειες οδήγησης", "href": "/browse/driving/driving-licences", "description": "Αίτηση, ανανέωση ή ενημέρωση άδειας, προβολή ή κοινοποίηση άδειας οδήγησης, προσθήκη νέων κατηγοριών" },
+      { "text": "Τέλη κυκλοφορίας, ΚΤΕΟ και ασφάλιση", "href": "/browse/driving/vehicle-tax-mot-insurance", "description": "Πληρωμή ή ακύρωση τελών κυκλοφορίας, δήλωση ακινησίας, κράτηση ή έλεγχος ΚΤΕΟ, ασφάλιση" },
+      { "text": "Εξετάσεις οδήγησης και εκμάθηση", "href": "/browse/driving/learning-to-drive", "description": "Εύρεση σχολής οδήγησης, κράτηση θεωρητικής και πρακτικής εξέτασης, εξετάσεις για διαφορετικά οχήματα" },
+      { "text": "Πινακίδες, εγγραφή οχήματος και άδεια κυκλοφορίας", "href": "/browse/driving/number-plate", "description": "Ενημέρωση στοιχείων, εξατομικευμένη πινακίδα ή επαγγελματική πινακίδα" },
+      { "text": "Αγορά, πώληση ή απόσυρση οχήματος", "href": "/browse/driving/buy-sell-scrap-vehicle", "description": "Αγορά ή πώληση οχήματος, έλεγχος μεταχειρισμένου, κατεστραμμένα οχήματα, απόσυρση" },
+      { "text": "Κώδικας Οδικής Κυκλοφορίας, ασφάλεια και κανονισμοί", "href": "/browse/driving/highway-code-road-safety", "description": "Κανόνες για οδηγούς, ποδηλάτες και πεζούς και οδική ασφάλεια" },
+      { "text": "Οδήγηση με ιατρικές παθήσεις, κάρτα αναπηρίας ΚΕΠΑ και μεταφορά ΑμεΑ", "href": "/browse/driving/disability-health-condition", "description": "Έλεγχος και δήλωση ιατρικής πάθησης, κάρτα αναπηρίας ΚΕΠΑ, αναπηρικά αμαξίδια και δωρεάν μεταφορά" },
+      { "text": "Δεδομένα και πληροφορίες οχήματος και οδηγού", "href": "/browse/driving/vehicle-and-driver-information", "description": "Άντληση πληροφοριών οχήματος, έλεγχος ιστορικού ΚΤΕΟ, έλεγχος ιστορικού άδειας οδήγησης" },
+      { "text": "Ποινές, πρόστιμα και αφαίρεση άδειας", "href": "/browse/driving/penalty-points-fines-bans", "description": "Ποινές και πρόστιμα, υπερβολική ταχύτητα, οδήγηση υπό επήρεια, παράνομη στάθμευση, προσφυγές" },
+      { "text": "Οδήγηση στην Ελλάδα και στο εξωτερικό", "href": "/browse/driving/driving-uk-and-abroad", "description": "Χρήση ξένης άδειας στην Ελλάδα, οδήγηση εξωτερικού, διόδια και εισαγωγή οχήματος" },
+      { "text": "Οδηγοί φορτηγών, λεωφορείων και πούλμαν", "href": "/browse/driving/drivers-lorries-buses", "description": "Απόκτηση άδειας ΦΙΧ ή λεωφορείου, κατάρτιση, ώρες οδήγησης, εξειδικευμένες εξετάσεις" },
+      { "text": "Επιχειρήσεις μεταφορών και οδήγησης", "href": "/browse/driving/businesses", "description": "Άδειες μεταφορέα, διαχείριση στόλου και πρόσληψη οδηγών" },
+      { "text": "Διδασκαλία οδήγησης", "href": "/browse/driving/teaching-people-to-drive", "description": "Γίνετε εκπαιδευτής, κράτηση και διαχείριση εξετάσεων, εγγραφή εκπαιδευτή" },
+      { "text": "Καταγγελία παραβάσεων οχήματος και οδήγησης", "href": "/browse/driving/driving-enforcing-the-law", "description": "Καταγγελία οχημάτων χωρίς τέλη κυκλοφορίας ή εγκαταλελειμμένων και άλλα αδικήματα" },
+      { "text": "Στάθμευση και δημόσιες μεταφορές", "href": "/browse/driving/parking-public-transport-environment", "description": "Δημόσιες συγκοινωνίες και δωρεάν μεταφορά, στάθμευση και κάρτα αναπηρίας ΚΕΠΑ" },
+      { "text": "Κατασκευή ή τροποποίηση οχήματος", "href": "/browse/driving/manufacture-adapt-vehicle", "description": "Έγκριση τύπου οχήματος, εγγραφή νέου οχήματος, κανονισμοί κατασκευής" }
+    ]
+  },
+  "education": {
+    "title": "Εκπαίδευση και μάθηση",
+    "description": "Περιλαμβάνει υποτροφίες, εισαγωγές και προγράμματα κατάρτισης",
+    "mostViewed": [
+      { "text": "Σύνδεση στο σύστημα υποτροφιών ΙΚΥ", "href": "/browse/education/student-finance" },
+      { "text": "Εύρεση προγράμματος μαθητείας ΔΥΠΑ", "href": "/browse/education/find-course" },
+      { "text": "Διαχείριση υποτροφίας ΙΚΥ", "href": "/browse/education/student-finance" }
+    ],
+    "topics": [
+      {
+        "text": "Μαθητεία, εκπαίδευση 14-19 ετών και κατάρτιση για εργασία",
+        "href": "/browse/education/find-course",
+        "description": "Περιλαμβάνει εύρεση προγράμματος, μαθητεία ΔΥΠΑ και πληροφορίες για εργοδότες"
+      },
+      {
+        "text": "Εγγραφές σε σχολεία και μεταφορά μαθητών",
+        "href": "/browse/education/school-admissions-transport",
+        "description": "Αίτηση για θέση σε σχολείο, κατ' οίκον διδασκαλία και κόστος μετακίνησης"
+      },
+      {
+        "text": "Σχολεία και αναλυτικό πρόγραμμα",
+        "href": "/browse/education/school-life",
+        "description": "Φοίτηση, συμπεριφορά μαθητών και υποβολή παραπόνου"
+      },
+      {
+        "text": "Χρηματοδότηση σπουδών",
+        "href": "/browse/education/student-finance",
+        "description": "Αίτηση ή διαχείριση χρηματοδότησης σπουδών, υποτροφίες ΙΚΥ, επιδόματα και άλλες ενισχύσεις"
+      },
+      {
+        "text": "Πανεπιστήμια και τριτοβάθμια εκπαίδευση",
+        "href": "/browse/education/universities-higher-education",
+        "description": "Εύρεση σχολών, σύγκριση τίτλων σπουδών και επαλήθευση αναγνώρισης ιδρύματος"
+      }
+    ]
+  },
+  "employing-people": {
+    "title": "Απασχόληση προσωπικού",
+    "description": "Περιλαμβάνει αμοιβές, συμβάσεις, προσλήψεις και απολύσεις",
+    "mostViewed": [
+      { "text": "myAADE – σύνδεση ή δημιουργία λογαριασμού εργοδότη", "href": "/browse/employing-people/payroll" },
+      { "text": "Υπηρεσία ελέγχου ποινικού μητρώου υποψηφίου", "href": "/browse/employing-people/recruiting-hiring" },
+      { "text": "Έλεγχος δικαιώματος εργασίας υποψηφίου", "href": "/browse/employing-people/recruiting-hiring" }
+    ],
+    "topics": [
+      {
+        "text": "Συμβάσεις εργασίας και ωράριο",
+        "href": "/browse/employing-people/contracts",
+        "description": "Περιλαμβάνει είδη σχέσεων εργασίας, δικαιώματα εργαζομένων, υπερωρίες και τροποποιήσεις συμβάσεων"
+      },
+      {
+        "text": "Απόλυση προσωπικού και αποζημιώσεις",
+        "href": "/browse/employing-people/dismissals-redundancies",
+        "description": "Πειθαρχικές διαδικασίες, αποζημίωση απόλυσης και δικαιώματα εργαζομένων"
+      },
+      {
+        "text": "Υγεία και ασφάλεια στην εργασία",
+        "href": "/browse/employing-people/health-safety",
+        "description": "Ατυχήματα, νομοθεσία υγείας και ασφάλειας (ΣΕΠΕ) και συνθήκες εργασίας"
+      },
+      {
+        "text": "Μισθοδοσία",
+        "href": "/browse/employing-people/payroll",
+        "description": "ΑΠΔ e-ΕΦΚΑ για εργοδότες, έναρξη, υποβολή και πληρωμή εισφορών, έξοδα και παροχές"
+      },
+      {
+        "text": "Συντάξεις για το προσωπικό σας",
+        "href": "/browse/employing-people/pensions",
+        "description": "Περιλαμβάνει επαγγελματική ασφάλιση και βεβαιώσεις ασφαλιστικού ιστορικού e-ΕΦΚΑ"
+      },
+      {
+        "text": "Προσλήψεις",
+        "href": "/browse/employing-people/recruiting-hiring",
+        "description": "Αγγελία θέσης εργασίας, έλεγχος ποινικού μητρώου, έλεγχος δικαιώματος εργασίας, νόμος κατά των διακρίσεων και μαθητεία"
+      },
+      {
+        "text": "Νόμιμες άδειες και απουσίες",
+        "href": "/browse/employing-people/time-off",
+        "description": "Περιλαμβάνει άδεια μητρότητας και πατρότητας, δικαίωμα ετήσιας άδειας και αποδοχές ασθένειας"
+      },
+      {
+        "text": "Συνδικαλιστικές οργανώσεις και δικαιώματα εργαζομένων",
+        "href": "/browse/employing-people/trade-unions",
+        "description": "Περιλαμβάνει απεργία και αναγνώριση συνδικαλιστικών οργανώσεων"
+      }
+    ]
+  },
+  "environment-countryside": {
+    "title": "Περιβάλλον και ύπαιθρος",
+    "description": "Περιλαμβάνει πλημμύρες, ανακύκλωση, γεωργία και άγρια ζωή",
+    "mostViewed": [
+      { "text": "Έλεγχος κινδύνου πλημμύρας για περιοχή στην Ελλάδα", "href": "/browse/environment-countryside/flooding-extreme-weather" },
+      { "text": "Μάθετε την ημέρα αποκομιδής απορριμμάτων", "href": "/browse/environment-countryside/recycling-waste-management" },
+      { "text": "Αγορά άδειας ερασιτεχνικής αλιείας", "href": "/browse/environment-countryside/fishing-hunting" }
+    ],
+    "topics": [
+      {
+        "text": "Σκάφη και υδάτινες οδοί",
+        "href": "/browse/environment-countryside/boats-waterways",
+        "description": "Εγγραφή σκάφους, ασφάλεια και στάθμη ποταμών"
+      },
+      {
+        "text": "Ακτές",
+        "href": "/browse/environment-countryside/coasts",
+        "description": "Διάβρωση ακτών, αντιπλημμυρική προστασία, ποιότητα νερού κολύμβησης"
+      },
+      {
+        "text": "Ύπαιθρος",
+        "href": "/browse/environment-countryside/countryside",
+        "description": "Επίσκεψη και ζωή στην ύπαιθρο, δικαιώματα διέλευσης και διαχείριση προστατευόμενων περιοχών"
+      },
+      {
+        "text": "Γεωργία και διαχείριση γης",
+        "href": "/browse/environment-countryside/farming-land-management",
+        "description": "Γεωργία, αγροτικές πληρωμές ΟΠΕΚΕΠΕ, εισαγωγές και εξαγωγές, δικαιώματα εργαζομένων, κανονισμοί"
+      },
+      {
+        "text": "Αλιεία και κυνήγι",
+        "href": "/browse/environment-countryside/fishing-hunting",
+        "description": "Άδειες ερασιτεχνικής αλιείας, άδειες και κανονισμοί, νόμιμο κυνήγι"
+      },
+      {
+        "text": "Πλημμύρες",
+        "href": "/browse/environment-countryside/flooding-extreme-weather",
+        "description": "Έλεγχος προειδοποιήσεων πλημμύρας, προετοιμασία και τι να κάνετε πριν, κατά και μετά από πλημμύρα"
+      },
+      {
+        "text": "Θησαυροί και ναυάγια",
+        "href": "/browse/environment-countryside/treasure-wrecks",
+        "description": "Αναφορά ναυαγίων και αρχαιολογικών ευρημάτων"
+      },
+      {
+        "text": "Διαχείριση αποβλήτων",
+        "href": "/browse/environment-countryside/recycling-waste-management",
+        "description": "Υποχρεώσεις σας, επικίνδυνα απόβλητα και αναφορά περιβαλλοντικού συμβάντος"
+      },
+      {
+        "text": "Άγρια ζωή και βιοποικιλότητα",
+        "href": "/browse/environment-countryside/wildlife-biodiversity",
+        "description": "Προστατευόμενα είδη, αναφορά παρατήρησης"
+      }
+    ]
+  },
+  "housing-local-services": {
+    "title": "Κατοικία και τοπικές υπηρεσίες",
+    "description": "Ιδιοκατοίκηση ή ενοικίαση και υπηρεσίες δήμου",
+    "mostViewed": [
+      { "text": "Βρείτε πιστοποιητικό ενεργειακής απόδοσης (ΠΕΑ)", "href": "/browse/housing-local-services/household-energy" },
+      { "text": "Βρείτε τον δήμο σας", "href": "/browse/housing-local-services/local-councils" },
+      { "text": "Αναζήτηση πληροφοριών γης και ακινήτων στο Κτηματολόγιο", "href": "/browse/housing-local-services/buying-owning-property" }
+    ],
+    "topics": [
+      {
+        "text": "Κοινωνική κατοικία και οικιστικοί φορείς",
+        "href": "/browse/housing-local-services/council-housing-association",
+        "description": "Περιλαμβάνει κοινωνική στέγαση ΔΥΠΑ, κοινωφελείς κατοικίες, επισκευές και επίδομα ενοικίου"
+      },
+      {
+        "text": "Ενοικίαση κατοικίας",
+        "href": "/browse/housing-local-services/renting-property",
+        "description": "Περιλαμβάνει μισθωτήριο συμβόλαιο, εγγύηση, πρόγραμμα «Σπίτι μου» και δικαιώματα ενοικιαστών"
+      },
+      {
+        "text": "Αγορά και ιδιοκτησία ακινήτου",
+        "href": "/browse/housing-local-services/buying-owning-property",
+        "description": "Περιλαμβάνει αγορά και πώληση κατοικίας, στεγαστικά δάνεια, Κτηματολόγιο και αποζημιώσεις"
+      },
+      {
+        "text": "Δημοτικά τέλη",
+        "href": "/browse/housing-local-services/council-tax",
+        "description": "Περιλαμβάνει ΤΑΠ, ΑΤΑΚ, προσφυγές και εκπτώσεις δημοτικών τελών"
+      },
+      {
+        "text": "Εκμίσθωση κατοικίας ή δωματίου",
+        "href": "/browse/housing-local-services/landlords",
+        "description": "Περιλαμβάνει έλεγχο ταυτότητας ενοικιαστή, εξώσεις, μισθωτήρια και προστασία εγγύησης"
+      },
+      {
+        "text": "Δήμοι και τοπικές υπηρεσίες",
+        "href": "/browse/housing-local-services/local-councils",
+        "description": "Εύρεση και πρόσβαση σε τοπικές υπηρεσίες"
+      },
+      {
+        "text": "Οικιακή ενέργεια",
+        "href": "/browse/housing-local-services/household-energy",
+        "description": "Περιλαμβάνει ΠΕΑ, επιδοτήσεις εξοικονόμησης ενέργειας, ΔΕΔΔΗΕ και ανανεώσιμες πηγές"
+      },
+      {
+        "text": "Οικοδομική άδεια και κανονισμοί δόμησης",
+        "href": "/browse/housing-local-services/planning-permission",
+        "description": "Περιλαμβάνει e-Άδειες, κανονισμούς δόμησης, τακτοποίηση αυθαιρέτων και Κτηματολόγιο"
+      },
+      {
+        "text": "Κατασχέσεις, αστεγία, έκτακτη στέγαση και εξώσεις",
+        "href": "/browse/housing-local-services/repossessions-evictions",
+        "description": "Περιλαμβάνει βοήθεια για αστέγους, εξώσεις και αυθαίρετη κατάληψη"
+      },
+      {
+        "text": "Ανακύκλωση και απορρίμματα",
+        "href": "/browse/housing-local-services/recycling-rubbish",
+        "description": "Περιλαμβάνει αποκομιδή ογκωδών, κήπων και αναφορά προβλημάτων"
+      },
+      {
+        "text": "Θόρυβος, γείτονες, κατοικίδια και παράσιτα",
+        "href": "/browse/housing-local-services/noise-neighbours",
+        "description": "Περιλαμβάνει διαφορές γειτόνων, αναφορά θορύβου, απεντομώσεις και φροντίδα κατοικίδιων"
+      },
+      {
+        "text": "Δρόμοι, πεζοδρόμια και κτίρια",
+        "href": "/browse/housing-local-services/streets-roads-buildings",
+        "description": "Περιλαμβάνει καθαριότητα δρόμων, φανάρια και αναφορά βλαβών"
+      },
+      {
+        "text": "Ασφάλεια και περιβάλλον στην κοινότητα",
+        "href": "/browse/housing-local-services/safety-environment",
+        "description": "Περιλαμβάνει περιοχές ελέγχου καπνού, οδική ασφάλεια και πρόληψη εγκληματικότητας"
+      }
+    ]
+  },
+  "tax": {
+    "title": "Χρήμα και φορολογία",
+    "description": "Περιλαμβάνει χρέη και φορολογικές δηλώσεις",
+    "mostViewed": [
+      { "text": "myAADE: σύνδεση ή δημιουργία λογαριασμού", "href": "/browse/tax/dealing-with-aade" },
+      { "text": "Προσωπικός φορολογικός λογαριασμός myTAXISnet: σύνδεση ή δημιουργία", "href": "/browse/tax/dealing-with-aade" },
+      { "text": "Υπολογισμός φόρου εισοδήματος για το τρέχον έτος", "href": "/browse/tax/income-tax" }
+    ],
+    "topics": [
+      {
+        "text": "Φόρος υπεραξίας",
+        "href": "/browse/tax/capital-gains",
+        "description": "Φόρος κατά την πώληση ακινήτου, μετοχών, προσωπικών αντικειμένων και επιχειρηματικών περιουσιακών στοιχείων"
+      },
+      {
+        "text": "Δικαστικές αξιώσεις, χρέη και πτώχευση",
+        "href": "/browse/tax/court-claims-debt-bankruptcy",
+        "description": "Περιλαμβάνει είσπραξη χρεών, υπαγωγή σε πτώχευση και εγγραφή ως πιστωτή"
+      },
+      {
+        "text": "Επικοινωνία με την ΑΑΔΕ",
+        "href": "/browse/tax/dealing-with-aade",
+        "description": "Δήλωση αλλαγών, εκπρόσωποι, προσφυγές, έλεγχοι, καταγγελίες και βοήθεια με φορολογικά θέματα"
+      },
+      {
+        "text": "Φόρος εισοδήματος",
+        "href": "/browse/tax/income-tax",
+        "description": "Περιλαμβάνει συντελεστές και αφορολόγητο, κωδικοί φορολογίας και επιστροφές"
+      },
+      {
+        "text": "Φόρος κληρονομιάς",
+        "href": "/browse/tax/inheritance-tax",
+        "description": "Περιλαμβάνει αποτίμηση περιουσίας, καταπιστεύματα και φόρους"
+      },
+      {
+        "text": "Ασφαλιστικές εισφορές (e-ΕΦΚΑ)",
+        "href": "/browse/tax/national-insurance",
+        "description": "Εθελοντικές εισφορές και πιστώσεις, αριθμοί, ποσοστά και κατηγορίες"
+      },
+      {
+        "text": "Φορολογική δήλωση (Ε1)",
+        "href": "/browse/tax/self-assessment",
+        "description": "Περιλαμβάνει υποβολή, προθεσμίες, πληρωμή και φορολογικά αρχεία"
+      },
+      {
+        "text": "ΦΠΑ",
+        "href": "/browse/tax/vat",
+        "description": "Περιλαμβάνει ηλεκτρονικές δηλώσεις, συντελεστές, χρέωση και τήρηση αρχείων"
+      }
+    ]
+  },
+  "abroad": {
+    "title": "Διαβατήρια, ταξίδια και διαμονή εξωτερικού",
+    "description": "Περιλαμβάνει ανανέωση διαβατηρίων και ταξιδιωτικές οδηγίες ανά χώρα",
+    "mostViewed": [
+      { "text": "Αίτηση ηλεκτρονικά για ελληνικό διαβατήριο", "href": "/browse/abroad/passports" },
+      { "text": "Ταξιδιωτικές οδηγίες ανά χώρα", "href": "/foreign-travel-advice" },
+      { "text": "Έκδοση διαβατηρίου επειγόντως", "href": "/browse/abroad/passports" }
+    ],
+    "topics": [
+      {
+        "text": "Διαμονή εξωτερικού",
+        "href": "/browse/abroad/living-abroad",
+        "description": "Περιλαμβάνει φορολογία, σύνταξη, παροχές και ελληνικές προξενικές υπηρεσίες εξωτερικού"
+      },
+      {
+        "text": "Διαβατήρια",
+        "href": "/browse/abroad/passports",
+        "description": "Δικαιούχοι, τέλη, αίτηση, ανανέωση και ενημέρωση στοιχείων"
+      },
+      {
+        "text": "Ταξίδια στο εξωτερικό",
+        "href": "/browse/abroad/travel-abroad",
+        "description": "Περιλαμβάνει τελευταίες ταξιδιωτικές οδηγίες ανά χώρα, δικαιώματα στο αεροδρόμιο και βοήθεια εξωτερικού"
+      }
+    ]
+  },
+  "visas-immigration": {
+    "title": "Βίζες και μετανάστευση",
+    "description": "Αίτηση για επίσκεψη, εργασία, σπουδές ή εγκατάσταση στην Ελλάδα",
+    "mostViewed": [
+      { "text": "e-Βίζα: πρόσβαση και χρήση ηλεκτρονικής βίζας", "href": "/browse/visas-immigration/what-you-need-to-do" },
+      { "text": "Αίτηση βίζας Schengen για επίσκεψη στην Ελλάδα", "href": "/browse/visas-immigration/tourist-short-stay-visas" },
+      { "text": "Έλεγχος κατάστασης αίτησης βίζας", "href": "/browse/visas-immigration/what-you-need-to-do" }
+    ],
+    "topics": [
+      {
+        "text": "Τι χρειάζεται να κάνετε",
+        "href": "/browse/visas-immigration/what-you-need-to-do",
+        "description": "Ελέγξτε αν χρειάζεστε βίζα ή ηλεκτρονική άδεια ταξιδιού για είσοδο στην Ελλάδα"
+      },
+      {
+        "text": "Επίσκεψη στην Ελλάδα",
+        "href": "/browse/visas-immigration/tourist-short-stay-visas",
+        "description": "Επίσκεψη για τουρισμό, επιχειρήσεις ή βραχεία παραμονή (έως 90 ημέρες), βίζες transit αεροδρομίου"
+      },
+      {
+        "text": "Εργασία στην Ελλάδα",
+        "href": "/browse/visas-immigration/work-visas",
+        "description": "Άδεια εργασίας, επενδυτική βίζα (Golden Visa), δικαίωμα εργασίας"
+      },
+      {
+        "text": "Σπουδές στην Ελλάδα",
+        "href": "/browse/visas-immigration/student-visas",
+        "description": "Φοιτητική βίζα για σπουδές σε ΑΕΙ και ιδιωτικά εκπαιδευτικά ιδρύματα"
+      },
+      {
+        "text": "Οικογένεια στην Ελλάδα",
+        "href": "/browse/visas-immigration/family-visas",
+        "description": "Σύζυγος, σύντροφος, εξαρτώμενα μέλη και βίζες οικογενειακής επανένωσης"
+      },
+      {
+        "text": "Πολίτες ΕΕ, ΕΟΧ και Ελβετίας",
+        "href": "/browse/visas-immigration/eu-eea-swiss",
+        "description": "Εγγραφή, πιστοποιητικό εγγραφής, δικαίωμα ελεύθερης κυκλοφορίας"
+      },
+      {
+        "text": "Ουκρανοί και οικογένειές τους",
+        "href": "/browse/visas-immigration/ukrainian-nationals",
+        "description": "Προσωρινή προστασία, άδεια διαμονής και στήριξη για Ουκρανούς πρόσφυγες"
+      },
+      {
+        "text": "Πολίτες τρίτων χωρών",
+        "href": "/browse/visas-immigration/third-country-nationals",
+        "description": "Ειδικές βίζες και άδειες διαμονής για πολίτες εκτός ΕΕ/ΕΟΧ"
+      },
+      {
+        "text": "Μόνιμη διαμονή στην Ελλάδα",
+        "href": "/browse/visas-immigration/settle-in-greece",
+        "description": "Τρόποι μόνιμης εγκατάστασης, άδεια διαμονής αορίστου χρόνου και πολιτογράφηση"
+      },
+      {
+        "text": "Αίτηση ασύλου ή προστασίας",
+        "href": "/browse/visas-immigration/asylum",
+        "description": "Αίτηση ασύλου ως πρόσφυγας, η διαδικασία και η υποστήριξη"
+      },
+      {
+        "text": "Προσφυγές μετανάστευσης και προβλήματα καθεστώτος",
+        "href": "/browse/visas-immigration/immigration-appeals",
+        "description": "Προσφυγή κατά απόφασης για βίζα, διαμονή ή άσυλο, προβλήματα καθεστώτος"
+      },
+      {
+        "text": "Άφιξη στην Ελλάδα",
+        "href": "/browse/visas-immigration/arriving-in-greece",
+        "description": "Μεταφορά αντικειμένων, διέλευση από τελωνείο και φορολογία"
+      }
+    ]
+  },
+  "working": {
+    "title": "Εργασία, θέσεις εργασίας και συντάξεις",
+    "description": "Περιλαμβάνει διακοπές, εύρεση εργασίας και απολύσεις",
+    "mostViewed": [
+      { "text": "Επίδομα ανεργίας ΔΥΠΑ", "href": "/browse/working/finding-job" },
+      { "text": "Ελέγξτε την πρόβλεψη σύνταξής σας στο e-ΕΦΚΑ", "href": "/browse/working/state-pension" },
+      { "text": "Βρείτε εργασία", "href": "/browse/working/finding-job" }
+    ],
+    "topics": [
+      {
+        "text": "Ένοπλες δυνάμεις",
+        "href": "/browse/working/armed-forces",
+        "description": "Περιλαμβάνει εθελοντές, συντάξεις ενόπλων δυνάμεων, παροχές και οικονομική βοήθεια"
+      },
+      {
+        "text": "Εύρεση εργασίας",
+        "href": "/browse/working/finding-job",
+        "description": "Αναζήτηση εργασίας, επίδομα ανεργίας ΔΥΠΑ, προσφορές θέσεων, μαθητεία και εθελοντισμός"
+      },
+      {
+        "text": "Άδειες, αναρρωτικές και γονικές άδειες",
+        "href": "/browse/working/time-off",
+        "description": "Περιλαμβάνει επαγγελματικές διακοπές και υπολογιστή ετήσιας άδειας"
+      },
+      {
+        "text": "Απολύσεις, καταγγελίες και πειθαρχικά",
+        "href": "/browse/working/redundancies-dismissals",
+        "description": "Περιλαμβάνει επίλυση εργασιακής διαφοράς, υπολογισμό αποζημίωσης και απόλυση"
+      },
+      {
+        "text": "Κύρια σύνταξη (e-ΕΦΚΑ)",
+        "href": "/browse/working/state-pension",
+        "description": "Υπολογισμός σύνταξης, επικουρική, επιλεξιμότητα, αίτηση και αναστολή"
+      },
+      {
+        "text": "Επαγγελματικά και ιδιωτικά ταμεία",
+        "href": "/browse/working/workplace-personal-pensions",
+        "description": "Περιλαμβάνει αυτόματη υπαγωγή, χαμένες συντάξεις και σχεδιασμό συνταξιοδότησης"
+      },
+      {
+        "text": "Σύμβαση εργασίας και ωράριο",
+        "href": "/browse/working/contract-working-hours",
+        "description": "Περιλαμβάνει καθεστώς εργασίας, δικαιώματα εργαζομένων και αλλαγές συμβάσεων"
+      },
+      {
+        "text": "Αποδοχές, φορολογία και κατώτατος μισθός",
+        "href": "/browse/working/tax-minimum-wage",
+        "description": "Περιλαμβάνει ποσοστά κατώτατου μισθού, τήρηση αρχείων και δικαιώματα αποδοχών"
+      },
+      {
+        "text": "Δικαιώματα στην εργασία και συνδικαλισμός",
+        "href": "/browse/working/rights-trade-unions",
+        "description": "Περιλαμβάνει υγεία και ασφάλεια, εργατικά ατυχήματα και συνδικαλιστικές οργανώσεις"
+      }
+    ]
+  }
+}

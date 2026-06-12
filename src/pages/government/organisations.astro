@@ -1,0 +1,299 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import orgs from '../../data/organisations.json';
+
+const totalCount = orgs.sections.reduce((sum, s) => sum + s.organisations.length, 0);
+
+// Split: first section (standalone, no label) vs the rest
+const standaloneSection = orgs.sections.find(s => s.label === null)!;
+const labeledSections   = orgs.sections.filter(s => s.label !== null);
+---
+
+<Layout
+  title="Υπουργεία, φορείς και δημόσιοι οργανισμοί – gov.gr"
+  breadcrumbs={[
+    { text: 'Αρχική', href: '/' },
+    { text: 'Δραστηριότητα κυβέρνησης', href: '/' },
+    { text: 'Υπουργεία, φορείς και δημόσιοι οργανισμοί' },
+  ]}
+>
+  <div class="govuk-width-container" data-module="list-filter">
+
+    <!-- Heading + search (exactly as in the reference) -->
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">
+          Υπουργεία, φορείς και δημόσιοι οργανισμοί
+        </h1>
+        <form class="filter-list__form" data-filter="form" role="search"
+              aria-label="Υπουργεία, φορείς και δημόσιοι οργανισμοί" autocomplete="off">
+          <div class="govuk-form-group govuk-!-margin-bottom-8">
+            <label for="filter-organisations-list" class="govuk-label">
+              Αναζητήστε υπουργείο, φορέα ή δημόσιο οργανισμό
+            </label>
+            <input
+              aria-controls="search_results"
+              class="govuk-input"
+              id="filter-organisations-list"
+              name="search-box"
+              spellcheck="false"
+              type="text"
+            />
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Results region -->
+    <div class="organisations" id="search_results" role="region"
+         aria-label="Λίστα υπουργείων, φορέων και δημόσιων οργανισμών">
+
+      <!-- Standalone section (Προεδρία) — results count left, list right -->
+      <div class="govuk-grid-row organisations-list__section" data-filter="block">
+        <div class="govuk-grid-column-one-third" data-filter="count">
+          <div class="filter-list__results govuk-heading-m js-search-results" aria-live="polite">
+            <span id="results-count">{totalCount}</span> αποτελέσματα
+          </div>
+        </div>
+        <div class="govuk-grid-column-two-thirds organisations-list__without-number">
+          <ol>
+            {standaloneSection.organisations.map(org => (
+              <li class="organisations-list__item" id={org.id}
+                  data-filter="item" data-filter-terms={org.searchTerms}>
+                <div class="govuk-!-margin-bottom-3">
+                  <h3 class="gem-c-organisation-logo">
+                    <a class="gem-c-organisation-logo__container gem-c-organisation-logo__link"
+                       href={`/government/organisations/${org.slug}`}>
+                      {((org as any).logo ?? standaloneSection.crest) && (
+                        <img class="gem-c-organisation-logo__crest"
+                             src={(org as any).logo ?? standaloneSection.crest}
+                             alt="" aria-hidden="true" />
+                      )}
+                      <span class="gem-c-organisation-logo__name">{org.name}</span>
+                    </a>
+                  </h3>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </div>
+
+      <!-- Labeled sections (Υπουργεία, Ανεξάρτητες Αρχές, …) -->
+      {labeledSections.map(section => (
+        <div class="govuk-grid-row organisations-list__section" data-filter="block">
+
+          <!-- Left: label + big number -->
+          <div class="govuk-grid-column-one-third" data-filter="count">
+            <div class="gem-c-heading">
+              <h2 class="gem-c-heading__text govuk-heading-m">{section.label}</h2>
+            </div>
+            <p class="govuk-visually-hidden">
+              Υπάρχουν <span class="js-accessible-item-count">{section.organisations.length}</span> {section.label}
+            </p>
+            <div aria-hidden="true" class="gem-c-big-number">
+              <span class="gem-c-big-number__value" data-item-count="true">
+                {section.organisations.length}
+              </span>
+            </div>
+          </div>
+
+          <!-- Right: list of organisations -->
+          <div class="govuk-grid-column-two-thirds">
+            <ol>
+              {section.organisations.map(org => (
+                <li class="organisations-list__item" id={org.id}
+                    data-filter="item" data-filter-terms={org.searchTerms}>
+
+                  <div class="govuk-!-margin-bottom-3">
+                    <h3 class="gem-c-organisation-logo">
+                      <a class="gem-c-organisation-logo__container gem-c-organisation-logo__link"
+                         href={`/government/organisations/${org.slug}`}>
+                        {((org as any).logo ?? section.crest) && (
+                          <img class="gem-c-organisation-logo__crest"
+                               src={(org as any).logo ?? section.crest}
+                               alt="" aria-hidden="true" />
+                        )}
+                        <span class="gem-c-organisation-logo__name">{org.name}</span>
+                      </a>
+                    </h3>
+                  </div>
+
+                  {org.related.length > 0 && (
+                    <div class="govuk-!-margin-bottom-3">
+                      <details class="govuk-details govuk-!-margin-bottom-3">
+                        <summary class="govuk-details__summary">
+                          <span class="govuk-details__summary-text">
+                            Συνεργάζεται με {org.related.reduce((n: number, g: {items: unknown[]}) => n + g.items.length, 0)} φορείς και δημόσιους οργανισμούς
+                          </span>
+                        </summary>
+                        <div class="govuk-details__text">
+                          {org.related.map((group: {type: string; items: {name: string; slug: string}[]}) => (
+                            <div>
+                              <h4 class="govuk-heading-s govuk-!-margin-top-2 govuk-!-margin-bottom-1">{group.type}</h4>
+                              <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-3">
+                                {group.items.map((item: {name: string; slug: string}) => (
+                                  <li class="govuk-!-margin-bottom-1">
+                                    <a class="govuk-link" href={`/government/organisations/${item.slug}`}>
+                                      {item.name}
+                                    </a>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          ))}
+                        </div>
+                      </details>
+                    </div>
+                  )}
+
+                </li>
+              ))}
+            </ol>
+          </div>
+
+        </div>
+      ))}
+
+      <p class="govuk-body organisations-list__no-results" hidden>
+        Δεν βρέθηκαν αποτελέσματα. Δοκιμάστε διαφορετική αναζήτηση.
+      </p>
+
+    </div><!-- /#search_results -->
+  </div><!-- /.govuk-width-container -->
+</Layout>
+
+<style>
+  /* Results count */
+  .filter-list__results {
+    margin-bottom: 20px;
+  }
+
+  /* Section row */
+  .organisations-list__section {
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+  }
+
+  .organisations-list__section[hidden] { display: none; }
+
+  /* Section heading */
+  .gem-c-heading__text {
+    margin-top: 0;
+    margin-bottom: 6px;
+  }
+
+  /* Big number */
+  .gem-c-big-number {
+    margin-bottom: 10px;
+  }
+
+  .gem-c-big-number__value {
+    display: block;
+    font-size: 7rem;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--govgr-brand);
+  }
+
+  /* Organisation list */
+  ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .organisations-list__item {
+    margin-bottom: 16px;
+  }
+
+  .organisations-list__item[hidden] { display: none; }
+
+  /* Organisation logo */
+  .gem-c-organisation-logo {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: normal;
+  }
+
+  .gem-c-organisation-logo__container {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    text-decoration: none;
+    border-left: 4px solid var(--govgr-brand);
+    padding: 6px 0 6px 10px;
+    color: #0b0c0c;
+    max-width: 100%;
+  }
+
+  .gem-c-organisation-logo__link:hover .gem-c-organisation-logo__name {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    color: var(--govgr-brand);
+  }
+
+  .gem-c-organisation-logo__link:focus {
+    outline: 3px solid #ffdd00;
+    outline-offset: 0;
+    background: #ffdd00;
+  }
+
+  .gem-c-organisation-logo__crest {
+    display: block;
+    height: 52px;
+    width: auto;
+    max-width: 220px;
+    object-fit: contain;
+    object-position: left center;
+  }
+
+  .gem-c-organisation-logo__name {
+    font-size: 1.1875rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #0b0c0c;
+  }
+
+  /* No results */
+  .organisations-list__no-results[hidden] { display: none; }
+</style>
+
+<script>
+  const input       = document.getElementById('filter-organisations-list') as HTMLInputElement;
+  const countEl     = document.getElementById('results-count')!;
+  const noResults   = document.querySelector('.organisations-list__no-results') as HTMLElement;
+
+  function normalise(s: string) {
+    return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+  }
+
+  input.addEventListener('input', () => {
+    const q = normalise(input.value.trim());
+    const items    = document.querySelectorAll<HTMLElement>('[data-filter="item"]');
+    const sections = document.querySelectorAll<HTMLElement>('[data-filter="block"]');
+    let visible = 0;
+
+    items.forEach(item => {
+      const terms = normalise(item.dataset.filterTerms ?? '');
+      const name  = normalise(item.querySelector('.gem-c-organisation-logo__name')?.textContent ?? '');
+      const match = !q || terms.includes(q) || name.includes(q);
+      item.hidden = !match;
+      if (match) visible++;
+    });
+
+    sections.forEach(section => {
+      const vis = Array.from(section.querySelectorAll<HTMLElement>('[data-filter="item"]'))
+                       .filter(el => !el.hidden).length;
+      section.hidden = vis === 0;
+      const n  = section.querySelector<HTMLElement>('[data-item-count="true"]');
+      const na = section.querySelector<HTMLElement>('.js-accessible-item-count');
+      if (n)  n.textContent  = String(vis);
+      if (na) na.textContent = String(vis);
+    });
+
+    countEl.textContent = String(visible);
+    noResults.hidden = visible > 0;
+  });
+</script>

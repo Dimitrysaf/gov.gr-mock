@@ -1,0 +1,94 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ActionLink from '../../components/ActionLink.astro';
+import CardList from '../../components/CardList.astro';
+import browseData from '../../data/browse.json';
+
+export function getStaticPaths() {
+  return Object.keys(browseData).map(category => ({ params: { category } }));
+}
+
+const { category } = Astro.params;
+const data = browseData[category as keyof typeof browseData];
+---
+
+<Layout title={`${data.title} – gov.gr`}>
+  <div class="browse-header govuk-!-padding-bottom-8 govuk-!-margin-bottom-9">
+    <div class="govuk-width-container">
+      <nav class="govuk-breadcrumbs govuk-breadcrumbs--inverse govuk-!-margin-bottom-4" aria-label="Breadcrumb">
+        <ol class="govuk-breadcrumbs__list">
+          <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="/">Αρχική</a>
+          </li>
+          <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="/browse">Υπηρεσίες και πληροφορίες</a>
+          </li>
+          <li class="govuk-breadcrumbs__list-item">
+            <span aria-current="page">{data.title}</span>
+          </li>
+        </ol>
+      </nav>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+          <h1 class="govuk-heading-xl govuk-!-margin-bottom-3 browse-header__title">
+            {data.title}
+          </h1>
+          {data.description && (
+            <p class="gem-c-lead-paragraph govuk-!-margin-bottom-2">
+              {data.description}
+            </p>
+          )}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {data.mostViewed && data.mostViewed.length > 0 && (
+    <div class="govuk-width-container">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+          <div class="browse__action-links">
+            <h2 class="govuk-heading-m govuk-!-margin-bottom-6">Πιο δημοφιλή</h2>
+            <ul class="govuk-list govuk-!-margin-bottom-7">
+              {data.mostViewed.map(item => (
+                <li>
+                  <ActionLink text={item.text} href={item.href} />
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  )}
+
+  <div class="govuk-width-container govuk-!-margin-bottom-9">
+    <h2 class="govuk-heading-m browse-topics__heading">Θέματα</h2>
+    <CardList items={data.topics} />
+  </div>
+</Layout>
+
+<style>
+  .browse-topics__heading {
+    border-top: 4px solid var(--govgr-brand);
+    padding-top: 15px;
+  }
+
+  .browse-header {
+    background-color: var(--govgr-brand);
+    margin-top: -20px;
+    padding-top: 20px;
+  }
+
+  @media (min-width: 40.0625em) {
+    .browse-header {
+      margin-top: -40px;
+      padding-top: 30px;
+    }
+  }
+
+  .browse-header__title,
+  .gem-c-lead-paragraph {
+    color: #ffffff;
+  }
+</style>

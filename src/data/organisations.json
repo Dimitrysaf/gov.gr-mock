@@ -1,0 +1,1070 @@
+{
+  "sections": [
+    {
+      "id": "executive-office",
+      "label": null,
+      "crest": "/Coat_of_Arms_of_Greece_(Ministries).svg",
+      "organisations": [
+        {
+          "id": "presidency-of-government",
+          "name": "Προεδρία της Κυβέρνησης",
+          "slug": "presidency-of-government",
+          "searchTerms": "Προεδρία Κυβέρνησης Πρωθυπουργός Μαξίμου",
+          "related": []
+        }
+      ]
+    },
+    {
+      "id": "ministerial-departments",
+      "label": "Υπουργεία",
+      "crest": "/Coat_of_Arms_of_Greece_(Ministries).svg",
+      "organisations": [
+        {
+          "id": "ministry-of-rural-development",
+          "name": "Υπουργείο Αγροτικής Ανάπτυξης και Τροφίμων",
+          "slug": "ministry-of-rural-development",
+          "searchTerms": "Υπουργείο Αγροτικής Ανάπτυξης Τροφίμων γεωργία κτηνοτροφία αλιεία αγρότες",
+          "related": [
+            {
+              "type": "Εκτελεστικός Οργανισμός",
+              "items": [
+                {
+                  "name": "Οργανισμός Πληρωμών & Ελέγχου Κοινοτικών Ενισχύσεων (ΟΠΕΚΕΠΕ)",
+                  "slug": "opekepe"
+                },
+                {
+                  "name": "Ελληνικός Γεωργικός Οργανισμός – ΔΗΜΗΤΡΑ (ΕΛΓΟ-ΔΗΜΗΤΡΑ)",
+                  "slug": "elgo-dimetra"
+                },
+                {
+                  "name": "Οργανισμός Ελληνικών Γεωργικών Ασφαλίσεων (ΕΛΓΑ)",
+                  "slug": "elga"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ministry-of-development",
+          "name": "Υπουργείο Ανάπτυξης και Επενδύσεων",
+          "slug": "ministry-of-development",
+          "searchTerms": "Υπουργείο Ανάπτυξης Επενδύσεων επιχειρηματικότητα εμπόριο ΕΣΠΑ",
+          "related": [
+            {
+              "type": "Ανεξάρτητη Αρχή",
+              "items": [
+                {
+                  "name": "Επιτροπή Ανταγωνισμού",
+                  "slug": "competition-commission"
+                },
+                {
+                  "name": "Αρχή Εξέτασης Προδικαστικών Προσφυγών (ΑΕΠΠ)",
+                  "slug": "aepp"
+                }
+              ]
+            },
+            {
+              "type": "Εκτελεστικός Οργανισμός",
+              "items": [
+                {
+                  "name": "Ελληνική Αναπτυξιακή Τράπεζα (HDB)",
+                  "slug": "hdb"
+                },
+                {
+                  "name": "Enterprise Greece",
+                  "slug": "enterprise-greece"
+                },
+                {
+                  "name": "Οργανισμός Πνευματικής Ιδιοκτησίας (ΟΠΙ)",
+                  "slug": "opi"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ministry-of-justice",
+          "name": "Υπουργείο Δικαιοσύνης",
+          "slug": "ministry-of-justice",
+          "searchTerms": "Υπουργείο Δικαιοσύνης δικαστήρια φυλακές νομοθεσία",
+          "related": [
+            {
+              "type": "Εκτελεστικός Οργανισμός",
+              "items": [
+                {
+                  "name": "Εθνική Σχολή Δικαστικών Λειτουργών (ΕΣΔΙ)",
+                  "slug": "esdi"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ministry-of-national-defence",
+          "name": "Υπουργείο Εθνικής Άμυνας",
+          "slug": "ministry-of-national-defence",
+          "searchTerms": "Υπουργείο Εθνικής Άμυνας στρατός ΓΕΕΘΑ θητεία",
+          "related": [
+            {
+              "type": "Εκτελεστικός Οργανισμός",
+              "items": [
+                {
+                  "name": "Γενικό Επιτελείο Εθνικής Άμυνας (ΓΕΕΘΑ)",
+                  "slug": "geetha"
+                },
+                {
+                  "name": "Γενικό Επιτελείο Στρατού (ΓΕΣ)",
+                  "slug": "ges"
+                },
+                {
+                  "name": "Γενικό Επιτελείο Ναυτικού (ΓΕΝ)",
+                  "slug": "gen"
+                },
+                {
+                  "name": "Γενικό Επιτελείο Αεροπορίας (ΓΕΑ)",
+                  "slug": "gea"
+                },
+                {
+                  "name": "Ελληνική Αεροπορική Βιομηχανία (ΕΑΒ)",
+                  "slug": "eab"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ministry-of-foreign-affairs",
+          "name": "Υπουργείο Εξωτερικών",
+          "slug": "ministry-of-foreign-affairs",
+          "searchTerms": "Υπουργείο Εξωτερικών διπλωματία προξενεία πρεσβείες",
+          "related": [
+            {
+              "type": "Εκτελεστικός Οργανισμός",
+              "items": [
+                {
+                  "name": "Ίδρυμα Ελληνικού Πολιτισμού (ΙΕΠ)",
+                  "slug": "iep-culture"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ministry-of-labour",
+          "name": "Υπουργείο Εργασίας και Κοινωνικών Υποθέσεων",
+          "slug": "ministry-of-labour",
+          "searchTerms": "Υπουργείο Εργασίας Κοινωνικών Υποθέσεων ΕΦΚΑ ΔΥΠΑ σύνταξη",
+          "related": [
+            {
+              "type": "Ανεξάρτητη Αρχή",
+              "items": [
+                {
+                  "name": "Σώμα Επιθεώρησης Εργασίας (ΣΕΠΕ)",
+                  "slug": "sepe"
+                }
+              ]
+            },
+            {
+              "type": "Εκτελεστικός Οργανισμός",
+              "items": [
+                {
+                  "name": "e-ΕΦΚΑ",
+                  "slug": "efka"
+                },
+                {
+                  "name": "ΔΥΠΑ (Δημόσια Υπηρεσία Απασχόλησης)",
+                  "slug": "dypa"
+                },
+                {
+                  "name": "Εθνικό Ινστιτούτο Εργασίας & Ανθρώπινου Δυναμικού (ΕΙΕΑΔ)",
+                  "slug": "eiaed"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ministry-of-interior",
+          "name": "Υπουργείο Εσωτερικών",
+          "slug": "ministry-of-interior",
+          "searchTerms": "Υπουργείο Εσωτερικών δήμοι εκλογές αστική κατάσταση",
+          "related": [
+            {
+              "type": "Ανεξάρτητη Αρχή",
+              "items": [
+                {
+                  "name": "Συνήγορος του Πολίτη",
+                  "slug": "ombudsman"
+                }
+              ]
+            },
+            {
+              "type": "Εκτελεστικός Οργανισμός",
+              "items": [
+                {
+                  "name": "Κεντρική Ένωση Δήμων Ελλάδας (ΚΕΔΕ)",
+                  "slug": "kede"
+                },
+                {
+                  "name": "Εθνική Σχολή Δημόσιας Διοίκησης & Αυτοδιοίκησης (ΕΣΔΔΑ)",
+                  "slug": "esdda"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ministry-of-migration",
+          "name": "Υπουργείο Μετανάστευσης και Ασύλου",
+          "slug": "ministry-of-migration",
+          "searchTerms": "Υπουργείο Μετανάστευσης Ασύλου μετανάστες προσφύγων άδεια διαμονής",
+          "related": [
+            {
+              "type": "Εκτελεστικός Οργανισμός",
+              "items": [
+                {
+                  "name": "Υπηρεσία Ασύλου",
+                  "slug": "asylum-service"
+                },
+                {
+                  "name": "Υπηρεσία Υποδοχής & Ταυτοποίησης (ΥΥΤ)",
+                  "slug": "reception-identification"
+                },
+                {
+                  "name": "Αρχή Προσφυγικής Υπόθεσης (ΑΠΥ)",
+                  "slug": "apy"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ministry-of-maritime",
+          "name": "Υπουργείο Ναυτιλίας και Νησιωτικής Πολιτικής",
+          "slug": "ministry-of-maritime",
+          "searchTerms": "Υπουργείο Ναυτιλίας Νησιωτικής Πολιτικής λιμεναρχεία πλοία νησιά ακτοπλοΐα",
+          "related": [
+            {
+              "type": "Εκτελεστικός Οργανισμός",
+              "items": [
+                {
+                  "name": "Αρχηγείο Λιμενικού Σώματος – Ελληνικής Ακτοφυλακής",
+                  "slug": "ls-ak"
+                },
+                {
+                  "name": "Οργανισμός Λιμένος Πειραιώς (ΟΛΠ ΑΕ)",
+                  "slug": "olp"
+                },
+                {
+                  "name": "Οργανισμός Λιμένος Θεσσαλονίκης (ΟΛΘ ΑΕ)",
+                  "slug": "olth"
+                },
+                {
+                  "name": "Ναυτικό Απομαχικό Ταμείο (ΝΑΤ)",
+                  "slug": "nat"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ministry-of-finance",
+          "name": "Υπουργείο Οικονομικών",
+          "slug": "ministry-of-finance",
+          "searchTerms": "Υπουργείο Οικονομικών φορολογία προϋπολογισμός δημόσια έσοδα",
+          "related": [
+            {
+              "type": "Ανεξάρτητη Αρχή",
+              "items": [
+                {
+                  "name": "Ανεξάρτητη Αρχή Δημοσίων Εσόδων (ΑΑΔΕ)",
+                  "slug": "aade"
+                },
+                {
+                  "name": "Ελληνική Στατιστική Αρχή (ΕΛΣΤΑΤ)",
+                  "slug": "elstat"
+                }
+              ]
+            },
+            {
+              "type": "Εκτελεστικός Οργανισμός",
+              "items": [
+                {
+                  "name": "Ταμείο Αξιοποίησης Ιδιωτικής Περιουσίας Δημοσίου (ΤΑΙΠΕΔ)",
+                  "slug": "taiped"
+                },
+                {
+                  "name": "Ελληνική Εταιρεία Συμμετοχών & Περιουσίας (Υπερταμείο)",
+                  "slug": "eesyp"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ministry-of-education",
+          "name": "Υπουργείο Παιδείας και Θρησκευμάτων",
+          "slug": "ministry-of-education",
+          "searchTerms": "Υπουργείο Παιδείας Θρησκευμάτων σχολεία ΑΕΙ πανεπιστήμια εκπαίδευση",
+          "related": [
+            {
+              "type": "Ανεξάρτητη Αρχή",
+              "items": [
+                {
+                  "name": "Εθνική Αρχή Ανώτατης Εκπαίδευσης (ΕΘΑΑΕ)",
+                  "slug": "ethaae"
+                }
+              ]
+            },
+            {
+              "type": "Εκτελεστικός Οργανισμός",
+              "items": [
+                {
+                  "name": "Ίδρυμα Κρατικών Υποτροφιών (ΙΚΥ)",
+                  "slug": "iky"
+                },
+                {
+                  "name": "Ινστιτούτο Εκπαιδευτικής Πολιτικής (ΙΕΠ)",
+                  "slug": "iep-edu"
+                },
+                {
+                  "name": "Ινστιτούτο Νεολαίας & Δια Βίου Μάθησης (ΙΝΕΔΙΒΙΜ)",
+                  "slug": "inedivim"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ministry-of-environment",
+          "name": "Υπουργείο Περιβάλλοντος και Ενέργειας",
+          "slug": "ministry-of-environment",
+          "searchTerms": "Υπουργείο Περιβάλλοντος Ενέργειας ΑΠΕ κλίμα ρύπανση ηλεκτρισμός",
+          "related": [
+            {
+              "type": "Ανεξάρτητη Αρχή",
+              "items": [
+                {
+                  "name": "Ρυθμιστική Αρχή Ενέργειας (ΡΑΕ)",
+                  "slug": "rae"
+                },
+                {
+                  "name": "Ρυθμιστική Αρχή Αποβλήτων, Ενέργειας & Υδάτων (ΡΑΕΕΥ)",
+                  "slug": "raeyy"
+                }
+              ]
+            },
+            {
+              "type": "Εκτελεστικός Οργανισμός",
+              "items": [
+                {
+                  "name": "ΑΔΜΗΕ ΑΕ",
+                  "slug": "admie"
+                },
+                {
+                  "name": "ΔΕΔΔΗΕ ΑΕ",
+                  "slug": "deddie"
+                },
+                {
+                  "name": "ΔΑΠΕΕΠ ΑΕ",
+                  "slug": "dapeep"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ministry-of-culture",
+          "name": "Υπουργείο Πολιτισμού και Αθλητισμού",
+          "slug": "ministry-of-culture",
+          "searchTerms": "Υπουργείο Πολιτισμού Αθλητισμού μουσεία αρχαιολογία αθλητισμός",
+          "related": [
+            {
+              "type": "Εκτελεστικός Οργανισμός",
+              "items": [
+                {
+                  "name": "Εθνικό Αρχαιολογικό Μουσείο",
+                  "slug": "national-arch-museum"
+                },
+                {
+                  "name": "Μουσείο Ακρόπολης",
+                  "slug": "acropolis-museum"
+                },
+                {
+                  "name": "Εθνική Βιβλιοθήκη της Ελλάδος (ΕΒΕ)",
+                  "slug": "nlg"
+                },
+                {
+                  "name": "Εθνικό Θέατρο",
+                  "slug": "national-theatre"
+                },
+                {
+                  "name": "Εθνική Λυρική Σκηνή (ΕΛΣ)",
+                  "slug": "els"
+                },
+                {
+                  "name": "Ελληνικό Κέντρο Κινηματογράφου (ΕΚΚ)",
+                  "slug": "ekk"
+                },
+                {
+                  "name": "Γενική Γραμματεία Αθλητισμού (ΓΓΑ)",
+                  "slug": "gga"
+                },
+                {
+                  "name": "Ελληνική Ολυμπιακή Επιτροπή (ΕΟΕ)",
+                  "slug": "eoe"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ministry-of-citizen-protection",
+          "name": "Υπουργείο Προστασίας του Πολίτη",
+          "slug": "ministry-of-citizen-protection",
+          "searchTerms": "Υπουργείο Προστασίας Πολίτη αστυνομία πυρόσβεση πολιτική προστασία",
+          "related": [
+            {
+              "type": "Εκτελεστικός Οργανισμός",
+              "items": [
+                {
+                  "name": "Αρχηγείο Ελληνικής Αστυνομίας (ΕΛ.ΑΣ.)",
+                  "slug": "elas"
+                },
+                {
+                  "name": "Πυροσβεστικό Σώμα Ελλάδος",
+                  "slug": "pse"
+                },
+                {
+                  "name": "Εθνική Μετεωρολογική Υπηρεσία (ΕΜΥ)",
+                  "slug": "emy"
+                },
+                {
+                  "name": "Ελληνικός Οργανισμός Αντισεισμικής Προστασίας (ΟAΣΠ)",
+                  "slug": "oasp"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ministry-of-tourism",
+          "name": "Υπουργείο Τουρισμού",
+          "slug": "ministry-of-tourism",
+          "searchTerms": "Υπουργείο Τουρισμού ΕΟΤ τουριστική προβολή ξενοδοχεία",
+          "related": [
+            {
+              "type": "Εκτελεστικός Οργανισμός",
+              "items": [
+                {
+                  "name": "Ελληνικός Οργανισμός Τουρισμού (ΕΟΤ)",
+                  "slug": "eot"
+                },
+                {
+                  "name": "Ξενοδοχειακό Επιμελητήριο Ελλάδος (ΞΕΕ)",
+                  "slug": "xee"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ministry-of-health",
+          "name": "Υπουργείο Υγείας",
+          "slug": "ministry-of-health",
+          "logo": "/Logo-ypoyrgeio-ygeias.png",
+          "searchTerms": "Υπουργείο Υγείας νοσοκομεία ΕΣΥ φάρμακα ιατρική",
+          "related": [
+            {
+              "type": "Εκτελεστικός Οργανισμός",
+              "items": [
+                {
+                  "name": "Εθνικός Οργανισμός Δημόσιας Υγείας (ΕΟΔΥ)",
+                  "slug": "eody"
+                },
+                {
+                  "name": "Εθνικός Οργανισμός Φαρμάκων (ΕΟΦ)",
+                  "slug": "eof"
+                },
+                {
+                  "name": "Εθνικό Κέντρο Άμεσης Βοήθειας (ΕΚΑΒ)",
+                  "slug": "ekab"
+                },
+                {
+                  "name": "Εθνικό Κέντρο Αιμοδοσίας (ΕΚΕΑ)",
+                  "slug": "ekea"
+                },
+                {
+                  "name": "Εθνικός Οργανισμός Μεταμοσχεύσεων (ΕΟΜ)",
+                  "slug": "eom"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ministry-of-infrastructure",
+          "name": "Υπουργείο Υποδομών και Μεταφορών",
+          "slug": "ministry-of-infrastructure",
+          "searchTerms": "Υπουργείο Υποδομών Μεταφορών οδοί αυτοκινητόδρομοι αεροδρόμια τρένα",
+          "related": [
+            {
+              "type": "Ανεξάρτητη Αρχή",
+              "items": [
+                {
+                  "name": "Ρυθμιστική Αρχή Σιδηροδρόμων (ΡΑΣ)",
+                  "slug": "ras"
+                }
+              ]
+            },
+            {
+              "type": "Εκτελεστικός Οργανισμός",
+              "items": [
+                {
+                  "name": "Υπηρεσία Πολιτικής Αεροπορίας (ΥΠΑ)",
+                  "slug": "ypa"
+                },
+                {
+                  "name": "ΕΡΓΟΣΕ ΑΕ",
+                  "slug": "ergose"
+                },
+                {
+                  "name": "Κτηματολόγιο ΑΕ",
+                  "slug": "ktima"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ministry-of-digital-governance",
+          "name": "Υπουργείο Ψηφιακής Διακυβέρνησης",
+          "slug": "ministry-of-digital-governance",
+          "searchTerms": "Υπουργείο Ψηφιακής Διακυβέρνησης ψηφιακός μετασχηματισμός gov.gr",
+          "related": [
+            {
+              "type": "Ανεξάρτητη Αρχή",
+              "items": [
+                {
+                  "name": "Εθνική Επιτροπή Τηλεπικοινωνιών & Ταχυδρομείων (ΕΕΤΤ)",
+                  "slug": "eett"
+                },
+                {
+                  "name": "Αρχή Διασφάλισης Απορρήτου Επικοινωνιών (ΑΔΑΕ)",
+                  "slug": "adae"
+                }
+              ]
+            },
+            {
+              "type": "Εκτελεστικός Οργανισμός",
+              "items": [
+                {
+                  "name": "Κοινωνία της Πληροφορίας (ΚτΠ ΑΕ)",
+                  "slug": "ktp"
+                },
+                {
+                  "name": "Γενική Γραμματεία Πληροφοριακών Συστημάτων (ΓΓΠΣ)",
+                  "slug": "ggps"
+                },
+                {
+                  "name": "Εθνική Αρχή Κυβερνοασφάλειας (ΕΑΚΑ)",
+                  "slug": "eaka"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "independent-authorities",
+      "label": "Ανεξάρτητες Διοικητικές Αρχές",
+      "crest": null,
+      "organisations": [
+        {
+          "id": "ombudsman",
+          "name": "Συνήγορος του Πολίτη",
+          "slug": "ombudsman",
+          "searchTerms": "Συνήγορος Πολίτη παράπονα διοίκηση",
+          "related": []
+        },
+        {
+          "id": "apdph",
+          "name": "Αρχή Προστασίας Δεδομένων Προσωπικού Χαρακτήρα (ΑΠΔΠΧ)",
+          "slug": "apdph",
+          "searchTerms": "ΑΠΔΠΧ GDPR προσωπικά δεδομένα",
+          "related": []
+        },
+        {
+          "id": "aade",
+          "name": "Ανεξάρτητη Αρχή Δημοσίων Εσόδων (ΑΑΔΕ)",
+          "slug": "aade",
+          "searchTerms": "ΑΑΔΕ φορολογία εφορία Taxisnet ΦΠΑ",
+          "related": []
+        },
+        {
+          "id": "elstat",
+          "name": "Ελληνική Στατιστική Αρχή (ΕΛΣΤΑΤ)",
+          "slug": "elstat",
+          "searchTerms": "ΕΛΣΤΑΤ στατιστικά απογραφή ΑΕΠ",
+          "related": []
+        },
+        {
+          "id": "eett",
+          "name": "Εθνική Επιτροπή Τηλεπικοινωνιών & Ταχυδρομείων (ΕΕΤΤ)",
+          "slug": "eett",
+          "searchTerms": "ΕΕΤΤ τηλεπικοινωνίες ίντερνετ συχνότητες",
+          "related": []
+        },
+        {
+          "id": "rae",
+          "name": "Ρυθμιστική Αρχή Ενέργειας (ΡΑΕ)",
+          "slug": "rae",
+          "searchTerms": "ΡΑΕ ρύθμιση ενέργεια ηλεκτρισμός",
+          "related": []
+        },
+        {
+          "id": "competition-commission",
+          "name": "Επιτροπή Ανταγωνισμού",
+          "slug": "competition-commission",
+          "searchTerms": "Επιτροπή Ανταγωνισμού καρτέλ μονοπώλιο",
+          "related": []
+        },
+        {
+          "id": "ethaae",
+          "name": "Εθνική Αρχή Ανώτατης Εκπαίδευσης (ΕΘΑΑΕ)",
+          "slug": "ethaae",
+          "searchTerms": "ΕΘΑΑΕ αξιολόγηση πανεπιστήμια",
+          "related": []
+        },
+        {
+          "id": "sepe",
+          "name": "Σώμα Επιθεώρησης Εργασίας (ΣΕΠΕ)",
+          "slug": "sepe",
+          "searchTerms": "ΣΕΠΕ εργατικό δίκαιο εργασιακά",
+          "related": []
+        },
+        {
+          "id": "adae",
+          "name": "Αρχή Διασφάλισης Απορρήτου Επικοινωνιών (ΑΔΑΕ)",
+          "slug": "adae",
+          "searchTerms": "ΑΔΑΕ απόρρητο επικοινωνιών",
+          "related": []
+        },
+        {
+          "id": "esr",
+          "name": "Εθνικό Συμβούλιο Ραδιοτηλεόρασης (ΕΣΡ)",
+          "slug": "esr",
+          "searchTerms": "ΕΣΡ ραδιοτηλεόραση ΜΜΕ άδειες",
+          "related": []
+        },
+        {
+          "id": "eeda",
+          "name": "Εθνική Επιτροπή Δικαιωμάτων του Ανθρώπου (ΕΕΔΑ)",
+          "slug": "eeda",
+          "searchTerms": "ΕΕΔΑ ανθρώπινα δικαιώματα",
+          "related": []
+        },
+        {
+          "id": "aepp",
+          "name": "Αρχή Εξέτασης Προδικαστικών Προσφυγών (ΑΕΠΠ)",
+          "slug": "aepp",
+          "searchTerms": "ΑΕΠΠ δημόσιες συμβάσεις προμήθειες",
+          "related": []
+        },
+        {
+          "id": "eaka",
+          "name": "Εθνική Αρχή Κυβερνοασφάλειας (ΕΑΚΑ)",
+          "slug": "eaka",
+          "searchTerms": "ΕΑΚΑ κυβερνοασφάλεια ψηφιακή ασφάλεια",
+          "related": []
+        },
+        {
+          "id": "raeyy",
+          "name": "Ρυθμιστική Αρχή Αποβλήτων, Ενέργειας & Υδάτων (ΡΑΕΕΥ)",
+          "slug": "raeyy",
+          "searchTerms": "ΡΑΕΕΥ απόβλητα νερό ύδατα",
+          "related": []
+        },
+        {
+          "id": "ras",
+          "name": "Ρυθμιστική Αρχή Σιδηροδρόμων (ΡΑΣ)",
+          "slug": "ras",
+          "searchTerms": "ΡΑΣ σιδηρόδρομοι τρένα",
+          "related": []
+        },
+        {
+          "id": "gedd",
+          "name": "Γενικός Επιθεωρητής Δημόσιας Διοίκησης (ΓΕΔΔ)",
+          "slug": "gedd",
+          "searchTerms": "ΓΕΔΔ επιθεώρηση δημόσια διοίκηση",
+          "related": []
+        },
+        {
+          "id": "elte",
+          "name": "Επιτροπή Λογιστικής Τυποποίησης & Ελέγχων (ΕΛΤΕ)",
+          "slug": "elte",
+          "searchTerms": "ΕΛΤΕ λογιστική ελεγκτές ορκωτοί",
+          "related": []
+        },
+        {
+          "id": "eeep",
+          "name": "Επιτροπή Εποπτείας & Ελέγχου Παιγνίων (ΕΕΕΠ)",
+          "slug": "eeep",
+          "searchTerms": "ΕΕΕΠ παίγνια στοιχήματα καζίνο",
+          "related": []
+        }
+      ]
+    },
+    {
+      "id": "courts",
+      "label": "Δικαστικές Αρχές",
+      "crest": null,
+      "organisations": [
+        {
+          "id": "areios-pagos",
+          "name": "Άρειος Πάγος",
+          "slug": "areios-pagos",
+          "searchTerms": "Άρειος Πάγος Ανώτατο Ακυρωτικό αστικές ποινικές",
+          "related": []
+        },
+        {
+          "id": "ste",
+          "name": "Συμβούλιο της Επικρατείας (ΣτΕ)",
+          "slug": "symvoulio-epikrateias",
+          "searchTerms": "Συμβούλιο Επικρατείας ΣτΕ διοικητικό δίκαιο",
+          "related": []
+        },
+        {
+          "id": "elegktiko-synedrio",
+          "name": "Ελεγκτικό Συνέδριο",
+          "slug": "elegktiko-synedrio",
+          "searchTerms": "Ελεγκτικό Συνέδριο δημοσιονομικός έλεγχος",
+          "related": []
+        },
+        {
+          "id": "efeteio-athinon",
+          "name": "Εφετείο Αθηνών",
+          "slug": "efeteio-athinon",
+          "searchTerms": "Εφετείο Αθηνών αστικό ποινικό",
+          "related": []
+        },
+        {
+          "id": "eisangelea",
+          "name": "Εισαγγελία του Αρείου Πάγου",
+          "slug": "eisangelea-areiou-pagou",
+          "searchTerms": "Εισαγγελία Αρείου Πάγου ποινική δίωξη",
+          "related": []
+        },
+        {
+          "id": "dioikitiko-efeteio",
+          "name": "Διοικητικό Εφετείο Αθηνών",
+          "slug": "dioikitiko-efeteio-athinon",
+          "searchTerms": "Διοικητικό Εφετείο Αθηνών φορολογικές",
+          "related": []
+        }
+      ]
+    },
+    {
+      "id": "decentralized-administrations",
+      "label": "Αποκεντρωμένες Διοικήσεις",
+      "crest": null,
+      "organisations": [
+        {
+          "id": "apod-attikis",
+          "name": "Αποκεντρωμένη Διοίκηση Αττικής",
+          "slug": "apod-attikis",
+          "searchTerms": "Αποκεντρωμένη Διοίκηση Αττικής Αθήνα",
+          "related": []
+        },
+        {
+          "id": "apod-makedonia-thraki",
+          "name": "Αποκεντρωμένη Διοίκηση Μακεδονίας – Θράκης",
+          "slug": "apod-makedonia-thraki",
+          "searchTerms": "Αποκεντρωμένη Διοίκηση Μακεδονίας Θράκης Θεσσαλονίκη",
+          "related": []
+        },
+        {
+          "id": "apod-ipiros",
+          "name": "Αποκεντρωμένη Διοίκηση Ηπείρου – Δυτικής Μακεδονίας",
+          "slug": "apod-ipiros-dytiki-makedonia",
+          "searchTerms": "Αποκεντρωμένη Διοίκηση Ηπείρου Δυτικής Μακεδονίας Ιωάννινα",
+          "related": []
+        },
+        {
+          "id": "apod-thessalia",
+          "name": "Αποκεντρωμένη Διοίκηση Θεσσαλίας – Στερεάς Ελλάδας",
+          "slug": "apod-thessalia-sterea",
+          "searchTerms": "Αποκεντρωμένη Διοίκηση Θεσσαλίας Στερεάς Ελλάδας Λάρισα",
+          "related": []
+        },
+        {
+          "id": "apod-peloponnesos",
+          "name": "Αποκεντρωμένη Διοίκηση Πελοποννήσου, Δυτικής Ελλάδας & Ιονίου",
+          "slug": "apod-peloponnesos-ionio",
+          "searchTerms": "Αποκεντρωμένη Διοίκηση Πελοποννήσου Ιονίου Πάτρα",
+          "related": []
+        },
+        {
+          "id": "apod-aigaio",
+          "name": "Αποκεντρωμένη Διοίκηση Αιγαίου",
+          "slug": "apod-aigaio",
+          "searchTerms": "Αποκεντρωμένη Διοίκηση Αιγαίου νησιά",
+          "related": []
+        },
+        {
+          "id": "apod-kriti",
+          "name": "Αποκεντρωμένη Διοίκηση Κρήτης",
+          "slug": "apod-kriti",
+          "searchTerms": "Αποκεντρωμένη Διοίκηση Κρήτης Ηράκλειο",
+          "related": []
+        }
+      ]
+    },
+    {
+      "id": "regions",
+      "label": "Περιφέρειες",
+      "crest": null,
+      "organisations": [
+        {
+          "id": "periferia-attikis",
+          "name": "Περιφέρεια Αττικής",
+          "slug": "periferia-attikis",
+          "searchTerms": "Περιφέρεια Αττικής Αθήνα",
+          "related": []
+        },
+        {
+          "id": "periferia-kentrikis-makedonias",
+          "name": "Περιφέρεια Κεντρικής Μακεδονίας",
+          "slug": "periferia-kentrikis-makedonias",
+          "searchTerms": "Περιφέρεια Κεντρικής Μακεδονίας Θεσσαλονίκη",
+          "related": []
+        },
+        {
+          "id": "periferia-dytikis-makedonias",
+          "name": "Περιφέρεια Δυτικής Μακεδονίας",
+          "slug": "periferia-dytikis-makedonias",
+          "searchTerms": "Περιφέρεια Δυτικής Μακεδονίας Κοζάνη Φλώρινα",
+          "related": []
+        },
+        {
+          "id": "periferia-am-thrakis",
+          "name": "Περιφέρεια Ανατολικής Μακεδονίας & Θράκης",
+          "slug": "periferia-anatolikis-makedonias-thrakis",
+          "searchTerms": "Περιφέρεια Ανατολικής Μακεδονίας Θράκης Καβάλα Κομοτηνή",
+          "related": []
+        },
+        {
+          "id": "periferia-thessalias",
+          "name": "Περιφέρεια Θεσσαλίας",
+          "slug": "periferia-thessalias",
+          "searchTerms": "Περιφέρεια Θεσσαλίας Λάρισα Βόλος",
+          "related": []
+        },
+        {
+          "id": "periferia-stereas-elladas",
+          "name": "Περιφέρεια Στερεάς Ελλάδας",
+          "slug": "periferia-stereas-elladas",
+          "searchTerms": "Περιφέρεια Στερεάς Ελλάδας Λαμία Χαλκίδα",
+          "related": []
+        },
+        {
+          "id": "periferia-ipirou",
+          "name": "Περιφέρεια Ηπείρου",
+          "slug": "periferia-ipirou",
+          "searchTerms": "Περιφέρεια Ηπείρου Ιωάννινα Άρτα",
+          "related": []
+        },
+        {
+          "id": "periferia-dytikis-elladas",
+          "name": "Περιφέρεια Δυτικής Ελλάδας",
+          "slug": "periferia-dytikis-elladas",
+          "searchTerms": "Περιφέρεια Δυτικής Ελλάδας Πάτρα Αχαΐα",
+          "related": []
+        },
+        {
+          "id": "periferia-peloponnisou",
+          "name": "Περιφέρεια Πελοποννήσου",
+          "slug": "periferia-peloponnisou",
+          "searchTerms": "Περιφέρεια Πελοποννήσου Τρίπολη Ναύπλιο",
+          "related": []
+        },
+        {
+          "id": "periferia-ionion",
+          "name": "Περιφέρεια Ιονίων Νήσων",
+          "slug": "periferia-ionion-nison",
+          "searchTerms": "Περιφέρεια Ιονίων Νήσων Κέρκυρα Ζάκυνθος",
+          "related": []
+        },
+        {
+          "id": "periferia-voriou-aigaiou",
+          "name": "Περιφέρεια Βορείου Αιγαίου",
+          "slug": "periferia-voriou-aigaiou",
+          "searchTerms": "Περιφέρεια Βορείου Αιγαίου Μυτιλήνη Χίος Σάμος",
+          "related": []
+        },
+        {
+          "id": "periferia-notiou-aigaiou",
+          "name": "Περιφέρεια Νοτίου Αιγαίου",
+          "slug": "periferia-notiou-aigaiou",
+          "searchTerms": "Περιφέρεια Νοτίου Αιγαίου Σύρος Ρόδος Κυκλάδες",
+          "related": []
+        },
+        {
+          "id": "periferia-kritis",
+          "name": "Περιφέρεια Κρήτης",
+          "slug": "periferia-kritis",
+          "searchTerms": "Περιφέρεια Κρήτης Ηράκλειο Χανιά",
+          "related": []
+        }
+      ]
+    },
+    {
+      "id": "public-enterprises",
+      "label": "Δημόσιες Επιχειρήσεις & Οργανισμοί",
+      "crest": null,
+      "organisations": [
+        {
+          "id": "deh",
+          "name": "Δημόσια Επιχείρηση Ηλεκτρισμού (ΔΕΗ ΑΕ)",
+          "slug": "deh",
+          "searchTerms": "ΔΕΗ ηλεκτρισμός ρεύμα λογαριασμός",
+          "related": []
+        },
+        {
+          "id": "elta",
+          "name": "Ελληνικά Ταχυδρομεία (ΕΛΤΑ ΑΕ)",
+          "slug": "elta",
+          "searchTerms": "ΕΛΤΑ ταχυδρομεία δέματα γράμματα",
+          "related": []
+        },
+        {
+          "id": "hellenic-train",
+          "name": "Hellenic Train ΑΕ",
+          "slug": "hellenic-train",
+          "searchTerms": "Hellenic Train τρένα σιδηρόδρομοι ΟΣΕ εισιτήριο",
+          "related": []
+        },
+        {
+          "id": "ergose",
+          "name": "ΕΡΓΟΣΕ ΑΕ",
+          "slug": "ergose",
+          "searchTerms": "ΕΡΓΟΣΕ σιδηροδρομικές υποδομές κατασκευή",
+          "related": []
+        },
+        {
+          "id": "admie",
+          "name": "ΑΔΜΗΕ ΑΕ (Διαχειριστής Μεταφοράς Ηλεκτρικής Ενέργειας)",
+          "slug": "admie",
+          "searchTerms": "ΑΔΜΗΕ ηλεκτρικό δίκτυο μεταφορά",
+          "related": []
+        },
+        {
+          "id": "deddie",
+          "name": "ΔΕΔΔΗΕ ΑΕ (Διαχειριστής Δικτύου Διανομής Ηλεκτρικής Ενέργειας)",
+          "slug": "deddie",
+          "searchTerms": "ΔΕΔΔΗΕ διανομή ηλεκτρισμός δίκτυο",
+          "related": []
+        },
+        {
+          "id": "desfa",
+          "name": "ΔΕΣΦΑ ΑΕ (Διαχειριστής Εθνικού Συστήματος Φυσικού Αερίου)",
+          "slug": "desfa",
+          "searchTerms": "ΔΕΣΦΑ φυσικό αέριο αγωγοί",
+          "related": []
+        },
+        {
+          "id": "eydap",
+          "name": "ΕΥΔΑΠ ΑΕ (Ύδρευση & Αποχέτευση Πρωτεύουσας)",
+          "slug": "eydap",
+          "searchTerms": "ΕΥΔΑΠ νερό ύδρευση αποχέτευση Αθήνα",
+          "related": []
+        },
+        {
+          "id": "eyath",
+          "name": "ΕΥΑΘ ΑΕ (Ύδρευση & Αποχέτευση Θεσσαλονίκης)",
+          "slug": "eyath",
+          "searchTerms": "ΕΥΑΘ νερό ύδρευση Θεσσαλονίκη",
+          "related": []
+        },
+        {
+          "id": "oasa",
+          "name": "ΟΑΣΑ ΑΕ (Οργανισμός Αστικών Συγκοινωνιών Αθηνών)",
+          "slug": "oasa",
+          "searchTerms": "ΟΑΣΑ συγκοινωνίες Αθήνα λεωφορεία τρόλεϊ",
+          "related": []
+        },
+        {
+          "id": "stasy",
+          "name": "ΣΤΑ.ΣΥ. ΑΕ (Μετρό – Ηλεκτρικός – Τραμ Αθηνών)",
+          "slug": "stasy",
+          "searchTerms": "ΣΤΑΣΥ Μετρό Αθήνα τραμ προαστιακός",
+          "related": []
+        },
+        {
+          "id": "olp",
+          "name": "Οργανισμός Λιμένος Πειραιώς (ΟΛΠ ΑΕ)",
+          "slug": "olp",
+          "searchTerms": "ΟΛΠ Πειραιάς λιμάνι εμπορεύματα",
+          "related": []
+        },
+        {
+          "id": "olth",
+          "name": "Οργανισμός Λιμένος Θεσσαλονίκης (ΟΛΘ ΑΕ)",
+          "slug": "olth",
+          "searchTerms": "ΟΛΘ Θεσσαλονίκη λιμάνι εμπόριο",
+          "related": []
+        },
+        {
+          "id": "eot",
+          "name": "Ελληνικός Οργανισμός Τουρισμού (ΕΟΤ)",
+          "slug": "eot",
+          "searchTerms": "ΕΟΤ τουρισμός τουριστική προβολή",
+          "related": []
+        },
+        {
+          "id": "efka",
+          "name": "e-ΕΦΚΑ (Εθνικός Φορέας Κοινωνικής Ασφάλισης)",
+          "slug": "efka",
+          "searchTerms": "ΕΦΚΑ e-ΕΦΚΑ ασφαλιστικές εισφορές σύνταξη ΙΚΑ",
+          "related": []
+        },
+        {
+          "id": "dypa",
+          "name": "ΔΥΠΑ (Δημόσια Υπηρεσία Απασχόλησης)",
+          "slug": "dypa",
+          "searchTerms": "ΔΥΠΑ ΟΑΕΔ ανεργία επίδομα εργασία",
+          "related": []
+        },
+        {
+          "id": "eody",
+          "name": "Εθνικός Οργανισμός Δημόσιας Υγείας (ΕΟΔΥ)",
+          "slug": "eody",
+          "searchTerms": "ΕΟΔΥ δημόσια υγεία ασθένειες εμβολιασμοί",
+          "related": []
+        },
+        {
+          "id": "hdb",
+          "name": "Ελληνική Αναπτυξιακή Τράπεζα (HDB)",
+          "slug": "hdb",
+          "searchTerms": "HDB αναπτυξιακή τράπεζα δάνεια επενδύσεις",
+          "related": []
+        },
+        {
+          "id": "enterprise-greece",
+          "name": "Enterprise Greece ΑΕ",
+          "slug": "enterprise-greece",
+          "searchTerms": "Enterprise Greece επενδύσεις εξαγωγές",
+          "related": []
+        },
+        {
+          "id": "eab",
+          "name": "Ελληνική Αεροπορική Βιομηχανία (ΕΑΒ ΑΕ)",
+          "slug": "eab",
+          "searchTerms": "ΕΑΒ αεροπορία βιομηχανία συντήρηση",
+          "related": []
+        }
+      ]
+    }
+  ]
+}

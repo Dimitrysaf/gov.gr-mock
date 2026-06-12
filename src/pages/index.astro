@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import SearchForm from '../components/SearchForm.astro';
+import CardList from '../components/CardList.astro';
 import nav from '../data/navigation.json';
 ---
 
@@ -56,21 +57,7 @@ import nav from '../data/navigation.json';
       <div class="govuk-grid-column-two-thirds-from-desktop">
         <section>
           <h2 class="govuk-heading-l homepage-section__heading">Υπηρεσίες και πληροφορίες</h2>
-          <ul class="gem-c-cards__list">
-            {nav.services.map(item => (
-              <li class="gem-c-cards__list-item">
-                <div class="gem-c-cards__list-item-wrapper">
-                  <div class="gem-c-cards__list-item-content">
-                    <h3 class="gem-c-cards__sub-heading govuk-heading-s">
-                      <a class="govuk-link gem-c-cards__link" href={item.href}>{item.text}</a>
-                    </h3>
-                    {item.description && <p class="govuk-body gem-c-cards__description">{item.description}</p>}
-                  </div>
-                  <span class="gem-c-cards__arrow" aria-hidden="true"></span>
-                </div>
-              </li>
-            ))}
-          </ul>
+          <CardList items={nav.services} />
         </section>
       </div>
       <div class="govuk-grid-column-one-third-from-desktop homepage-sidebar">
@@ -98,21 +85,7 @@ import nav from '../data/navigation.json';
         <section>
           <h2 class="govuk-heading-l homepage-section__heading">Δραστηριότητα</h2>
           <p class="govuk-body">Μάθετε τι κάνει η κυβέρνηση</p>
-          <ul class="gem-c-cards__list">
-            {nav.government.map(item => (
-              <li class="gem-c-cards__list-item">
-                <div class="gem-c-cards__list-item-wrapper">
-                  <div class="gem-c-cards__list-item-content">
-                    <h3 class="gem-c-cards__sub-heading govuk-heading-s">
-                      <a class="govuk-link gem-c-cards__link" href={item.href}>{item.text}</a>
-                    </h3>
-                    <p class="govuk-body gem-c-cards__description">{item.description}</p>
-                  </div>
-                  <span class="gem-c-cards__arrow" aria-hidden="true"></span>
-                </div>
-              </li>
-            ))}
-          </ul>
+          <CardList items={nav.government} />
         </section>
       </div>
       <div class="govuk-grid-column-one-third-from-desktop homepage-sidebar">
