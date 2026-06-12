@@ -1,6 +1,6 @@
 ---
 ---
-<div class="govuk-cookie-banner" data-nosnippet role="region" aria-label="Cookies στο gov.gr" id="cookie-banner">
+<div class="govuk-cookie-banner" data-nosnippet role="region" aria-label="Cookies στο gov.gr" id="cookie-banner" hidden>
 
   <div class="govuk-cookie-banner__message govuk-width-container" id="cookie-banner-ask">
     <div class="govuk-grid-row">
@@ -47,15 +47,17 @@
 
 </div>
 
+<script is:inline>
+  (function() {
+    var COOKIE_NAME = 'govgr_cookie_prefs';
+    var raw = document.cookie.split('; ').find(function(r) { return r.startsWith(COOKIE_NAME + '='); });
+    if (!raw) document.getElementById('cookie-banner').removeAttribute('hidden');
+  })();
+</script>
+
 <script>
   const COOKIE_NAME = 'govgr_cookie_prefs';
   const COOKIE_MAX_AGE = 60 * 60 * 24 * 365;
-
-  function getPrefs(): { analytics: string } | null {
-    const raw = document.cookie.split('; ').find(r => r.startsWith(COOKIE_NAME + '='));
-    if (!raw) return null;
-    try { return JSON.parse(decodeURIComponent(raw.split('=')[1])); } catch { return null; }
-  }
 
   function savePrefs(value: string) {
     const prefs = JSON.stringify({ analytics: value, comms: value, settings: value });
@@ -66,8 +68,6 @@
   const askPanel = document.getElementById('cookie-banner-ask')!;
   const accPanel = document.getElementById('cookie-banner-accepted')!;
   const rejPanel = document.getElementById('cookie-banner-rejected')!;
-
-  if (getPrefs()) banner.setAttribute('hidden', '');
 
   document.getElementById('cookie-accept-btn')?.addEventListener('click', () => {
     savePrefs('yes');

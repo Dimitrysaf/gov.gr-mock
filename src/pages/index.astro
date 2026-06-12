@@ -77,11 +77,16 @@ import nav from '../data/navigation.json';
         <section>
           <h2 class="govuk-heading-l homepage-section__heading">Προτεινόμενα</h2>
           {nav.featured.map(item => (
-            <div class="homepage-featured-card">
-              <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
-                <a class="govuk-link" href={item.href}>{item.text}</a>
-              </h3>
-              <p class="govuk-body-s govuk-!-margin-bottom-0">{item.description}</p>
+            <div class="gem-c-image-card homepage-featured-card">
+              <div class="gem-c-image-card__icon-wrapper" aria-hidden="true">
+                <span class="material-symbols-sharp gem-c-image-card__icon">{item.icon}</span>
+              </div>
+              <div class="gem-c-image-card__text-wrapper">
+                <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+                  <a class="govuk-link" href={item.href}>{item.text}</a>
+                </h3>
+                <p class="govuk-body-s govuk-!-margin-bottom-0">{item.description}</p>
+              </div>
             </div>
           ))}
         </section>
@@ -91,7 +96,7 @@ import nav from '../data/navigation.json';
     <div class="govuk-grid-row homepage-row">
       <div class="govuk-grid-column-two-thirds-from-desktop">
         <section>
-          <h2 class="govuk-heading-l homepage-section__heading">Κυβερνητική δραστηριότητα</h2>
+          <h2 class="govuk-heading-l homepage-section__heading">Δραστηριότητα</h2>
           <p class="govuk-body">Μάθετε τι κάνει η κυβέρνηση</p>
           <ul class="gem-c-cards__list">
             {nav.government.map(item => (

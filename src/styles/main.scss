@@ -12,7 +12,7 @@ $govuk-functional-colours: (
   "link-visited": #4c2c92,
 );
 
-$govuk-font-family:  "Inter", system-ui, sans-serif;
+$govuk-font-family:  "Roboto", system-ui, sans-serif;
 $govuk-assets-path:  "/node_modules/govuk-frontend/dist/govuk/assets/";
 
 @import "govuk-frontend/dist/govuk/index";
@@ -582,6 +582,36 @@ $feedback-border: color.mix(#ffffff, #003476, 50%);
   margin: 0;
 }
 
+// ── Featured image cards (gem-c-image-card) ──────────────────────────────────
+
+.gem-c-image-card {
+  display: flex;
+  gap: govuk-spacing(3);
+  align-items: flex-start;
+  margin-bottom: 30px;
+}
+
+.gem-c-image-card__icon-wrapper {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90px;
+  height: 90px;
+  background-color: var(--govgr-brand);
+  border-radius: 2px;
+}
+
+.gem-c-image-card__icon {
+  font-size: 48px;
+  color: govuk-colour("white");
+  font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 48;
+}
+
+.gem-c-image-card__text-wrapper {
+  flex: 1;
+}
+
 // ── Homepage sections ────────────────────────────────────────────────────────
 
 .homepage-row--popular {
@@ -608,11 +638,12 @@ $feedback-border: color.mix(#ffffff, #003476, 50%);
 .homepage-most-viewed-list__item {
   border-top: 1px solid govuk-colour("mid-grey");
   padding: govuk-spacing(3) govuk-spacing(3) govuk-spacing(3) 0;
+  overflow: visible;
 }
 
 .gem-c-action-link {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: govuk-spacing(3);
 }
 
@@ -622,8 +653,10 @@ $feedback-border: color.mix(#ffffff, #003476, 50%);
 }
 
 .gem-c-action-link__svg {
-  width: 27px;
-  height: 27px;
+  display: block;
+  width: 36px;
+  height: 36px;
+  overflow: visible;
 }
 
 .gem-c-action-link__icon__circle {

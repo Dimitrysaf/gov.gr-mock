@@ -26,9 +26,9 @@
     { "text": "Διαφάνεια", "href": "/transparency", "description": "Δεδομένα και εκθέσεις εταιρικής διακυβέρνησης" }
   ],
   "featured": [
-    { "text": "Εύρεση εργασίας", "href": "/browse/working", "description": "Αναζητήστε και κάντε αίτηση για θέσεις εργασίας στην Ελλάδα." },
-    { "text": "Κοινωνική ασφάλιση", "href": "/browse/benefits", "description": "Ελέγξτε τις εισφορές και τα δικαιώματά σας." },
-    { "text": "Υποστήριξη κόστους ζωής", "href": "/browse/benefits", "description": "Μάθετε ποια βοήθεια διατίθεται για το κόστος ζωής." }
+    { "text": "Εύρεση εργασίας", "href": "/browse/working", "description": "Αναζητήστε και κάντε αίτηση για θέσεις εργασίας στην Ελλάδα.", "icon": "work" },
+    { "text": "Κοινωνική ασφάλιση", "href": "/browse/benefits", "description": "Ελέγξτε τις εισφορές και τα δικαιώματά σας.", "icon": "health_and_safety" },
+    { "text": "Υποστήριξη κόστους ζωής", "href": "/browse/benefits", "description": "Μάθετε ποια βοήθεια διατίθεται για το κόστος ζωής.", "icon": "payments" }
   ],
   "popular": [
     { "text": "Taxisnet: σύνδεση ή εγγραφή", "href": "/taxisnet" },
