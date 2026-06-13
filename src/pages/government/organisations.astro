@@ -18,7 +18,7 @@ const labeledSections   = orgs.sections.filter(s => s.label !== null);
 >
   <div class="govuk-width-container" data-module="list-filter">
 
-    <!-- Heading + search (exactly as in the reference) -->
+    <!-- Heading + search -->
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">
@@ -56,98 +56,33 @@ const labeledSections   = orgs.sections.filter(s => s.label !== null);
         </div>
         <div class="govuk-grid-column-two-thirds organisations-list__without-number">
           <ol>
-            {standaloneSection.organisations.map(org => (
-              <li class="organisations-list__item" id={org.id}
-                  data-filter="item" data-filter-terms={org.searchTerms}>
-                <div class="govuk-!-margin-bottom-3">
-                  <h3 class="gem-c-organisation-logo">
-                    <a class="gem-c-organisation-logo__container gem-c-organisation-logo__link"
-                       href={`/government/organisations/${org.slug}`}>
-                      {((org as any).logo ?? standaloneSection.crest) && (
-                        <img class="gem-c-organisation-logo__crest"
-                             src={(org as any).logo ?? standaloneSection.crest}
-                             alt="" aria-hidden="true" />
-                      )}
-                      <span class="gem-c-organisation-logo__name">{org.name}</span>
-                    </a>
-                  </h3>
-                </div>
-                {org.related.length > 0 && (
-                  <div class="govuk-!-margin-bottom-3">
-                    <details class="govuk-details govuk-!-margin-bottom-3">
-                      <summary class="govuk-details__summary">
-                        <span class="govuk-details__summary-text">
-                          Συνεργάζεται με {org.related.reduce((n: number, g: {items: unknown[]}) => n + g.items.length, 0)} φορείς και δημόσιους οργανισμούς
-                        </span>
-                      </summary>
-                      <div class="govuk-details__text">
-                        {org.related.map((group: {type: string; items: {name: string; slug: string}[]}) => (
-                          <div>
-                            <h4 class="govuk-heading-s govuk-!-margin-top-2 govuk-!-margin-bottom-1">{group.type}</h4>
-                            <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-3">
-                              {group.items.map((item: {name: string; slug: string}) => (
-                                <li class="govuk-!-margin-bottom-1">
-                                  <a class="govuk-link" href={`/government/organisations/${item.slug}`}>
-                                    {item.name}
-                                  </a>
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-                        ))}
-                      </div>
-                    </details>
-                  </div>
-                )}
-              </li>
-            ))}
-          </ol>
-        </div>
-      </div>
-
-      <!-- Labeled sections (Υπουργικά τμήματα, Μη υπουργικά, …) -->
-      {labeledSections.map(section => (
-        <div class="govuk-grid-row organisations-list__section" data-filter="block">
-
-          <!-- Left: label + big number -->
-          <div class="govuk-grid-column-one-third" data-filter="count">
-            <div class="gem-c-heading">
-              <h2 class="gem-c-heading__text govuk-heading-m">{section.label}</h2>
-            </div>
-            <p class="govuk-visually-hidden">
-              Υπάρχουν <span class="js-accessible-item-count">{section.organisations.length}</span> {section.label}
-            </p>
-            <div aria-hidden="true" class="gem-c-big-number">
-              <span class="gem-c-big-number__value" data-item-count="true">
-                {section.organisations.length}
-              </span>
-            </div>
-          </div>
-
-          <!-- Right: list of organisations -->
-          <div class="govuk-grid-column-two-thirds">
-            <ol>
-              {section.organisations.map(org => (
+            {standaloneSection.organisations.map(org => {
+              const logoSrc = (org as any).logo ?? standaloneSection.crest;
+              return (
                 <li class="organisations-list__item" id={org.id}
                     data-filter="item" data-filter-terms={org.searchTerms}>
-
-                  <div class="govuk-!-margin-bottom-3">
-                    <h3 class="gem-c-organisation-logo">
-                      <a class="gem-c-organisation-logo__container gem-c-organisation-logo__link"
-                         href={`/government/organisations/${org.slug}`}>
-                        {((org as any).logo ?? section.crest) && (
+                  <div class="govuk-!-margin-bottom-2">
+                    {logoSrc ? (
+                      <h3 class="gem-c-organisation-logo">
+                        <a class="gem-c-organisation-logo__container gem-c-organisation-logo__link"
+                           href={`/government/organisations/${org.slug}`}>
                           <img class="gem-c-organisation-logo__crest"
-                               src={(org as any).logo ?? section.crest}
-                               alt="" aria-hidden="true" />
-                        )}
-                        <span class="gem-c-organisation-logo__name">{org.name}</span>
-                      </a>
-                    </h3>
+                               src={logoSrc} alt="" aria-hidden="true" />
+                          <span class="gem-c-organisation-logo__name">{org.name}</span>
+                        </a>
+                      </h3>
+                    ) : (
+                      <h3 class="org-plain-heading">
+                        <a class="govuk-link govuk-link--no-visited-state"
+                           href={`/government/organisations/${org.slug}`}>
+                          {org.name}
+                        </a>
+                      </h3>
+                    )}
                   </div>
-
                   {org.related.length > 0 && (
-                    <div class="govuk-!-margin-bottom-3">
-                      <details class="govuk-details govuk-!-margin-bottom-3">
+                    <div class="govuk-!-margin-bottom-2">
+                      <details class="govuk-details govuk-!-margin-bottom-2">
                         <summary class="govuk-details__summary">
                           <span class="govuk-details__summary-text">
                             Συνεργάζεται με {org.related.reduce((n: number, g: {items: unknown[]}) => n + g.items.length, 0)} φορείς και δημόσιους οργανισμούς
@@ -172,9 +107,94 @@ const labeledSections   = orgs.sections.filter(s => s.label !== null);
                       </details>
                     </div>
                   )}
-
+                  <hr class="org-divider" />
                 </li>
-              ))}
+              );
+            })}
+          </ol>
+        </div>
+      </div>
+
+      <!-- Labeled sections -->
+      {labeledSections.map(section => (
+        <div class="govuk-grid-row organisations-list__section" data-filter="block">
+
+          <!-- Left: label + big number -->
+          <div class="govuk-grid-column-one-third" data-filter="count">
+            <div class="gem-c-heading">
+              <h2 class="gem-c-heading__text govuk-heading-m">{section.label}</h2>
+            </div>
+            <p class="govuk-visually-hidden">
+              Υπάρχουν <span class="js-accessible-item-count">{section.organisations.length}</span> {section.label}
+            </p>
+            <div aria-hidden="true" class="gem-c-big-number">
+              <span class="gem-c-big-number__value" data-item-count="true">
+                {section.organisations.length}
+              </span>
+            </div>
+          </div>
+
+          <!-- Right: list of organisations -->
+          <div class="govuk-grid-column-two-thirds">
+            <ol>
+              {section.organisations.map(org => {
+                const logoSrc = (org as any).logo ?? (section as any).crest;
+                return (
+                  <li class="organisations-list__item" id={org.id}
+                      data-filter="item" data-filter-terms={org.searchTerms}>
+
+                    <div class="govuk-!-margin-bottom-2">
+                      {logoSrc ? (
+                        <h3 class="gem-c-organisation-logo">
+                          <a class="gem-c-organisation-logo__container gem-c-organisation-logo__link"
+                             href={`/government/organisations/${org.slug}`}>
+                            <img class="gem-c-organisation-logo__crest"
+                                 src={logoSrc} alt="" aria-hidden="true" />
+                            <span class="gem-c-organisation-logo__name">{org.name}</span>
+                          </a>
+                        </h3>
+                      ) : (
+                        <h3 class="org-plain-heading">
+                          <a class="govuk-link govuk-link--no-visited-state"
+                             href={`/government/organisations/${org.slug}`}>
+                            {org.name}
+                          </a>
+                        </h3>
+                      )}
+                    </div>
+
+                    {org.related.length > 0 && (
+                      <div class="govuk-!-margin-bottom-2">
+                        <details class="govuk-details govuk-!-margin-bottom-2">
+                          <summary class="govuk-details__summary">
+                            <span class="govuk-details__summary-text">
+                              Συνεργάζεται με {org.related.reduce((n: number, g: {items: unknown[]}) => n + g.items.length, 0)} φορείς και δημόσιους οργανισμούς
+                            </span>
+                          </summary>
+                          <div class="govuk-details__text">
+                            {org.related.map((group: {type: string; items: {name: string; slug: string}[]}) => (
+                              <div>
+                                <h4 class="govuk-heading-s govuk-!-margin-top-2 govuk-!-margin-bottom-1">{group.type}</h4>
+                                <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-3">
+                                  {group.items.map((item: {name: string; slug: string}) => (
+                                    <li class="govuk-!-margin-bottom-1">
+                                      <a class="govuk-link" href={`/government/organisations/${item.slug}`}>
+                                        {item.name}
+                                      </a>
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
+                            ))}
+                          </div>
+                        </details>
+                      </div>
+                    )}
+
+                    <hr class="org-divider" />
+                  </li>
+                );
+              })}
             </ol>
           </div>
 
@@ -197,8 +217,7 @@ const labeledSections   = orgs.sections.filter(s => s.label !== null);
 
   /* Section row */
   .organisations-list__section {
-    padding-bottom: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 80px;
   }
 
   .organisations-list__section[hidden] { display: none; }
@@ -230,12 +249,12 @@ const labeledSections   = orgs.sections.filter(s => s.label !== null);
   }
 
   .organisations-list__item {
-    margin-bottom: 16px;
+    margin-bottom: 0;
   }
 
   .organisations-list__item[hidden] { display: none; }
 
-  /* Organisation logo */
+  /* Logo treatment — only for orgs with an image */
   .gem-c-organisation-logo {
     margin: 0;
     font-size: 1rem;
@@ -282,6 +301,22 @@ const labeledSections   = orgs.sections.filter(s => s.label !== null);
     color: #0b0c0c;
   }
 
+  /* Plain link treatment — for orgs without an image */
+  .org-plain-heading {
+    margin: 0;
+    font-size: 1.1875rem;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  /* Divider below each org */
+  .org-divider {
+    border: none;
+    border-top: 1px solid #b1b4b6;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+
   /* No results */
   .organisations-list__no-results[hidden] { display: none; }
 </style>
@@ -303,7 +338,7 @@ const labeledSections   = orgs.sections.filter(s => s.label !== null);
 
     items.forEach(item => {
       const terms = normalise(item.dataset.filterTerms ?? '');
-      const name  = normalise(item.querySelector('.gem-c-organisation-logo__name')?.textContent ?? '');
+      const name  = normalise(item.querySelector('.gem-c-organisation-logo__name, .org-plain-heading a')?.textContent ?? '');
       const match = !q || terms.includes(q) || name.includes(q);
       item.hidden = !match;
       if (match) visible++;
