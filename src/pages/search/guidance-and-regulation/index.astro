@@ -1,0 +1,16 @@
+---
+import FinderPage from '../../../components/FinderPage.astro';
+import data from '../../../data/guidance.json';
+---
+
+<FinderPage
+  title="Οδηγίες και κανονισμοί"
+  breadcrumbs={[
+    { text: 'Αρχική', href: '/' },
+    { text: 'Οδηγίες και κανονισμοί' },
+  ]}
+  topics={data.topics}
+  typeFilterLabel="Τύπος εγγράφου"
+  typeFilters={data.types}
+  items={data.items}
+/>

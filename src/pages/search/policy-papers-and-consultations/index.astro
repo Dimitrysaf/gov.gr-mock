@@ -1,0 +1,16 @@
+---
+import FinderPage from '../../../components/FinderPage.astro';
+import data from '../../../data/consultations.json';
+---
+
+<FinderPage
+  title="Πολιτικά κείμενα και διαβουλεύσεις"
+  breadcrumbs={[
+    { text: 'Αρχική', href: '/' },
+    { text: 'Πολιτικά κείμενα και διαβουλεύσεις' },
+  ]}
+  topics={data.topics}
+  typeFilterLabel="Τύπος εγγράφου"
+  typeFilters={data.types}
+  items={data.items}
+/>

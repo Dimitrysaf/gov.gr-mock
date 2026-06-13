@@ -19,11 +19,11 @@
   ],
   "government": [
     { "text": "Υπουργεία", "href": "/government/organisations", "description": "Υπουργεία, φορείς και δημόσιοι οργανισμοί" },
-    { "text": "Νέα", "href": "/news", "description": "Ανακοινώσεις, ομιλίες, επιστολές και γνωστοποιήσεις" },
-    { "text": "Οδηγίες και κανονισμοί", "href": "/guidance", "description": "Αναλυτικές οδηγίες, κανονισμοί και κανόνες" },
-    { "text": "Έρευνα και στατιστικά", "href": "/research", "description": "Εκθέσεις, αναλύσεις και επίσημα στατιστικά" },
-    { "text": "Πολιτικά κείμενα και διαβουλεύσεις", "href": "/consultations", "description": "Διαβουλεύσεις και στρατηγική" },
-    { "text": "Διαφάνεια", "href": "/transparency", "description": "Δεδομένα και εκθέσεις εταιρικής διακυβέρνησης" }
+    { "text": "Νέα", "href": "/search/news-and-communications", "description": "Ανακοινώσεις, ομιλίες, επιστολές και γνωστοποιήσεις" },
+    { "text": "Οδηγίες και κανονισμοί", "href": "/search/guidance-and-regulation", "description": "Αναλυτικές οδηγίες, κανονισμοί και κανόνες" },
+    { "text": "Έρευνα και στατιστικά", "href": "/search/research-and-statistics", "description": "Εκθέσεις, αναλύσεις και επίσημα στατιστικά" },
+    { "text": "Πολιτικά κείμενα και διαβουλεύσεις", "href": "/search/policy-papers-and-consultations", "description": "Διαβουλεύσεις και στρατηγική" },
+    { "text": "Διαφάνεια", "href": "/search/transparency-and-freedom-of-information-releases", "description": "Δεδομένα και εκθέσεις εταιρικής διακυβέρνησης" }
   ],
   "featured": [
     { "text": "Εύρεση εργασίας", "href": "/browse/working", "description": "Αναζητήστε και κάντε αίτηση για θέσεις εργασίας στην Ελλάδα.", "icon": "work" },

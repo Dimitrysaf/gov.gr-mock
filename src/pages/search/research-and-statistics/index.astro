@@ -1,0 +1,18 @@
+---
+import FinderPage from '../../../components/FinderPage.astro';
+import data from '../../../data/research.json';
+---
+
+<FinderPage
+  title="Έρευνα και στατιστικά"
+  breadcrumbs={[
+    { text: 'Αρχική', href: '/' },
+    { text: 'Έρευνα και στατιστικά' },
+  ]}
+  topics={data.topics}
+  radioFilter={{
+    allLabel: 'Όλες οι έρευνες και στατιστικά',
+    options: data.radioOptions,
+  }}
+  items={data.items}
+/>

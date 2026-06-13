@@ -1,0 +1,16 @@
+---
+import FinderPage from '../../../components/FinderPage.astro';
+import data from '../../../data/transparency.json';
+---
+
+<FinderPage
+  title="Διαφάνεια και αποδεσμευμένα έγγραφα ΕτΠ"
+  breadcrumbs={[
+    { text: 'Αρχική', href: '/' },
+    { text: 'Διαφάνεια και αποδεσμευμένα έγγραφα ΕτΠ' },
+  ]}
+  topics={data.topics}
+  typeFilterLabel="Τύπος εγγράφου"
+  typeFilters={data.types}
+  items={data.items}
+/>

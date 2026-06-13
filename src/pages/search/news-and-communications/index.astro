@@ -1,0 +1,16 @@
+---
+import FinderPage from '../../../components/FinderPage.astro';
+import data from '../../../data/news.json';
+---
+
+<FinderPage
+  title="Νέα και ανακοινώσεις"
+  breadcrumbs={[
+    { text: 'Αρχική', href: '/' },
+    { text: 'Νέα και ανακοινώσεις' },
+  ]}
+  topics={data.topics}
+  typeFilterLabel="Τύπος"
+  typeFilters={data.types}
+  items={data.items}
+/>

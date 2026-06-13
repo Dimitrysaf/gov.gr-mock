@@ -1,0 +1,205 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import newsData from '../../data/news.json';
+import guidanceData from '../../data/guidance.json';
+import researchData from '../../data/research.json';
+import consultationsData from '../../data/consultations.json';
+import transparencyData from '../../data/transparency.json';
+
+function formatDate(dateStr: string) {
+  const d = new Date(dateStr + 'T00:00:00');
+  return d.toLocaleDateString('el-GR', { day: 'numeric', month: 'long', year: 'numeric' });
+}
+
+const allItems = [
+  ...newsData.items.map(i => ({ ...i, source: 'news', sourceLabel: 'Νέα και ανακοινώσεις', sourceHref: '/search/news-and-communications' })),
+  ...guidanceData.items.map(i => ({ ...i, source: 'guidance', sourceLabel: 'Οδηγίες και κανονισμοί', sourceHref: '/search/guidance-and-regulation' })),
+  ...researchData.items.map(i => ({ ...i, source: 'research', sourceLabel: 'Έρευνα και στατιστικά', sourceHref: '/search/research-and-statistics' })),
+  ...consultationsData.items.map(i => ({ ...i, source: 'consultations', sourceLabel: 'Πολιτικά κείμενα και διαβουλεύσεις', sourceHref: '/search/policy-papers-and-consultations' })),
+  ...transparencyData.items.map(i => ({ ...i, source: 'transparency', sourceLabel: 'Διαφάνεια και ΕτΠ', sourceHref: '/search/transparency-and-freedom-of-information-releases' })),
+].sort((a, b) => b.date.localeCompare(a.date));
+
+const sourceFilters = [
+  { value: 'news', label: 'Νέα και ανακοινώσεις' },
+  { value: 'guidance', label: 'Οδηγίες και κανονισμοί' },
+  { value: 'research', label: 'Έρευνα και στατιστικά' },
+  { value: 'consultations', label: 'Πολιτικά κείμενα και διαβουλεύσεις' },
+  { value: 'transparency', label: 'Διαφάνεια και ΕτΠ' },
+];
+---
+
+<Layout
+  title="Αναζήτηση – gov.gr"
+  breadcrumbs={[{ text: 'Αρχική', href: '/' }, { text: 'Αναζήτηση' }]}
+>
+  <div class="govuk-width-container">
+
+    <div class="govuk-grid-row govuk-!-margin-bottom-2">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Αναζήτηση στο gov.gr</h1>
+      </div>
+    </div>
+
+    <div class="govuk-grid-row">
+
+      <!-- ── Filters ── -->
+      <div class="govuk-grid-column-one-third">
+
+        <div class="gem-c-search gem-c-search--on-white gem-c-search--separate-label govuk-!-margin-bottom-6" role="search">
+          <label for="site-search-keyword" class="gem-c-search__label">
+            Αναζήτηση <span class="govuk-visually-hidden">σε όλο το gov.gr</span>
+          </label>
+          <div class="gem-c-search__item-wrapper">
+            <div class="gem-c-search__input-wrapper">
+              <input
+                class="gem-c-search__input gem-c-search__input--on-white"
+                id="site-search-keyword"
+                type="search"
+                autocorrect="off"
+                autocapitalize="off"
+              />
+            </div>
+            <div class="gem-c-search__submit-wrapper">
+              <button class="gem-c-search__submit" type="button" aria-label="Αναζήτηση">
+                <svg class="gem-c-search__icon" width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                  <circle cx="12.0161" cy="11.0161" r="8.51613" stroke="currentColor" stroke-width="3"></circle>
+                  <line x1="17.8668" y1="17.3587" x2="26.4475" y2="25.9393" stroke="currentColor" stroke-width="3"></line>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <details class="govuk-details govuk-!-margin-bottom-0">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">Τύπος περιεχομένου</span>
+          </summary>
+          <div class="govuk-details__text">
+            <div class="govuk-form-group govuk-checkboxes govuk-checkboxes--small govuk-!-margin-bottom-2">
+              {sourceFilters.map((f, i) => (
+                <div class="govuk-checkboxes__item">
+                  <input
+                    class="govuk-checkboxes__input site-source-check"
+                    id={`site-source-${i}`}
+                    type="checkbox"
+                    value={f.value}
+                  />
+                  <label class="govuk-label govuk-checkboxes__label" for={`site-source-${i}`}>
+                    {f.label}
+                  </label>
+                </div>
+              ))}
+            </div>
+          </div>
+        </details>
+
+      </div>
+
+      <!-- ── Results ── -->
+      <div class="govuk-grid-column-two-thirds">
+
+        <p class="govuk-body-s govuk-hint govuk-!-margin-bottom-4" aria-live="polite">
+          <span id="site-results-count">{allItems.length}</span> αποτελέσματα
+        </p>
+
+        <ul class="finder-results-list" id="site-results">
+          {allItems.map(item => (
+            <li
+              class="finder-results-list__item"
+              data-source={item.source}
+              data-search={[item.title, item.organisation, item.description ?? '', item.sourceLabel].join(' ').toLowerCase()}
+            >
+              <h2 class="govuk-heading-s govuk-!-margin-bottom-1">
+                <a class="govuk-link" href={item.href}>{item.title}</a>
+              </h2>
+              <p class="govuk-body-s govuk-hint govuk-!-margin-bottom-1">
+                <a class="govuk-link govuk-link--no-visited-state" href={item.sourceHref}>{item.sourceLabel}</a>
+                {' · '}
+                {item.organisation}
+                {' · '}
+                <time datetime={item.date}>{formatDate(item.date)}</time>
+              </p>
+              {item.description && (
+                <p class="govuk-body-s govuk-!-margin-bottom-0">{item.description}</p>
+              )}
+            </li>
+          ))}
+        </ul>
+
+        <p class="govuk-body" id="site-no-results" hidden>
+          Δεν βρέθηκαν αποτελέσματα. Δοκιμάστε διαφορετική αναζήτηση.
+        </p>
+
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<script>
+  function normalise(s: string) {
+    return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+  }
+
+  const keywordInput = document.getElementById('site-search-keyword') as HTMLInputElement;
+  const sourceChecks = document.querySelectorAll<HTMLInputElement>('.site-source-check');
+  const countEl     = document.getElementById('site-results-count')!;
+  const noResults   = document.getElementById('site-no-results') as HTMLElement;
+  const items       = document.querySelectorAll<HTMLElement>('.finder-results-list__item');
+
+  function applyFilters() {
+    const kw      = normalise(keywordInput.value.trim());
+    const sources = Array.from(sourceChecks).filter(c => c.checked).map(c => c.value);
+
+    let visible = 0;
+    items.forEach(item => {
+      const matchKw     = !kw || normalise(item.dataset.search ?? '').includes(kw);
+      const matchSource = sources.length === 0 || sources.includes(item.dataset.source ?? '');
+      const show = matchKw && matchSource;
+      item.hidden = !show;
+      if (show) visible++;
+    });
+
+    countEl.textContent = String(visible);
+    noResults.hidden = visible > 0;
+
+    const url = new URL(window.location.href);
+    if (keywordInput.value.trim()) {
+      url.searchParams.set('keywords', keywordInput.value.trim());
+    } else {
+      url.searchParams.delete('keywords');
+    }
+    history.replaceState(null, '', url.toString());
+  }
+
+  // Pre-fill from URL on load
+  const params = new URLSearchParams(window.location.search);
+  const kw = params.get('keywords');
+  if (kw) {
+    keywordInput.value = kw;
+    applyFilters();
+  }
+
+  keywordInput.addEventListener('input', applyFilters);
+  sourceChecks.forEach(c => c.addEventListener('change', applyFilters));
+</script>
+
+<style>
+  .finder-results-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .finder-results-list__item {
+    padding: 20px 0;
+    border-top: 1px solid #b1b4b6;
+  }
+
+  .finder-results-list__item:last-child {
+    border-bottom: 1px solid #b1b4b6;
+  }
+
+  .finder-results-list__item[hidden] {
+    display: none;
+  }
+</style>
